@@ -6,11 +6,32 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXFileReference section */
+		EDFD01CA23FF2115005B1623 /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		EDFD01CB23FF21EB005B1623 /* Sakuya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya.png; sourceTree = "<group>"; };
+		EDFD01CC23FF21EB005B1623 /* Sakuya_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya_flip.png; sourceTree = "<group>"; };
+		EDFD01CD23FF21EB005B1623 /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
+		EDFD01CE23FF2207005B1623 /* function.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = function.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		EDFD01BF23FF20DE005B1623 = {
 			isa = PBXGroup;
 			children = (
+				EDFD01CA23FF2115005B1623 /* main.py */,
+				EDFD01CE23FF2207005B1623 /* function.py */,
+				EDFD01CF23FF221B005B1623 /* images */,
 			);
+			sourceTree = "<group>";
+		};
+		EDFD01CF23FF221B005B1623 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD01CC23FF21EB005B1623 /* Sakuya_flip.png */,
+				EDFD01CB23FF21EB005B1623 /* Sakuya.png */,
+				EDFD01CD23FF21EB005B1623 /* wallpaper.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
