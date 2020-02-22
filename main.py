@@ -3,7 +3,7 @@ from pygame.locals import *
 from function import *
 import os
 
-#toutes les coordonnées:
+ #toutes les coordonnées:
 
 WINDOW_X = 1000
 WINDOW_Y = 600
