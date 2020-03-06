@@ -5,6 +5,7 @@ import os
 import platform
 #toutes les coordonnées:
 
+#test les maman
 pygame.init()
 
 width, height = pygame.display.Info().current_w, pygame.display.Info().current_h
