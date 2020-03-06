@@ -7,14 +7,14 @@ import platform
 
 pygame.init()
 
-width, height = pygame.display.Info().current_w, pygame.display.Info().current_h
+width, height = int(pygame.display.Info().current_w), int(pygame.display.Info().current_h)
 WINDOW_X = width
 WINDOW_Y = height
 
 BACK_X = 0
 BACK_Y = 0
 
-GROUND_Y = (900 / 1080) * height
+GROUND_Y = int((900 / 1080) * height)
 
 
 MOVE = 15 #vitesse de déplacement
@@ -43,8 +43,8 @@ heading_j1 = 1 #1 = droite; 0 = gauche
 heading_j2 = 0
 
 
-pos_j1 = pos_j1.move((0 / 1920) * width, GROUND_Y-((30 / 1080) * height))
-pos_j2 = pos_j2.move((1500 / 1920) * width, GROUND_Y-((30 / 1080) * height))
+pos_j1 = pos_j1.move(int((0 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
+pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
@@ -106,8 +106,8 @@ while game:
 
 
 
-    if pos_j1.y >= GROUND_Y-((30 / 1080) * height):
-        pos_j1.y = GROUND_Y-((30 / 1080) * height)
+    if pos_j1.y >= int(GROUND_Y-((30 / 1080) * height)):
+        pos_j1.y = int(GROUND_Y-((30 / 1080) * height))
 
     if pos_j1.y <= 0:
         pos_j1 = pos_j1.move(0, MOVE)
@@ -120,8 +120,8 @@ while game:
     
 
 
-    if pos_j2.y >= GROUND_Y-((30 / 1080) * height):
-        pos_j2.y = GROUND_Y-((30 / 1080) * height)
+    if pos_j2.y >= int(GROUND_Y-((30 / 1080) * height)):
+        pos_j2.y = int(GROUND_Y-((30 / 1080) * height))
 
     if pos_j2.y <= 0:
         pos_j2 = pos_j2.move(0, MOVE)
