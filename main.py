@@ -17,7 +17,7 @@ BACK_Y = 0
 GROUND_Y = (900 / 1080) * height
 
 
-MOVE = 10 #vitesse de déplacement
+MOVE = 15 #vitesse de déplacement
 choice = choice_perso()
 
 isMac = platform.system() == "Darwin"
