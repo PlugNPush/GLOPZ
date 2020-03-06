@@ -2,22 +2,25 @@ import pygame
 from pygame.locals import *
 from function import *
 import os
-
+import platform
 #toutes les coordonnées:
 
-WINDOW_X = 1920
-WINDOW_Y = 1080
+pygame.init()
+
+width, height = pygame.display.Info().current_w, pygame.display.Info().current_h
+WINDOW_X = width
+WINDOW_Y = height
 
 BACK_X = 0
 BACK_Y = 0
 
-GROUND_Y = 770
+GROUND_Y = (900 / 1080) * height
 
-MOVE = 10 #vitesse de déplacement
+
+MOVE = 15 #vitesse de déplacement
 choice = choice_perso()
 
-pygame.init()
-
+isMac = platform.system() == "Darwin"
 
 #création d'une fenetre
 screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
@@ -40,8 +43,8 @@ heading_j1 = 1 #1 = droite; 0 = gauche
 heading_j2 = 0
 
 
-pos_j1 = pos_j1.move(0, GROUND_Y-1)
-pos_j2 = pos_j2.move(1500, GROUND_Y-30)
+pos_j1 = pos_j1.move((0 / 1920) * width, GROUND_Y-((30 / 1080) * height))
+pos_j2 = pos_j2.move((1500 / 1920) * width, GROUND_Y-((30 / 1080) * height))
 
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
@@ -65,19 +68,19 @@ while game:
     if keys[K_LALT] and keys[K_F4]:
         game = False
 
-    if keys[K_s]:
+    if keys[K_s] if isMac else keys[K_s]:
         pos_j1 = pos_j1.move(0, MOVE)
 
-    if keys[K_w]:
+    if keys[K_z] if isMac else keys[K_w]:
         pos_j1 = pos_j1.move(0, -MOVE)
     else:
         pos_j1 = pos_j1.move(0, MOVE)
 
-    if keys[K_d]:
+    if keys[K_d] if isMac else keys[K_d]:
         pos_j1 = pos_j1.move(MOVE, 0)
         heading_j1 = 0
 
-    if keys[K_a]:
+    if keys[K_q] if isMac else keys[K_a]:
         pos_j1 = pos_j1.move(-MOVE, 0)
         heading_j1 = 1
     
@@ -103,8 +106,8 @@ while game:
 
 
 
-    if pos_j1.y >= GROUND_Y:
-        pos_j1.y = GROUND_Y-1
+    if pos_j1.y >= GROUND_Y-((30 / 1080) * height):
+        pos_j1.y = GROUND_Y-((30 / 1080) * height)
 
     if pos_j1.y <= 0:
         pos_j1 = pos_j1.move(0, MOVE)
@@ -117,8 +120,8 @@ while game:
     
 
 
-    if pos_j2.y >= GROUND_Y-29:
-        pos_j2.y = GROUND_Y-30
+    if pos_j2.y >= GROUND_Y-((30 / 1080) * height):
+        pos_j2.y = GROUND_Y-((30 / 1080) * height)
 
     if pos_j2.y <= 0:
         pos_j2 = pos_j2.move(0, MOVE)
