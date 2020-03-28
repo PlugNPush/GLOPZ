@@ -16,7 +16,7 @@ BACK_Y = 0
 
 GROUND_Y = int((900 / 1080) * height)
 COEF_UP = 1.1
-COEF_DOWN = 1.2
+COEF_DOWN = 1.1
 
 UP_MOVE = 30 #vitesse de déplacement
 SIDE_MOVE = 10
