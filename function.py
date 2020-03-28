@@ -8,7 +8,7 @@ def choice_perso():
     while verif == False:
         j1 = input("...")
         if j1.lower() == "liste":
-            print("- Sakuya\n- Papacito")
+            print("- Sakuya\n- Papacito\n- Nathan")
 
         elif j1.lower() == "sakuya":
             choice[0] = "/images/sakuya.png"
@@ -35,7 +35,7 @@ def choice_perso():
     while verif == False:
         j2 = input("...")
         if j2.lower() == "liste":
-            print("- Sakuya\n- Papacito")
+            print("- Sakuya\n- Papacito\n- Nathan")
 
         if j2.lower() == "sakuya":
             choice[1] = "/images/sakuya.png"
