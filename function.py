@@ -19,6 +19,11 @@ def choice_perso():
             choice[0] = "/images/papacito.png"
             choice_flip[0] = "/images/papacito_flip.png"
             verif = True
+        
+        elif j1.lower() == "nathan":
+            choice[0] = "/images/nathan.png"
+            choice_flip[0] = "/images/nathan_flip.png"
+            verif = True
 
         else:
             print("Je n'ai pas bien compris, veuillez remettre le nom de votre personnage.")
@@ -40,6 +45,11 @@ def choice_perso():
         elif j2.lower() == "papacito":
             choice[1] = "/images/papacito.png"
             choice_flip[1] = "/images/papacito_flip.png"
+            verif = True
+        
+        elif j2.lower() == "nathan":
+            choice[1] = "/images/nathan.png"
+            choice_flip[1] = "/images/nathan_flip.png"
             verif = True
 
         else:
