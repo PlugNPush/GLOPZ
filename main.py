@@ -15,9 +15,11 @@ BACK_X = 0
 BACK_Y = 0
 
 GROUND_Y = int((900 / 1080) * height)
+COEF_UP = 1.1
+COEF_DOWN = 1.2
 
-
-MOVE = 15 #vitesse de déplacement
+UP_MOVE = 30 #vitesse de déplacement
+SIDE_MOVE = 10
 choice = choice_perso()
 
 isMac = platform.system() == "Darwin"
@@ -41,7 +43,14 @@ pos_j1 = j1.get_rect()
 pos_j2 = j2.get_rect()
 heading_j1 = 1 #1 = droite; 0 = gauche
 heading_j2 = 0
-
+jump_j1 = True
+#jump_j1_count = 0
+jump_j2 = True
+#jump_j2_count = 0
+coef_jump_j1 = float(1)
+coef_jump_j2 = float(1)
+pass_j1 = True
+pass_j2 = True
 
 pos_j1 = pos_j1.move(int((0 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
@@ -68,55 +77,112 @@ while game:
     if keys[K_LALT] and keys[K_F4]:
         game = False
 
+    
     if keys[K_s] if isMac else keys[K_s]:
-        pos_j1 = pos_j1.move(0, MOVE)
+        pos_j1 = pos_j1.move(0, UP_MOVE)
 
+    
     if keys[K_z] if isMac else keys[K_w]:
-        pos_j1 = pos_j1.move(0, -MOVE)
-    else:
-        pos_j1 = pos_j1.move(0, MOVE)
+        if jump_j1 == True :
+            pos_j1 = pos_j1.move(0, -coef_jump_j1*UP_MOVE)
+            #jump_j1_count += 1
+            coef_jump_j1 = coef_jump_j1/COEF_UP
+
+        elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
+            if pass_j1 == True :
+                coef_jump_j1 = 0.1
+                pass_j1 = False
+
+            pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
+            #jump_j1_count += -1
+            coef_jump_j1 = coef_jump_j1*COEF_DOWN
+    
+    elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
+        if pass_j1 == True :
+            coef_jump_j1 = 0.1
+            pass_j1 = False
+
+        pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
+        #jump_j1_count += -1
+        coef_jump_j1 = coef_jump_j1*COEF_DOWN
+        jump_j1 = False
 
     if keys[K_d] if isMac else keys[K_d]:
-        pos_j1 = pos_j1.move(MOVE, 0)
+        pos_j1 = pos_j1.move(SIDE_MOVE, 0)
         heading_j1 = 0
 
     if keys[K_q] if isMac else keys[K_a]:
-        pos_j1 = pos_j1.move(-MOVE, 0)
+        pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
         heading_j1 = 1
     
+    if coef_jump_j1 < 0.1:
+        jump_j1 = False
 
-
+    if pos_j1.y == int(GROUND_Y-((30 / 1080) * height)):
+        coef_jump_j1 = float(1)
+        pass_j1 = True
+        jump_j1 = True
+    #if jump_j1_count > 20 :
+    #    jump_j1 = False
+    #if jump_j1_count == 0 :
+    #    jump_j1 = True
 
     if keys[K_DOWN]:
-        pos_j2 = pos_j2.move(0, MOVE)
+        pos_j2 = pos_j2.move(0, UP_MOVE)
 
     if keys[K_UP]:
-        pos_j2 = pos_j2.move(0, -MOVE)
-    else:
-        pos_j2 = pos_j2.move(0, MOVE)
+        if jump_j2 == True :
+            pos_j2 = pos_j2.move(0, -coef_jump_j2*UP_MOVE)
+            #jump_j2_count += 1
+            coef_jump_j2 = coef_jump_j2/COEF_UP
+
+        elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
+            if pass_j2 == True :
+                coef_jump_j2 = 0.1
+                pass_j2 = False
+
+            pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
+            #jump_j2_count += -1
+            coef_jump_j2 = coef_jump_j2*COEF_DOWN
+    
+    elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
+        if pass_j2 == True :
+            coef_jump_j2 = 0.1
+            pass_j2 = False
+
+        pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
+        #jump_j2_count += -1
+        coef_jump_j2 = coef_jump_j2*COEF_DOWN
+        jump_j2 = False
 
     if keys[K_RIGHT]:
-        pos_j2 = pos_j2.move(MOVE, 0)
+        pos_j2 = pos_j2.move(SIDE_MOVE, 0)
         heading_j2 = 0
 
     if keys[K_LEFT]:
-        pos_j2 = pos_j2.move(-MOVE, 0)
+        pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
         heading_j2 = 1
 
+    if coef_jump_j2 < 0.1:
+        jump_j2 = False
 
+    if pos_j2.y == int(GROUND_Y-((30 / 1080) * height)):
+        coef_jump_j2 = float(1)
+        pass_j2 = True
+        jump_j2 = True
 
 
     if pos_j1.y >= int(GROUND_Y-((30 / 1080) * height)):
         pos_j1.y = int(GROUND_Y-((30 / 1080) * height))
 
     if pos_j1.y <= 0:
-        pos_j1 = pos_j1.move(0, MOVE)
+        pos_j1 = pos_j1.move(0, UP_MOVE)
 
     if pos_j1.x <= 0:
-        pos_j1 = pos_j1.move(MOVE, 0)
+        pos_j1 = pos_j1.move(SIDE_MOVE, 0)
 
     if pos_j1.x >= WINDOW_X-110:
-        pos_j1 = pos_j1.move(-MOVE, 0)
+        pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
     
 
 
@@ -124,13 +190,13 @@ while game:
         pos_j2.y = int(GROUND_Y-((30 / 1080) * height))
 
     if pos_j2.y <= 0:
-        pos_j2 = pos_j2.move(0, MOVE)
+        pos_j2 = pos_j2.move(0, UP_MOVE)
 
     if pos_j2.x <= 0:
-        pos_j2 = pos_j2.move(MOVE, 0)
+        pos_j2 = pos_j2.move(SIDE_MOVE, 0)
 
     if pos_j2.x >= WINDOW_X-110:
-        pos_j2 = pos_j2.move(-MOVE, 0)
+        pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
 
 
 
