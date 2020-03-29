@@ -3,40 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXFileReference section */
-		EDB24176241670EC00846697 /* papacito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito.png; sourceTree = "<group>"; };
-		EDB24177241670EC00846697 /* Rocket_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher.png; sourceTree = "<group>"; };
-		EDB24178241670EC00846697 /* pistol_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full_flip.png; sourceTree = "<group>"; };
-		EDB24179241670EC00846697 /* USI_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full_flip.png; sourceTree = "<group>"; };
-		EDB2417A241670EC00846697 /* AK_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full_flip.png; sourceTree = "<group>"; };
-		EDB2417B241670EC00846697 /* map_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_1.png; sourceTree = "<group>"; };
-		EDB2417C241670EC00846697 /* shura.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = shura.psd; sourceTree = "<group>"; };
-		EDB2417D241670EC00846697 /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
-		EDB2417E241670EC00846697 /* flash_grenade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_grenade.png; sourceTree = "<group>"; };
-		EDB2417F241670EC00846697 /* Archer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Archer.png; sourceTree = "<group>"; };
-		EDB24180241670EC00846697 /* Shootgun_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full.png; sourceTree = "<group>"; };
-		EDB24181241670EC00846697 /* papacito_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_flip.png; sourceTree = "<group>"; };
-		EDB24182241670EC00846697 /* M16_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full_flip.png; sourceTree = "<group>"; };
-		EDB24183241670EC00846697 /* pistol_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full.png; sourceTree = "<group>"; };
-		EDB24184241670EC00846697 /* M16_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full.png; sourceTree = "<group>"; };
-		EDB24185241670EC00846697 /* tilesetOpenGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilesetOpenGame.png; sourceTree = "<group>"; };
-		EDB24186241670EC00846697 /* Knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knife.png; sourceTree = "<group>"; };
-		EDB24187241670EC00846697 /* Assault_rifle_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full_flip.png; sourceTree = "<group>"; };
-		EDB24188241670EC00846697 /* grenade1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grenade1.png; sourceTree = "<group>"; };
-		EDB24189241670EC00846697 /* platformertiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformertiles.png; sourceTree = "<group>"; };
-		EDB2418A241670ED00846697 /* Assault_rifle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full.png; sourceTree = "<group>"; };
-		EDB2418B241670ED00846697 /* USI_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full.png; sourceTree = "<group>"; };
-		EDB2418C241670ED00846697 /* AK_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full.png; sourceTree = "<group>"; };
-		EDB2418D241670ED00846697 /* magic-cliffs.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "magic-cliffs.psd"; sourceTree = "<group>"; };
-		EDB2418E241670ED00846697 /* Rocket_launcher_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher_flip.png; sourceTree = "<group>"; };
-		EDB2418F241670ED00846697 /* Shootgun_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full_flip.png; sourceTree = "<group>"; };
+		ED09581324314A7E000EB84D /* papacito_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_head.png; sourceTree = "<group>"; };
+		ED09581424314A7E000EB84D /* papastick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papastick.png; sourceTree = "<group>"; };
+		ED09581524314A7E000EB84D /* AK_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full_flip.png; sourceTree = "<group>"; };
+		ED09581624314A7E000EB84D /* Rocket_launcher_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher_flip.png; sourceTree = "<group>"; };
+		ED09581724314A7E000EB84D /* characters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = characters; sourceTree = "<group>"; };
+		ED09581824314A7E000EB84D /* M16_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full.png; sourceTree = "<group>"; };
+		ED09581924314A7E000EB84D /* shura.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = shura.psd; sourceTree = "<group>"; };
+		ED09581A24314A7E000EB84D /* grenade1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grenade1.png; sourceTree = "<group>"; };
+		ED09581B24314A7E000EB84D /* USI_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full.png; sourceTree = "<group>"; };
+		ED09581C24314A7E000EB84D /* nathan_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nathan_flip.png; sourceTree = "<group>"; };
+		ED09581D24314A7E000EB84D /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon; sourceTree = "<group>"; };
+		ED09581E24314A7E000EB84D /* Assault_rifle_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full_flip.png; sourceTree = "<group>"; };
+		ED09581F24314A7E000EB84D /* Sakuya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya.png; sourceTree = "<group>"; };
+		ED09582024314A7E000EB84D /* Rocket_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher.png; sourceTree = "<group>"; };
+		ED09582124314A7E000EB84D /* AK_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full.png; sourceTree = "<group>"; };
+		ED09582224314A7E000EB84D /* Archer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Archer.png; sourceTree = "<group>"; };
+		ED09582324314A7E000EB84D /* stickman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickman.png; sourceTree = "<group>"; };
+		ED09582424314A7F000EB84D /* papacito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito.png; sourceTree = "<group>"; };
+		ED09582524314A7F000EB84D /* sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sources; sourceTree = "<group>"; };
+		ED09582624314A7F000EB84D /* tilesetOpenGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilesetOpenGame.png; sourceTree = "<group>"; };
+		ED09582724314A7F000EB84D /* pistol_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full_flip.png; sourceTree = "<group>"; };
+		ED09582824314A7F000EB84D /* Sakuya_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya_flip.png; sourceTree = "<group>"; };
+		ED09582924314A7F000EB84D /* magic-cliffs.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "magic-cliffs.psd"; sourceTree = "<group>"; };
+		ED09582A24314A7F000EB84D /* flash_grenade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_grenade.png; sourceTree = "<group>"; };
+		ED09582B24314A7F000EB84D /* papacito_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_flip.png; sourceTree = "<group>"; };
+		ED09582C24314A7F000EB84D /* map_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_1.png; sourceTree = "<group>"; };
+		ED09582D24314A7F000EB84D /* nathan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nathan.jpg; sourceTree = "<group>"; };
+		ED09582E24314A7F000EB84D /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
+		ED09582F24314A7F000EB84D /* M16_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full_flip.png; sourceTree = "<group>"; };
+		ED09583024314A7F000EB84D /* Assault_rifle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full.png; sourceTree = "<group>"; };
+		ED09583124314A7F000EB84D /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
+		ED09583224314A7F000EB84D /* papastick.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = papastick.clip; sourceTree = "<group>"; };
+		ED09583324314A7F000EB84D /* nathan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nathan.png; sourceTree = "<group>"; };
+		ED09583424314A80000EB84D /* platformertiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformertiles.png; sourceTree = "<group>"; };
+		ED09583524314A80000EB84D /* Knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knife.png; sourceTree = "<group>"; };
+		ED09583624314A80000EB84D /* Shootgun_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full_flip.png; sourceTree = "<group>"; };
+		ED09583724314A80000EB84D /* pistol_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full.png; sourceTree = "<group>"; };
+		ED09583824314A80000EB84D /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
+		ED09583924314A80000EB84D /* USI_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full_flip.png; sourceTree = "<group>"; };
+		ED09583A24314A80000EB84D /* Shootgun_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full.png; sourceTree = "<group>"; };
 		EDFD01CA23FF2115005B1623 /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
-		EDFD01CB23FF21EB005B1623 /* Sakuya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya.png; sourceTree = "<group>"; };
-		EDFD01CC23FF21EB005B1623 /* Sakuya_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya_flip.png; sourceTree = "<group>"; };
-		EDFD01CD23FF21EB005B1623 /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
 		EDFD01CE23FF2207005B1623 /* function.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = function.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,35 +64,46 @@
 		EDFD01CF23FF221B005B1623 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				EDB2417A241670EC00846697 /* AK_full_flip.png */,
-				EDB2418C241670ED00846697 /* AK_full.png */,
-				EDB2417F241670EC00846697 /* Archer.png */,
-				EDB24187241670EC00846697 /* Assault_rifle_full_flip.png */,
-				EDB2418A241670ED00846697 /* Assault_rifle_full.png */,
-				EDB2417D241670EC00846697 /* explosion.png */,
-				EDB2417E241670EC00846697 /* flash_grenade.png */,
-				EDB24188241670EC00846697 /* grenade1.png */,
-				EDB24186241670EC00846697 /* Knife.png */,
-				EDB24182241670EC00846697 /* M16_full_flip.png */,
-				EDB24184241670EC00846697 /* M16_full.png */,
-				EDB2418D241670ED00846697 /* magic-cliffs.psd */,
-				EDB2417B241670EC00846697 /* map_1.png */,
-				EDB24181241670EC00846697 /* papacito_flip.png */,
-				EDB24176241670EC00846697 /* papacito.png */,
-				EDB24178241670EC00846697 /* pistol_full_flip.png */,
-				EDB24183241670EC00846697 /* pistol_full.png */,
-				EDB24189241670EC00846697 /* platformertiles.png */,
-				EDB2418E241670ED00846697 /* Rocket_launcher_flip.png */,
-				EDB24177241670EC00846697 /* Rocket_launcher.png */,
-				EDB2418F241670ED00846697 /* Shootgun_full_flip.png */,
-				EDB24180241670EC00846697 /* Shootgun_full.png */,
-				EDB2417C241670EC00846697 /* shura.psd */,
-				EDB24185241670EC00846697 /* tilesetOpenGame.png */,
-				EDB24179241670EC00846697 /* USI_full_flip.png */,
-				EDB2418B241670ED00846697 /* USI_full.png */,
-				EDFD01CC23FF21EB005B1623 /* Sakuya_flip.png */,
-				EDFD01CB23FF21EB005B1623 /* Sakuya.png */,
-				EDFD01CD23FF21EB005B1623 /* wallpaper.png */,
+				ED09581524314A7E000EB84D /* AK_full_flip.png */,
+				ED09582124314A7E000EB84D /* AK_full.png */,
+				ED09582224314A7E000EB84D /* Archer.png */,
+				ED09581E24314A7E000EB84D /* Assault_rifle_full_flip.png */,
+				ED09583024314A7F000EB84D /* Assault_rifle_full.png */,
+				ED09581724314A7E000EB84D /* characters */,
+				ED09583824314A80000EB84D /* explosion.png */,
+				ED09582A24314A7F000EB84D /* flash_grenade.png */,
+				ED09581A24314A7E000EB84D /* grenade1.png */,
+				ED09581D24314A7E000EB84D /* icon */,
+				ED09583524314A80000EB84D /* Knife.png */,
+				ED09582F24314A7F000EB84D /* M16_full_flip.png */,
+				ED09581824314A7E000EB84D /* M16_full.png */,
+				ED09582924314A7F000EB84D /* magic-cliffs.psd */,
+				ED09582C24314A7F000EB84D /* map_1.png */,
+				ED09582E24314A7F000EB84D /* maps */,
+				ED09581C24314A7E000EB84D /* nathan_flip.png */,
+				ED09582D24314A7F000EB84D /* nathan.jpg */,
+				ED09583324314A7F000EB84D /* nathan.png */,
+				ED09582B24314A7F000EB84D /* papacito_flip.png */,
+				ED09581324314A7E000EB84D /* papacito_head.png */,
+				ED09582424314A7F000EB84D /* papacito.png */,
+				ED09583224314A7F000EB84D /* papastick.clip */,
+				ED09581424314A7E000EB84D /* papastick.png */,
+				ED09582724314A7F000EB84D /* pistol_full_flip.png */,
+				ED09583724314A80000EB84D /* pistol_full.png */,
+				ED09583424314A80000EB84D /* platformertiles.png */,
+				ED09581624314A7E000EB84D /* Rocket_launcher_flip.png */,
+				ED09582024314A7E000EB84D /* Rocket_launcher.png */,
+				ED09582824314A7F000EB84D /* Sakuya_flip.png */,
+				ED09581F24314A7E000EB84D /* Sakuya.png */,
+				ED09583624314A80000EB84D /* Shootgun_full_flip.png */,
+				ED09583A24314A80000EB84D /* Shootgun_full.png */,
+				ED09581924314A7E000EB84D /* shura.psd */,
+				ED09582524314A7F000EB84D /* sources */,
+				ED09582324314A7E000EB84D /* stickman.png */,
+				ED09582624314A7F000EB84D /* tilesetOpenGame.png */,
+				ED09583924314A80000EB84D /* USI_full_flip.png */,
+				ED09581B24314A7E000EB84D /* USI_full.png */,
+				ED09583124314A7F000EB84D /* wallpaper.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -96,10 +118,11 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/local/bin/python3;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = GLOPZ;
-			passBuildSettingsInEnvironment = 1;
+			passBuildSettingsInEnvironment = 0;
 			productName = GLOPZ;
 		};
 /* End PBXLegacyTarget section */
@@ -108,6 +131,7 @@
 		EDFD01C023FF20DE005B1623 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Étudiants d'Efrei Paris";
 				TargetAttributes = {
