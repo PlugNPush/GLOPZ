@@ -70,6 +70,7 @@ pygame.key.set_repeat(1, 10)
 game = True
 while game:
     keys = pygame.key.get_pressed()
+    
     for event in pygame.event.get():
         if event.type == QUIT:
             game = False
