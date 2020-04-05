@@ -22,10 +22,10 @@ UP_MOVE = 30 #vitesse de déplacement
 SIDE_MOVE = 10
 choice = choice_perso()
 
-isMac = platform.system() == "Darwin" or platform.system == "Linux"
+isMac = platform.system() == "Darwin" or platform.system() == "Linux"
 
 #création d'une fenetre
-screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
+screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
 
 curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
