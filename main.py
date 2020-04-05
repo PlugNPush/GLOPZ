@@ -25,7 +25,10 @@ choice = choice_perso()
 isMac = platform.system() == "Darwin" or platform.system() == "Linux"
 
 #création d'une fenetre
-screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
+if platform.system() == "Linux":
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
+else:
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
 
 curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
