@@ -7,56 +7,140 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		ED09581324314A7E000EB84D /* papacito_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_head.png; sourceTree = "<group>"; };
-		ED09581424314A7E000EB84D /* papastick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papastick.png; sourceTree = "<group>"; };
-		ED09581524314A7E000EB84D /* AK_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full_flip.png; sourceTree = "<group>"; };
-		ED09581624314A7E000EB84D /* Rocket_launcher_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher_flip.png; sourceTree = "<group>"; };
-		ED09581724314A7E000EB84D /* characters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = characters; sourceTree = "<group>"; };
-		ED09581824314A7E000EB84D /* M16_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full.png; sourceTree = "<group>"; };
-		ED09581924314A7E000EB84D /* shura.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = shura.psd; sourceTree = "<group>"; };
-		ED09581A24314A7E000EB84D /* grenade1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grenade1.png; sourceTree = "<group>"; };
-		ED09581B24314A7E000EB84D /* USI_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full.png; sourceTree = "<group>"; };
-		ED09581C24314A7E000EB84D /* nathan_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nathan_flip.png; sourceTree = "<group>"; };
-		ED09581D24314A7E000EB84D /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon; sourceTree = "<group>"; };
-		ED09581E24314A7E000EB84D /* Assault_rifle_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full_flip.png; sourceTree = "<group>"; };
-		ED09581F24314A7E000EB84D /* Sakuya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya.png; sourceTree = "<group>"; };
-		ED09582024314A7E000EB84D /* Rocket_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher.png; sourceTree = "<group>"; };
-		ED09582124314A7E000EB84D /* AK_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full.png; sourceTree = "<group>"; };
-		ED09582224314A7E000EB84D /* Archer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Archer.png; sourceTree = "<group>"; };
-		ED09582324314A7E000EB84D /* stickman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickman.png; sourceTree = "<group>"; };
-		ED09582424314A7F000EB84D /* papacito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito.png; sourceTree = "<group>"; };
-		ED09582524314A7F000EB84D /* sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sources; sourceTree = "<group>"; };
-		ED09582624314A7F000EB84D /* tilesetOpenGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilesetOpenGame.png; sourceTree = "<group>"; };
-		ED09582724314A7F000EB84D /* pistol_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full_flip.png; sourceTree = "<group>"; };
-		ED09582824314A7F000EB84D /* Sakuya_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya_flip.png; sourceTree = "<group>"; };
-		ED09582924314A7F000EB84D /* magic-cliffs.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "magic-cliffs.psd"; sourceTree = "<group>"; };
-		ED09582A24314A7F000EB84D /* flash_grenade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_grenade.png; sourceTree = "<group>"; };
-		ED09582B24314A7F000EB84D /* papacito_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_flip.png; sourceTree = "<group>"; };
-		ED09582C24314A7F000EB84D /* map_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_1.png; sourceTree = "<group>"; };
-		ED09582D24314A7F000EB84D /* nathan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nathan.jpg; sourceTree = "<group>"; };
-		ED09582E24314A7F000EB84D /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
-		ED09582F24314A7F000EB84D /* M16_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full_flip.png; sourceTree = "<group>"; };
-		ED09583024314A7F000EB84D /* Assault_rifle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full.png; sourceTree = "<group>"; };
-		ED09583124314A7F000EB84D /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
-		ED09583224314A7F000EB84D /* papastick.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = papastick.clip; sourceTree = "<group>"; };
-		ED09583324314A7F000EB84D /* nathan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nathan.png; sourceTree = "<group>"; };
-		ED09583424314A80000EB84D /* platformertiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformertiles.png; sourceTree = "<group>"; };
-		ED09583524314A80000EB84D /* Knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knife.png; sourceTree = "<group>"; };
-		ED09583624314A80000EB84D /* Shootgun_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full_flip.png; sourceTree = "<group>"; };
-		ED09583724314A80000EB84D /* pistol_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full.png; sourceTree = "<group>"; };
-		ED09583824314A80000EB84D /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
-		ED09583924314A80000EB84D /* USI_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full_flip.png; sourceTree = "<group>"; };
-		ED09583A24314A80000EB84D /* Shootgun_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full.png; sourceTree = "<group>"; };
+		ED017316245391FC002D050F /* rifle-shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rifle-shot.wav"; sourceTree = "<group>"; };
+		ED017317245391FC002D050F /* rocket-launcher-explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rocket-launcher-explosion.wav"; sourceTree = "<group>"; };
+		ED017318245391FC002D050F /* grenade explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "grenade explosion.wav"; sourceTree = "<group>"; };
+		ED017319245391FC002D050F /* pistol-reload.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "pistol-reload.wav"; sourceTree = "<group>"; };
+		ED01731A245391FC002D050F /* grenade-throw.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "grenade-throw.wav"; sourceTree = "<group>"; };
+		ED01731B245391FC002D050F /* pistol-shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "pistol-shot.wav"; sourceTree = "<group>"; };
+		ED01731C245391FC002D050F /* shotgun-shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "shotgun-shot.wav"; sourceTree = "<group>"; };
+		ED01731D245391FC002D050F /* uzi-burst.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "uzi-burst.mp3"; sourceTree = "<group>"; };
+		ED01731E245391FC002D050F /* ak47-reload.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ak47-reload.mp3"; sourceTree = "<group>"; };
+		ED01731F245391FC002D050F /* shotgun-reload.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "shotgun-reload.wav"; sourceTree = "<group>"; };
+		ED017320245391FC002D050F /* bow-release.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bow-release.wav"; sourceTree = "<group>"; };
+		ED017321245391FD002D050F /* rocket-launcher-fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rocket-launcher-fire.wav"; sourceTree = "<group>"; };
+		ED017322245391FD002D050F /* uzi-reload.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "uzi-reload.wav"; sourceTree = "<group>"; };
+		ED017323245391FD002D050F /* regular-arrow-shot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "regular-arrow-shot.wav"; sourceTree = "<group>"; };
+		ED017324245391FD002D050F /* ak47-fire-.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "ak47-fire-.aiff"; sourceTree = "<group>"; };
+		ED017325245391FD002D050F /* rifle-reload.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rifle-reload.wav"; sourceTree = "<group>"; };
+		ED017326245391FE002D050F /* bow-pull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bow-pull.wav"; sourceTree = "<group>"; };
+		ED01732724539216002D050F /* trajectoire (brouillon).py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "trajectoire (brouillon).py"; sourceTree = "<group>"; };
+		ED01732824539217002D050F /* function.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = function.py; sourceTree = "<group>"; };
+		ED0173C52453946E002D050F /* explosion */ = {isa = PBXFileReference; lastKnownFileType = folder; path = explosion; sourceTree = "<group>"; };
+		ED0173C62453946E002D050F /* Rocket_launcher_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher_flip.png; sourceTree = "<group>"; };
+		ED0173C72453946E002D050F /* Sakuya_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya_flip.png; sourceTree = "<group>"; };
+		ED0173C82453946F002D050F /* Sakuya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sakuya.png; sourceTree = "<group>"; };
+		ED0173C92453946F002D050F /* shura.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = shura.psd; sourceTree = "<group>"; };
+		ED0173CA2453946F002D050F /* stickman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickman.png; sourceTree = "<group>"; };
+		ED0173CB24539470002D050F /* nathan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nathan.png; sourceTree = "<group>"; };
+		ED0173CC24539470002D050F /* chara_3_1_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_3_1_flip.png; sourceTree = "<group>"; };
+		ED0173CD24539471002D050F /* USI_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full_flip.png; sourceTree = "<group>"; };
+		ED0173CE24539471002D050F /* steampunk_m1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steampunk_m1.png; sourceTree = "<group>"; };
+		ED0173CF24539471002D050F /* pistol_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full_flip.png; sourceTree = "<group>"; };
+		ED0173D024539471002D050F /* Rocket_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocket_launcher.png; sourceTree = "<group>"; };
+		ED0173D124539472002D050F /* USI_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USI_full.png; sourceTree = "<group>"; };
+		ED0173D224539473002D050F /* chara_2_1_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_2_1_flip.png; sourceTree = "<group>"; };
+		ED0173D324539473002D050F /* flash_grenade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_grenade.png; sourceTree = "<group>"; };
+		ED0173D424539474002D050F /* papacito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito.png; sourceTree = "<group>"; };
+		ED0173D524539474002D050F /* yoda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoda.png; sourceTree = "<group>"; };
+		ED0173D624539477002D050F /* characters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = characters; sourceTree = "<group>"; };
+		ED0173D724539478002D050F /* Shootgun_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full.png; sourceTree = "<group>"; };
+		ED0173D824539478002D050F /* chara_1.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_1.clip; sourceTree = "<group>"; };
+		ED0173D924539479002D050F /* nathan_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nathan_flip.png; sourceTree = "<group>"; };
+		ED0173DA24539479002D050F /* Assault_rifle_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full_flip.png; sourceTree = "<group>"; };
+		ED0173DB24539479002D050F /* chara_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_1_1.png; sourceTree = "<group>"; };
+		ED0173DC2453947A002D050F /* papastick_flip.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = papastick_flip.clip; sourceTree = "<group>"; };
+		ED0173DD2453947A002D050F /* tokinoiori04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokinoiori04.png; sourceTree = "<group>"; };
+		ED0173DE2453947A002D050F /* papacito_flip2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_flip2.png; sourceTree = "<group>"; };
+		ED0173DF2453947B002D050F /* chara_4_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_4_1.png; sourceTree = "<group>"; };
+		ED0173E02453947B002D050F /* chara_2_0_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_2_0_flip.png; sourceTree = "<group>"; };
+		ED0173E12453947C002D050F /* sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sources; sourceTree = "<group>"; };
+		ED0173E22453947D002D050F /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
+		ED0173E32453947E002D050F /* 08sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08sprite.png; sourceTree = "<group>"; };
+		ED0173E42453947E002D050F /* chara_4_2_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_4_2_flip.png; sourceTree = "<group>"; };
+		ED0173E52453947F002D050F /* chara_3_2_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_3_2_flip.png; sourceTree = "<group>"; };
+		ED0173E62453947F002D050F /* Knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knife.png; sourceTree = "<group>"; };
+		ED0173E724539480002D050F /* chara_4_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_4_0.png; sourceTree = "<group>"; };
+		ED0173E824539480002D050F /* wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallpaper.png; sourceTree = "<group>"; };
+		ED0173E924539481002D050F /* tête onizuka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tête onizuka.png"; sourceTree = "<group>"; };
+		ED0173EA24539481002D050F /* AK_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full.png; sourceTree = "<group>"; };
+		ED0173EB24539482002D050F /* Archer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Archer.png; sourceTree = "<group>"; };
+		ED0173EC24539482002D050F /* chara_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_2_1.png; sourceTree = "<group>"; };
+		ED0173ED24539483002D050F /* papacito2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito2.png; sourceTree = "<group>"; };
+		ED0173EE24539483002D050F /* Assault_rifle_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Assault_rifle_full.png; sourceTree = "<group>"; };
+		ED0173EF24539484002D050F /* chara_4_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_4_2.png; sourceTree = "<group>"; };
+		ED0173F024539484002D050F /* chara_2_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_2_0.png; sourceTree = "<group>"; };
+		ED0173F124539485002D050F /* steampunk_f10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steampunk_f10.png; sourceTree = "<group>"; };
+		ED0173F224539485002D050F /* chara_1_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_1_0.png; sourceTree = "<group>"; };
+		ED0173F324539486002D050F /* M16_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full_flip.png; sourceTree = "<group>"; };
+		ED0173F424539486002D050F /* chara_3.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_3.clip; sourceTree = "<group>"; };
+		ED0173F524539487002D050F /* M16_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = M16_full.png; sourceTree = "<group>"; };
+		ED0173F624539487002D050F /* nathan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nathan.jpg; sourceTree = "<group>"; };
+		ED0173F724539488002D050F /* papastick.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = papastick.clip; sourceTree = "<group>"; };
+		ED0173F824539488002D050F /* Shootgun_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shootgun_full_flip.png; sourceTree = "<group>"; };
+		ED0173F924539489002D050F /* chara_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_2_2.png; sourceTree = "<group>"; };
+		ED0173FA2453948A002D050F /* platformertiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformertiles.png; sourceTree = "<group>"; };
+		ED0173FB2453948A002D050F /* tilesetOpenGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilesetOpenGame.png; sourceTree = "<group>"; };
+		ED0173FC2453948A002D050F /* chara_4.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_4.clip; sourceTree = "<group>"; };
+		ED0173FD2453948B002D050F /* map_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_1.png; sourceTree = "<group>"; };
+		ED0173FE2453948B002D050F /* chara_3_0_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_3_0_flip.png; sourceTree = "<group>"; };
+		ED0173FF2453948C002D050F /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon; sourceTree = "<group>"; };
+		ED0174002453948D002D050F /* chara_4_1_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_4_1_flip.png; sourceTree = "<group>"; };
+		ED0174012453948D002D050F /* chara_1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_1_2.png; sourceTree = "<group>"; };
+		ED0174022453948E002D050F /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
+		ED0174032453948E002D050F /* grenade1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grenade1.png; sourceTree = "<group>"; };
+		ED0174042453948F002D050F /* magic-cliffs.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "magic-cliffs.psd"; sourceTree = "<group>"; };
+		ED0174052453948F002D050F /* chara_3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_3_1.png; sourceTree = "<group>"; };
+		ED01740624539490002D050F /* chara_2_2_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_2_2_flip.png; sourceTree = "<group>"; };
+		ED01740724539490002D050F /* chara_3_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_3_2.png; sourceTree = "<group>"; };
+		ED01740824539491002D050F /* chara_1_1_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_1_1_flip.png; sourceTree = "<group>"; };
+		ED01740924539491002D050F /* papacito_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_flip.png; sourceTree = "<group>"; };
+		ED01740A24539492002D050F /* chara_4_0_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_4_0_flip.png; sourceTree = "<group>"; };
+		ED01740B24539493002D050F /* chara_3_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_3_0.png; sourceTree = "<group>"; };
+		ED01740C24539493002D050F /* AK_full_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AK_full_flip.png; sourceTree = "<group>"; };
+		ED01740D24539494002D050F /* chara_1_2_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_1_2_flip.png; sourceTree = "<group>"; };
+		ED01740E24539495002D050F /* chara_2.clip */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_2.clip; sourceTree = "<group>"; };
+		ED01740F24539495002D050F /* papacito_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papacito_head.png; sourceTree = "<group>"; };
+		ED01741024539496002D050F /* pistol_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pistol_full.png; sourceTree = "<group>"; };
+		ED01741124539496002D050F /* kannazukinomiko_himekomiko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kannazukinomiko_himekomiko.png; sourceTree = "<group>"; };
+		ED01741224539497002D050F /* chara_1_0_flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_1_0_flip.png; sourceTree = "<group>"; };
 		EDFD01CA23FF2115005B1623 /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 		EDFD01CE23FF2207005B1623 /* function.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = function.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		ED017315245391AF002D050F /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				ED017324245391FD002D050F /* ak47-fire-.aiff */,
+				ED01731E245391FC002D050F /* ak47-reload.mp3 */,
+				ED017326245391FE002D050F /* bow-pull.wav */,
+				ED017320245391FC002D050F /* bow-release.wav */,
+				ED017318245391FC002D050F /* grenade explosion.wav */,
+				ED01731A245391FC002D050F /* grenade-throw.wav */,
+				ED017319245391FC002D050F /* pistol-reload.wav */,
+				ED01731B245391FC002D050F /* pistol-shot.wav */,
+				ED017323245391FD002D050F /* regular-arrow-shot.wav */,
+				ED017325245391FD002D050F /* rifle-reload.wav */,
+				ED017316245391FC002D050F /* rifle-shot.wav */,
+				ED017317245391FC002D050F /* rocket-launcher-explosion.wav */,
+				ED017321245391FD002D050F /* rocket-launcher-fire.wav */,
+				ED01731F245391FC002D050F /* shotgun-reload.wav */,
+				ED01731C245391FC002D050F /* shotgun-shot.wav */,
+				ED01731D245391FC002D050F /* uzi-burst.mp3 */,
+				ED017322245391FD002D050F /* uzi-reload.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		EDFD01BF23FF20DE005B1623 = {
 			isa = PBXGroup;
 			children = (
+				ED017315245391AF002D050F /* Audio */,
 				EDFD01CA23FF2115005B1623 /* main.py */,
 				EDFD01CE23FF2207005B1623 /* function.py */,
+				ED01732824539217002D050F /* function.py */,
+				ED01732724539216002D050F /* trajectoire (brouillon).py */,
 				EDFD01CF23FF221B005B1623 /* images */,
 			);
 			sourceTree = "<group>";
@@ -64,46 +148,84 @@
 		EDFD01CF23FF221B005B1623 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				ED09581524314A7E000EB84D /* AK_full_flip.png */,
-				ED09582124314A7E000EB84D /* AK_full.png */,
-				ED09582224314A7E000EB84D /* Archer.png */,
-				ED09581E24314A7E000EB84D /* Assault_rifle_full_flip.png */,
-				ED09583024314A7F000EB84D /* Assault_rifle_full.png */,
-				ED09581724314A7E000EB84D /* characters */,
-				ED09583824314A80000EB84D /* explosion.png */,
-				ED09582A24314A7F000EB84D /* flash_grenade.png */,
-				ED09581A24314A7E000EB84D /* grenade1.png */,
-				ED09581D24314A7E000EB84D /* icon */,
-				ED09583524314A80000EB84D /* Knife.png */,
-				ED09582F24314A7F000EB84D /* M16_full_flip.png */,
-				ED09581824314A7E000EB84D /* M16_full.png */,
-				ED09582924314A7F000EB84D /* magic-cliffs.psd */,
-				ED09582C24314A7F000EB84D /* map_1.png */,
-				ED09582E24314A7F000EB84D /* maps */,
-				ED09581C24314A7E000EB84D /* nathan_flip.png */,
-				ED09582D24314A7F000EB84D /* nathan.jpg */,
-				ED09583324314A7F000EB84D /* nathan.png */,
-				ED09582B24314A7F000EB84D /* papacito_flip.png */,
-				ED09581324314A7E000EB84D /* papacito_head.png */,
-				ED09582424314A7F000EB84D /* papacito.png */,
-				ED09583224314A7F000EB84D /* papastick.clip */,
-				ED09581424314A7E000EB84D /* papastick.png */,
-				ED09582724314A7F000EB84D /* pistol_full_flip.png */,
-				ED09583724314A80000EB84D /* pistol_full.png */,
-				ED09583424314A80000EB84D /* platformertiles.png */,
-				ED09581624314A7E000EB84D /* Rocket_launcher_flip.png */,
-				ED09582024314A7E000EB84D /* Rocket_launcher.png */,
-				ED09582824314A7F000EB84D /* Sakuya_flip.png */,
-				ED09581F24314A7E000EB84D /* Sakuya.png */,
-				ED09583624314A80000EB84D /* Shootgun_full_flip.png */,
-				ED09583A24314A80000EB84D /* Shootgun_full.png */,
-				ED09581924314A7E000EB84D /* shura.psd */,
-				ED09582524314A7F000EB84D /* sources */,
-				ED09582324314A7E000EB84D /* stickman.png */,
-				ED09582624314A7F000EB84D /* tilesetOpenGame.png */,
-				ED09583924314A80000EB84D /* USI_full_flip.png */,
-				ED09581B24314A7E000EB84D /* USI_full.png */,
-				ED09583124314A7F000EB84D /* wallpaper.png */,
+				ED0173E32453947E002D050F /* 08sprite.png */,
+				ED01740C24539493002D050F /* AK_full_flip.png */,
+				ED0173EA24539481002D050F /* AK_full.png */,
+				ED0173EB24539482002D050F /* Archer.png */,
+				ED0173DA24539479002D050F /* Assault_rifle_full_flip.png */,
+				ED0173EE24539483002D050F /* Assault_rifle_full.png */,
+				ED01741224539497002D050F /* chara_1_0_flip.png */,
+				ED0173F224539485002D050F /* chara_1_0.png */,
+				ED01740824539491002D050F /* chara_1_1_flip.png */,
+				ED0173DB24539479002D050F /* chara_1_1.png */,
+				ED01740D24539494002D050F /* chara_1_2_flip.png */,
+				ED0174012453948D002D050F /* chara_1_2.png */,
+				ED0173D824539478002D050F /* chara_1.clip */,
+				ED0173E02453947B002D050F /* chara_2_0_flip.png */,
+				ED0173F024539484002D050F /* chara_2_0.png */,
+				ED0173D224539473002D050F /* chara_2_1_flip.png */,
+				ED0173EC24539482002D050F /* chara_2_1.png */,
+				ED01740624539490002D050F /* chara_2_2_flip.png */,
+				ED0173F924539489002D050F /* chara_2_2.png */,
+				ED01740E24539495002D050F /* chara_2.clip */,
+				ED0173FE2453948B002D050F /* chara_3_0_flip.png */,
+				ED01740B24539493002D050F /* chara_3_0.png */,
+				ED0173CC24539470002D050F /* chara_3_1_flip.png */,
+				ED0174052453948F002D050F /* chara_3_1.png */,
+				ED0173E52453947F002D050F /* chara_3_2_flip.png */,
+				ED01740724539490002D050F /* chara_3_2.png */,
+				ED0173F424539486002D050F /* chara_3.clip */,
+				ED01740A24539492002D050F /* chara_4_0_flip.png */,
+				ED0173E724539480002D050F /* chara_4_0.png */,
+				ED0174002453948D002D050F /* chara_4_1_flip.png */,
+				ED0173DF2453947B002D050F /* chara_4_1.png */,
+				ED0173E42453947E002D050F /* chara_4_2_flip.png */,
+				ED0173EF24539484002D050F /* chara_4_2.png */,
+				ED0173FC2453948A002D050F /* chara_4.clip */,
+				ED0173D624539477002D050F /* characters */,
+				ED0173C52453946E002D050F /* explosion */,
+				ED0173E22453947D002D050F /* explosion.png */,
+				ED0173D324539473002D050F /* flash_grenade.png */,
+				ED0174032453948E002D050F /* grenade1.png */,
+				ED0173FF2453948C002D050F /* icon */,
+				ED01741124539496002D050F /* kannazukinomiko_himekomiko.png */,
+				ED0173E62453947F002D050F /* Knife.png */,
+				ED0173F324539486002D050F /* M16_full_flip.png */,
+				ED0173F524539487002D050F /* M16_full.png */,
+				ED0174042453948F002D050F /* magic-cliffs.psd */,
+				ED0173FD2453948B002D050F /* map_1.png */,
+				ED0174022453948E002D050F /* maps */,
+				ED0173D924539479002D050F /* nathan_flip.png */,
+				ED0173F624539487002D050F /* nathan.jpg */,
+				ED0173CB24539470002D050F /* nathan.png */,
+				ED01740924539491002D050F /* papacito_flip.png */,
+				ED0173DE2453947A002D050F /* papacito_flip2.png */,
+				ED01740F24539495002D050F /* papacito_head.png */,
+				ED0173D424539474002D050F /* papacito.png */,
+				ED0173ED24539483002D050F /* papacito2.png */,
+				ED0173DC2453947A002D050F /* papastick_flip.clip */,
+				ED0173F724539488002D050F /* papastick.clip */,
+				ED0173CF24539471002D050F /* pistol_full_flip.png */,
+				ED01741024539496002D050F /* pistol_full.png */,
+				ED0173FA2453948A002D050F /* platformertiles.png */,
+				ED0173C62453946E002D050F /* Rocket_launcher_flip.png */,
+				ED0173D024539471002D050F /* Rocket_launcher.png */,
+				ED0173C72453946E002D050F /* Sakuya_flip.png */,
+				ED0173C82453946F002D050F /* Sakuya.png */,
+				ED0173F824539488002D050F /* Shootgun_full_flip.png */,
+				ED0173D724539478002D050F /* Shootgun_full.png */,
+				ED0173C92453946F002D050F /* shura.psd */,
+				ED0173E12453947C002D050F /* sources */,
+				ED0173F124539485002D050F /* steampunk_f10.png */,
+				ED0173CE24539471002D050F /* steampunk_m1.png */,
+				ED0173CA2453946F002D050F /* stickman.png */,
+				ED0173E924539481002D050F /* tête onizuka.png */,
+				ED0173FB2453948A002D050F /* tilesetOpenGame.png */,
+				ED0173DD2453947A002D050F /* tokinoiori04.png */,
+				ED0173CD24539471002D050F /* USI_full_flip.png */,
+				ED0173D124539472002D050F /* USI_full.png */,
+				ED0173E824539480002D050F /* wallpaper.png */,
+				ED0173D524539474002D050F /* yoda.png */,
 			);
 			path = images;
 			sourceTree = "<group>";

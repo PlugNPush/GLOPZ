@@ -11,13 +11,6 @@ width, height = int(pygame.display.Info().current_w), int(pygame.display.Info().
 WINDOW_X = width
 WINDOW_Y = height
 
-#création d'une fenetre
-if platform.system() == "Linux":
-    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
-else:
-    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
-
-
 """
 menu = True
 while menu is True:
@@ -58,6 +51,13 @@ SIDE_MOVE = 10
 choice = choice_perso()
 
 isMac = platform.system() == "Darwin" or platform.system() == "Linux"
+
+#création d'une fenetre
+if platform.system() == "Linux":
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
+else:
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
+
 
 curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
@@ -112,7 +112,6 @@ while game:
     for event in pygame.event.get():
         if event.type == QUIT:
             game = False
-            """
         elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
                     if event.pos[0] >= 500 and event.pos[0] <= 600 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
@@ -124,7 +123,7 @@ while game:
                         screen.blit(papacito_image, position_j1)
                     elif event.pos[0] >= 1000 and event.pos[0] <= 1100 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player4
                         screen.blit(sakuya_image, position_j2)
-"""
+
     if keys[K_LALT] and keys[K_F4]:
         game = False
 
