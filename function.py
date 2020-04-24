@@ -11,8 +11,8 @@ def choice_perso():
             print("- Sakuya\n- Papacito\n- Nathan")
 
         elif j1.lower() == "sakuya":
-            choice[0] = "/images/sakuya.png"
-            choice_flip[0] = "/images/sakuya_flip.png"
+            choice[0] = "/images/Sakuya.png"
+            choice_flip[0] = "/images/Sakuya_flip.png"
             verif = True
 
         elif j1.lower() == "papacito":
@@ -38,8 +38,8 @@ def choice_perso():
             print("- Sakuya\n- Papacito\n- Nathan")
 
         if j2.lower() == "sakuya":
-            choice[1] = "/images/sakuya.png"
-            choice_flip[1] = "/images/sakuya_flip.png"
+            choice[1] = "/images/Sakuya.png"
+            choice_flip[1] = "/images/Sakuya_flip.png"
             verif = True
 
         elif j2.lower() == "papacito":

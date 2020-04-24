@@ -11,6 +11,41 @@ width, height = int(pygame.display.Info().current_w), int(pygame.display.Info().
 WINDOW_X = width
 WINDOW_Y = height
 
+#création d'une fenetre
+if platform.system() == "Linux":
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
+else:
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
+
+
+"""
+menu = True
+while menu is True:
+    # rectangles choix joueurs
+    size = (width, height)
+    white = pygame.Color(255, 255, 255)
+    red = pygame.Color(255, 0, 0)
+    blue = pygame.Color(0, 0, 255)
+    green = pygame.Color(0, 255, 0)
+    null = pygame.Color(0, 0, 0)
+    button_player1 = pygame.Rect(500, 800, 100, 50)
+    pygame.draw.rect(screen, red, button_player1)
+    button_player2 = pygame.Rect(700, 800, 100, 50)
+    pygame.draw.rect(screen, green, button_player2)
+    button_player3 = pygame.Rect(900, 800, 100, 50)
+    pygame.draw.rect(screen, blue, button_player3)
+    button_player4 = pygame.Rect(1100, 800, 100, 50)
+    pygame.draw.rect(screen, null, button_player4)
+    pygame.display.flip()
+    # Rect en bas (largeur)
+    rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) #x , y
+    pygame.draw.rect(screen, color_rect_players, rect_players_choice)
+    # rectangle separation
+    rect_separation = pygame.Rect(int(WINDOW_X/2), 0, 2, int(WINDOW_Y*0.6659) )
+    pygame.draw.rect(screen, red, rect_separation)
+"""
+
+
 BACK_X = 0
 BACK_Y = 0
 
@@ -23,12 +58,6 @@ SIDE_MOVE = 10
 choice = choice_perso()
 
 isMac = platform.system() == "Darwin" or platform.system() == "Linux"
-
-#création d'une fenetre
-if platform.system() == "Linux":
-    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
-else:
-    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
 
 curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
@@ -58,6 +87,13 @@ pass_j2 = True
 pos_j1 = pos_j1.move(int((0 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 
+#couleurs 
+color_rect_players = (196, 184, 189)
+green = (0, 255, 0)
+blue = (0, 0, 255)
+red = (255, 0, 0)
+null = (153, 122, 144)
+
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
 screen.blit(j1, pos_j1)
@@ -73,11 +109,22 @@ pygame.key.set_repeat(1, 10)
 game = True
 while game:
     keys = pygame.key.get_pressed()
-    
     for event in pygame.event.get():
         if event.type == QUIT:
             game = False
-
+            """
+        elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    if event.pos[0] >= 500 and event.pos[0] <= 600 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
+                        screen.blit(papacito_image, position_j1)
+                        save_chara = 1;
+                    elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
+                        screen.blit(sakuya_image, position_j2)
+                    elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
+                        screen.blit(papacito_image, position_j1)
+                    elif event.pos[0] >= 1000 and event.pos[0] <= 1100 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player4
+                        screen.blit(sakuya_image, position_j2)
+"""
     if keys[K_LALT] and keys[K_F4]:
         game = False
 
