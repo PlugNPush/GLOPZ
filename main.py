@@ -170,6 +170,9 @@ while on:
                         print("BOUTON 2")
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
                         print("BOUTON 3")
+                        menu_personnage = False
+                        menu_principale = True
+                        break
                     elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 4")
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
