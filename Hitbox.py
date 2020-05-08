@@ -98,6 +98,14 @@ for wall in walls:
          player.position = player.old_position
 
 
+
+if self.x <= 0:
+    self.x += 1
+
+
+
+
+
 #-------------------------    hitbox copié  -------------------------
 
 import sys, time, random, math, pygame
