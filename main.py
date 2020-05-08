@@ -72,7 +72,7 @@ pygame.display.flip()
 #fréquence de répétition des touches
 pygame.key.set_repeat(1, 10)
 
-"""MENU"""
+
 menu = True
 while menu:
     #couleurs 
@@ -81,20 +81,24 @@ while menu:
     red = pygame.Color(255, 0, 0)
     blue = pygame.Color(0, 0, 255)
     green = pygame.Color(0, 255, 0)
-    null = pygame.Color(0, 0, 0)
+    null = pygame.Color(166, 253, 255)
 
     # rectangles choix joueurs
     # size = (width, height)
-    button_player1 = pygame.Rect(500, 800, 100, 50)
+    button_player1 = pygame.Rect(700, 800, 100, 50)
     pygame.draw.rect(screen, red, button_player1)
-    button_player2 = pygame.Rect(700, 800, 100, 50)
+    button_player2 = pygame.Rect(900, 800, 100, 50)
     pygame.draw.rect(screen, green, button_player2)
-    button_player3 = pygame.Rect(900, 800, 100, 50)
+    button_player3 = pygame.Rect(1100, 800, 100, 50)
     pygame.draw.rect(screen, blue, button_player3)
-    button_player4 = pygame.Rect(1100, 800, 100, 50)
-    pygame.draw.rect(screen, null, button_player4)
-    button_player5 = pygame.Rect()
+    button_player4 = pygame.Rect(700, 950, 100, 50)
+    pygame.draw.rect(screen, red, button_player4)
+    button_player5 = pygame.Rect(900, 950, 100, 50)
+    pygame.draw.rect(screen, blue, button_player5)
+    button_player6 = pygame.Rect(1100, 950, 100, 50)
+    pygame.draw.rect(screen, red, button_player6)
     pygame.display.flip()
+
     # Rect en bas (largeur)
     rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) #x , y
     pygame.draw.rect(screen, color_rect_players, rect_players_choice)
