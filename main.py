@@ -59,7 +59,7 @@ pass_j2 = True
 pos_j1 = pos_j1.move(int((0 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 
-menu = pygame.image.load(curdir + "\images\menu_button.png").convert_alpha()
+menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
 pos_menu = ((WINDOW_X/4)-10, WINDOW_Y/20)
 #placement des images
@@ -121,7 +121,7 @@ while on:
                 break
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
-                    if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[1] >= WINDOW_Y/20 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= (WINDOW_Y/20) + 203 :
+                    if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= WINDOW_Y/20 and event.pos[1] >= (WINDOW_Y/20) + 203 :
                         menu_principale = False
                         menu_personnage = True
         screen.blit(menu, pos_menu)
