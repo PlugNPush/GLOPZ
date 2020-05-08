@@ -115,15 +115,20 @@ while game:
             game = False
         elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
-                    if event.pos[0] >= 500 and event.pos[0] <= 600 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
-                        screen.blit(papacito_image, position_j1)
-                        save_chara = 1;
-                    elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
-                        screen.blit(sakuya_image, position_j2)
-                    elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
-                        screen.blit(papacito_image, position_j1)
-                    elif event.pos[0] >= 1000 and event.pos[0] <= 1100 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player4
-                        screen.blit(sakuya_image, position_j2)
+                    if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
+                        print("BOUTON 1")
+                    elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
+                        print("BOUTON 2")
+
+                    elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
+                        print("BOUTON 3")
+
+                    elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        print("BOUTON 4")
+                    elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        print("BOUTON 5")
+                    elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        print("BOUTON 6")
 
     if keys[K_LALT] and keys[K_F4]:
         game = False
