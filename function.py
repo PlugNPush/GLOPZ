@@ -57,30 +57,3 @@ def choice_perso():
 
     full_choice = [choice, choice_flip]
     return full_choice
-"""
-def menu(validation):
-    print("affichage du menu")
-    if validation is True:
-        game = True
-        while game:
-            keys = pygame.key.get_pressed()
-            for event in pygame.event.get():
-                if event.type == QUIT:
-                    game = False
-                elif event.type == pygame.MOUSEBUTTONUP:
-                        if event.button == 1:
-                            if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
-                                print("BOUTON 1")
-                            elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
-                                print("BOUTON 2")
-                            elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
-                                print("BOUTON 3")
-                            elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
-                                print("BOUTON 4")
-                            elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
-                                print("BOUTON 5")
-                            elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
-                                print("BOUTON 6")
-
-    else: 
-        print("ne fonctionne pas")"""
