@@ -61,7 +61,7 @@ pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * hei
 
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
-pos_menu = ((WINDOW_X/4)-10, WINDOW_Y/20)
+pos_menu = ((WINDOW_X/3), WINDOW_Y/7)
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
 screen.blit(j1, pos_j1)
@@ -121,13 +121,25 @@ while on:
                 break
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
-                    if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= WINDOW_Y/20 and event.pos[1] >= (WINDOW_Y/20) + 203 :
+                    #if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= WINDOW_Y/20 and event.pos[1] >= (WINDOW_Y/20) + 203 :
+                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7)) and event.pos[1] <= (int(WINDOW_Y/7)) + 203: #play
                         menu_principale = False
                         menu_personnage = True
+                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+236 and event.pos[1] <= (int(WINDOW_Y/7)) + 441: #exit
+                        #pygame.quit()
+                        menu_principale = False
+                        menu_personnage = False
+                        on = False
+                        break
+                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+472 and event.pos[1] <= (int(WINDOW_Y/7)) + 676: #info
+                        menu_principale = False
+                        menu_personnage = True
+        screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
     while menu_personnage:
-        
+
+        screen.blit(image_wall, (BACK_X, BACK_Y))
         button_player1 = pygame.Rect(700, 800, 100, 50)
         pygame.draw.rect(screen, red, button_player1)
         button_player2 = pygame.Rect(900, 800, 100, 50)
