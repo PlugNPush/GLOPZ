@@ -57,4 +57,3 @@ def choice_perso():
 
     full_choice = [choice, choice_flip]
     return full_choice
-
