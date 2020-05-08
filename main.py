@@ -59,8 +59,9 @@ pass_j2 = True
 pos_j1 = pos_j1.move(int((0 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 
-
-
+menu = pygame.image.load(curdir + "\images\menu_button.png").convert_alpha()
+pos_menu = menu.get_rect()
+pos_menu = ((WINDOW_X/4)-10, WINDOW_Y/20)
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
 screen.blit(j1, pos_j1)
@@ -110,9 +111,37 @@ menu_personnage = True
 game = True
 while on:
     while menu_principale: 
-        print("menu principale")
-        menu_principale = False
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                on = False
+                break
+            elif keys[K_LALT] and keys[K_F4]:
+                on = False
+                break
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[1] >= WINDOW_Y/20 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= (WINDOW_Y/20) + 203 :
+                        menu_principale = False
+                        menu_personnage = True
+        screen.blit(menu, pos_menu)
+        pygame.display.flip()
     while menu_personnage:
+        
+        button_player1 = pygame.Rect(700, 800, 100, 50)
+        pygame.draw.rect(screen, red, button_player1)
+        button_player2 = pygame.Rect(900, 800, 100, 50)
+        pygame.draw.rect(screen, green, button_player2)
+        button_player3 = pygame.Rect(1100, 800, 100, 50)
+        pygame.draw.rect(screen, blue, button_player3)
+        button_player4 = pygame.Rect(700, 950, 100, 50)
+        pygame.draw.rect(screen, red, button_player4)
+        button_player5 = pygame.Rect(900, 950, 100, 50)
+        pygame.draw.rect(screen, blue, button_player5)
+        button_player6 = pygame.Rect(1100, 950, 100, 50)
+        pygame.draw.rect(screen, red, button_player6)
+        pygame.display.flip()
+
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -133,11 +162,14 @@ while on:
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 6")
                         menu_personnage = False
+                        menu_principale = True
+                        break
         pygame.display.flip()
     while game:
         break
         if keys[K_LALT] and keys[K_F4]:
-            game = False
+            on = False
+            break
 
         
         if keys[K_s] if isMac else keys[K_s]:
