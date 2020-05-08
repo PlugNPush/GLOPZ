@@ -151,6 +151,9 @@ while on:
                 if event.button == 1:
                     if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
                         print("BOUTON 1")
+                        """n = 1
+                        numero_perso = choix_perso(n)
+                        choix_j1 = sauvegarde_perso(numero_perso)"""
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
@@ -164,6 +167,13 @@ while on:
                         menu_personnage = False
                         menu_principale = True
                         break
+        """
+        #joueur 1
+        j1 = pygame.image.load(curdir + liste[choix_j1]).convert_alpha()
+        #joueur 2
+        j2 = pygame.image.load(curdir + liste[choix_j2]).convert_alpha()
+
+        screen.blit(j1, pos_j1)"""
         pygame.display.flip()
     while game:
         break
