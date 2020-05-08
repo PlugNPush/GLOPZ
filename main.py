@@ -73,77 +73,92 @@ pygame.display.flip()
 pygame.key.set_repeat(1, 10)
 
 
-menu = True
-while menu:
-    #couleurs 
-    color_rect_players = (196, 184, 189)
-    white = pygame.Color(255, 255, 255)
-    red = pygame.Color(255, 0, 0)
-    blue = pygame.Color(0, 0, 255)
-    green = pygame.Color(0, 255, 0)
-    null = pygame.Color(166, 253, 255)
+#couleurs 
+color_rect_players = (196, 184, 189)
+white = pygame.Color(255, 255, 255)
+red = pygame.Color(255, 0, 0)
+blue = pygame.Color(0, 0, 255)
+green = pygame.Color(0, 255, 0)
+null = pygame.Color(166, 253, 255)
 
-    # rectangles choix joueurs
-    # size = (width, height)
-    button_player1 = pygame.Rect(700, 800, 100, 50)
-    pygame.draw.rect(screen, red, button_player1)
-    button_player2 = pygame.Rect(900, 800, 100, 50)
-    pygame.draw.rect(screen, green, button_player2)
-    button_player3 = pygame.Rect(1100, 800, 100, 50)
-    pygame.draw.rect(screen, blue, button_player3)
-    button_player4 = pygame.Rect(700, 950, 100, 50)
-    pygame.draw.rect(screen, red, button_player4)
-    button_player5 = pygame.Rect(900, 950, 100, 50)
-    pygame.draw.rect(screen, blue, button_player5)
-    button_player6 = pygame.Rect(1100, 950, 100, 50)
-    pygame.draw.rect(screen, red, button_player6)
-    pygame.display.flip()
+# rectangles choix joueurs
+# Rect en bas (largeur)
+rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) 
+pygame.draw.rect(screen, color_rect_players, rect_players_choice)
+# rectangle separation
+rect_separation = pygame.Rect(int(WINDOW_X/2), 0, 2, int(WINDOW_Y*0.6659) )
+pygame.draw.rect(screen, red, rect_separation)
 
-    # Rect en bas (largeur)
-    rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) #x , y
-    pygame.draw.rect(screen, color_rect_players, rect_players_choice)
-    # rectangle separation
-    rect_separation = pygame.Rect(int(WINDOW_X/2), 0, 2, int(WINDOW_Y*0.6659) )
-    pygame.draw.rect(screen, red, rect_separation)
+button_player1 = pygame.Rect(700, 800, 100, 50)
+pygame.draw.rect(screen, red, button_player1)
+button_player2 = pygame.Rect(900, 800, 100, 50)
+pygame.draw.rect(screen, green, button_player2)
+button_player3 = pygame.Rect(1100, 800, 100, 50)
+pygame.draw.rect(screen, blue, button_player3)
+button_player4 = pygame.Rect(700, 950, 100, 50)
+pygame.draw.rect(screen, red, button_player4)
+button_player5 = pygame.Rect(900, 950, 100, 50)
+pygame.draw.rect(screen, blue, button_player5)
+button_player6 = pygame.Rect(1100, 950, 100, 50)
+pygame.draw.rect(screen, red, button_player6)
+pygame.display.flip()
 
 #boucle en attente d'évènement
+on = True
+menu_principale = True
+menu_personnage = True
 game = True
-while game:
-    keys = pygame.key.get_pressed()
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            game = False
-        elif event.type == pygame.MOUSEBUTTONUP:
+while on:
+    while menu_principale: 
+        print("menu principale")
+        menu_principale = False
+    while menu_personnage:
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                on = False
+                break
+            elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
                     if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
                         print("BOUTON 1")
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
-
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
                         print("BOUTON 3")
-
                     elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 4")
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 5")
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 6")
+                        menu_personnage = False
+        pygame.display.flip()
+    while game:
+        break
+        if keys[K_LALT] and keys[K_F4]:
+            game = False
 
-    if keys[K_LALT] and keys[K_F4]:
-        game = False
+        
+        if keys[K_s] if isMac else keys[K_s]:
+            pos_j1 = pos_j1.move(0, UP_MOVE)
 
-    
-    if keys[K_s] if isMac else keys[K_s]:
-        pos_j1 = pos_j1.move(0, UP_MOVE)
+        
+        if keys[K_z] if isMac else keys[K_w]:
+            if jump_j1 == True :
+                pos_j1 = pos_j1.move(0, -coef_jump_j1*UP_MOVE)
+                #jump_j1_count += 1
+                coef_jump_j1 = coef_jump_j1/COEF_UP
 
-    
-    if keys[K_z] if isMac else keys[K_w]:
-        if jump_j1 == True :
-            pos_j1 = pos_j1.move(0, -coef_jump_j1*UP_MOVE)
-            #jump_j1_count += 1
-            coef_jump_j1 = coef_jump_j1/COEF_UP
+            elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
+                if pass_j1 == True :
+                    coef_jump_j1 = 0.1
+                    pass_j1 = False
 
+                pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
+                #jump_j1_count += -1
+                coef_jump_j1 = coef_jump_j1*COEF_DOWN
+        
         elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
             if pass_j1 == True :
                 coef_jump_j1 = 0.1
@@ -152,46 +167,46 @@ while game:
             pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
             #jump_j1_count += -1
             coef_jump_j1 = coef_jump_j1*COEF_DOWN
-    
-    elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
-        if pass_j1 == True :
-            coef_jump_j1 = 0.1
-            pass_j1 = False
+            jump_j1 = False
 
-        pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
-        #jump_j1_count += -1
-        coef_jump_j1 = coef_jump_j1*COEF_DOWN
-        jump_j1 = False
+        if keys[K_d] if isMac else keys[K_d]:
+            pos_j1 = pos_j1.move(SIDE_MOVE, 0)
+            heading_j1 = 0
 
-    if keys[K_d] if isMac else keys[K_d]:
-        pos_j1 = pos_j1.move(SIDE_MOVE, 0)
-        heading_j1 = 0
+        if keys[K_q] if isMac else keys[K_a]:
+            pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
+            heading_j1 = 1
+        
+        if coef_jump_j1 < 0.1:
+            jump_j1 = False
 
-    if keys[K_q] if isMac else keys[K_a]:
-        pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
-        heading_j1 = 1
-    
-    if coef_jump_j1 < 0.1:
-        jump_j1 = False
+        if pos_j1.y == int(GROUND_Y-((30 / 1080) * height)):
+            coef_jump_j1 = float(1)
+            pass_j1 = True
+            jump_j1 = True
+        #if jump_j1_count > 20 :
+        #    jump_j1 = False
+        #if jump_j1_count == 0 :
+        #    jump_j1 = True
 
-    if pos_j1.y == int(GROUND_Y-((30 / 1080) * height)):
-        coef_jump_j1 = float(1)
-        pass_j1 = True
-        jump_j1 = True
-    #if jump_j1_count > 20 :
-    #    jump_j1 = False
-    #if jump_j1_count == 0 :
-    #    jump_j1 = True
+        if keys[K_DOWN]:
+            pos_j2 = pos_j2.move(0, UP_MOVE)
 
-    if keys[K_DOWN]:
-        pos_j2 = pos_j2.move(0, UP_MOVE)
+        if keys[K_UP]:
+            if jump_j2 == True :
+                pos_j2 = pos_j2.move(0, -coef_jump_j2*UP_MOVE)
+                #jump_j2_count += 1
+                coef_jump_j2 = coef_jump_j2/COEF_UP
 
-    if keys[K_UP]:
-        if jump_j2 == True :
-            pos_j2 = pos_j2.move(0, -coef_jump_j2*UP_MOVE)
-            #jump_j2_count += 1
-            coef_jump_j2 = coef_jump_j2/COEF_UP
+            elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
+                if pass_j2 == True :
+                    coef_jump_j2 = 0.1
+                    pass_j2 = False
 
+                pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
+                #jump_j2_count += -1
+                coef_jump_j2 = coef_jump_j2*COEF_DOWN
+        
         elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
             if pass_j2 == True :
                 coef_jump_j2 = 0.1
@@ -200,84 +215,75 @@ while game:
             pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
             #jump_j2_count += -1
             coef_jump_j2 = coef_jump_j2*COEF_DOWN
-    
-    elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
-        if pass_j2 == True :
-            coef_jump_j2 = 0.1
-            pass_j2 = False
+            jump_j2 = False
 
-        pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
-        #jump_j2_count += -1
-        coef_jump_j2 = coef_jump_j2*COEF_DOWN
-        jump_j2 = False
+        if keys[K_RIGHT]:
+            pos_j2 = pos_j2.move(SIDE_MOVE, 0)
+            heading_j2 = 0
 
-    if keys[K_RIGHT]:
-        pos_j2 = pos_j2.move(SIDE_MOVE, 0)
-        heading_j2 = 0
+        if keys[K_LEFT]:
+            pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
+            heading_j2 = 1
 
-    if keys[K_LEFT]:
-        pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
-        heading_j2 = 1
+        if coef_jump_j2 < 0.1:
+            jump_j2 = False
 
-    if coef_jump_j2 < 0.1:
-        jump_j2 = False
-
-    if pos_j2.y == int(GROUND_Y-((30 / 1080) * height)):
-        coef_jump_j2 = float(1)
-        pass_j2 = True
-        jump_j2 = True
+        if pos_j2.y == int(GROUND_Y-((30 / 1080) * height)):
+            coef_jump_j2 = float(1)
+            pass_j2 = True
+            jump_j2 = True
 
 
-    if pos_j1.y >= int(GROUND_Y-((30 / 1080) * height)):
-        pos_j1.y = int(GROUND_Y-((30 / 1080) * height))
+        if pos_j1.y >= int(GROUND_Y-((30 / 1080) * height)):
+            pos_j1.y = int(GROUND_Y-((30 / 1080) * height))
 
-    if pos_j1.y <= 0:
-        pos_j1 = pos_j1.move(0, UP_MOVE)
+        if pos_j1.y <= 0:
+            pos_j1 = pos_j1.move(0, UP_MOVE)
 
-    if pos_j1.x <= 0:
-        pos_j1 = pos_j1.move(SIDE_MOVE, 0)
+        if pos_j1.x <= 0:
+            pos_j1 = pos_j1.move(SIDE_MOVE, 0)
 
-    if pos_j1.x >= WINDOW_X-110:
-        pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
-    
+        if pos_j1.x >= WINDOW_X-110:
+            pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
+        
 
 
-    if pos_j2.y >= int(GROUND_Y-((30 / 1080) * height)):
-        pos_j2.y = int(GROUND_Y-((30 / 1080) * height))
+        if pos_j2.y >= int(GROUND_Y-((30 / 1080) * height)):
+            pos_j2.y = int(GROUND_Y-((30 / 1080) * height))
 
-    if pos_j2.y <= 0:
-        pos_j2 = pos_j2.move(0, UP_MOVE)
+        if pos_j2.y <= 0:
+            pos_j2 = pos_j2.move(0, UP_MOVE)
 
-    if pos_j2.x <= 0:
-        pos_j2 = pos_j2.move(SIDE_MOVE, 0)
+        if pos_j2.x <= 0:
+            pos_j2 = pos_j2.move(SIDE_MOVE, 0)
 
-    if pos_j2.x >= WINDOW_X-110:
-        pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
+        if pos_j2.x >= WINDOW_X-110:
+            pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
 
 
 
 
-    #recollage des éléments
-    screen.blit(image_wall, (BACK_X, BACK_Y))
-    if heading_j1 == 1:
-        screen.blit(j1, pos_j1)
-    else:
-        screen.blit(j1_flip, pos_j1)
-    
+        #recollage des éléments
+        screen.blit(image_wall, (BACK_X, BACK_Y))
+        if heading_j1 == 1:
+            screen.blit(j1, pos_j1)
+        else:
+            screen.blit(j1_flip, pos_j1)
+        
 
 
 
-    if heading_j2 == 1:
-        screen.blit(j2, pos_j2)
-    else:
-        screen.blit(j2_flip, pos_j2)
+        if heading_j2 == 1:
+            screen.blit(j2, pos_j2)
+        else:
+            screen.blit(j2_flip, pos_j2)
 
 
 
 
-    #raffraichissement
-    
-    pygame.display.flip()
+        #raffraichissement
+        
+        pygame.display.flip()
 
-    pygame.time.delay(16)
+        pygame.time.delay(16)
 pygame.quit()
