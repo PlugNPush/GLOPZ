@@ -57,3 +57,12 @@ def choice_perso():
 
     full_choice = [choice, choice_flip]
     return full_choice
+def choix_perso(numero_personnage):
+    if numero_personnage == 1:
+        return "personnage1"
+    elif numero_personnage == 2:
+        return "personnage2"
+
+def sauvegarde_perso(personnageN):
+    liste_personnage = {personnage1 : "/images/Sakuya.png", personage2 : "/images/Papacito.png"}
+    return liste_personnage.personnageN
