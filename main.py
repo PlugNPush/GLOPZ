@@ -61,7 +61,7 @@ pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * hei
 
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
-pos_menu = ((WINDOW_X/3), WINDOW_Y/7)
+pos_menu = (1080*(WINDOW_X/3)/WINDOW_X, 1920*(WINDOW_Y/7)/WINDOW_Y)
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
 screen.blit(j1, pos_j1)
@@ -81,7 +81,6 @@ red = pygame.Color(255, 0, 0)
 blue = pygame.Color(0, 0, 255)
 green = pygame.Color(0, 255, 0)
 null = pygame.Color(166, 253, 255)
-
 # rectangles choix joueurs
 # Rect en bas (largeur)
 rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) 
@@ -121,17 +120,17 @@ while on:
                 break
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
-                    #if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= WINDOW_Y/20 and event.pos[1] >= (WINDOW_Y/20) + 203 :
-                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7)) and event.pos[1] <= (int(WINDOW_Y/7)) + 203: #play
-                        menu_principale = False
-                        menu_personnage = True
-                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+236 and event.pos[1] <= (int(WINDOW_Y/7)) + 441: #exit
+                    if event.pos[0] >= int(1080*(WINDOW_X/3)/WINDOW_X) and event.pos[0] <= int(1080*(WINDOW_X/3)/WINDOW_X)+613 :  #play
+                        if event.pos[1] >= int(1920*(WINDOW_Y/7)/WINDOW_Y) and event.pos[1] <= int(1920*(WINDOW_Y/7)/WINDOW_Y) + 203:
+                            menu_principale = False
+                            menu_personnage = True
+                    if event.pos[0] >= (int(1080*(WINDOW_X/3)/WINDOW_X)) and event.pos[0] <= (int(1080*(WINDOW_X/3)/WINDOW_X))+613 and event.pos[1] >= (int(1920*(WINDOW_Y/7)/WINDOW_Y))+236 and event.pos[1] <= (int(1920*(WINDOW_Y/7)/WINDOW_Y)) + 441: #exit
                         #pygame.quit()
                         menu_principale = False
                         menu_personnage = False
                         on = False
                         break
-                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+472 and event.pos[1] <= (int(WINDOW_Y/7)) + 676: #info
+                    if event.pos[0] >= (int(1080*(WINDOW_X/3)/WINDOW_X)) and event.pos[0] <= (int(1080*(WINDOW_X/3)/WINDOW_X))+613 and event.pos[1] >= (int(1920*(WINDOW_Y/7)/WINDOW_Y))+472 and event.pos[1] <= (int(1920*(WINDOW_Y/7)/WINDOW_Y)) + 676: #info
                         menu_principale = False
                         menu_personnage = True
         screen.blit(image_wall, (BACK_X, BACK_Y))

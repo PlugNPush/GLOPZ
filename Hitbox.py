@@ -106,7 +106,7 @@ if self.x <= 0:
 
 
 
-#-------------------------    hitbox copié  -------------------------
+#--------------------------    hitbox copié  ------------------------
 
 import sys, time, random, math, pygame
 from pygame.locals import *
