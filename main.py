@@ -156,13 +156,15 @@ while on:
         button_player5 = pygame.Rect(900, 950, 100, 50)
         pygame.draw.rect(screen, blue, button_player5)
         button_player6 = pygame.Rect(1100, 950, 100, 50)
+        button_skip = pygame.Rect(1300, 800, 100, 50)
+        pygame.draw.rect(screen, red, button_skip)
             
         if perso1: 
             screen.blit(perso1, pos_j1)
         if perso2:
             scren.blit(perso2, pos_)
         pygame.display.flip()
-        liste_perso = ["images/chara_1_face.png", "images/chara_2_face.png"]
+        liste_perso = ["images/chara_1_face.png", "images/chara_2_face.png", "images/chara_3_face.png", "images/chara_4_face.png", "images/chara_5_face.png", "images/chara_6_face.png"]
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -173,23 +175,24 @@ while on:
                     if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
                         print("BOUTON 1")
                         perso1 = pygame.image.load(liste_perso[0])
-                        perso1 = pygame.transform.scale(perso1,(230,470))
                         break
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
-                        perso1 = pygame.image.load(liste_perso[0])
+                        perso2 = pygame.image.load(liste_perso[1])
                         break
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
                         print("BOUTON 3")
-                        perso1 = pygame.image.load(liste_perso[0])
+                        perso3 = pygame.image.load(liste_perso[2])
                         break
                     elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 4")
-                        perso1 = pygame.image.load(liste_perso[0])
+                        perso4 = pygame.image.load(liste_perso[3])
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 5")
+                        perso5 = pygame.image.load(liste_perso[4])
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 6")
+                        perso6 = pygame.image.load(liste_perso[5])
                         menu_personnage = False
                         menu_principale = True
                         break
