@@ -152,7 +152,7 @@ while on:
         button_player6 = pygame.Rect(1100, 950, 100, 50)
         pygame.draw.rect(screen, red, button_player6)
         pygame.display.flip()
-
+        
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
