@@ -193,9 +193,11 @@ while on:
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 6")
                         perso6 = pygame.image.load(liste_perso[5])
+                        break
+                    elif event.pos[0] >= 1300 and event.pos[0] <= 1400 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player4
+                        print("BOUTON SKIP")
                         menu_personnage = False
                         menu_principale = True
-                        break
     while game:
         break
         if keys[K_LALT] and keys[K_F4]:
