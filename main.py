@@ -61,7 +61,7 @@ pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * hei
 
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
-pos_menu = (1080*(WINDOW_X/3)/WINDOW_X, 1920*(WINDOW_Y/7)/WINDOW_Y)
+pos_menu = (WINDOW_X/3, WINDOW_Y/7)
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
 screen.blit(j1, pos_j1)
@@ -130,7 +130,7 @@ while on:
                         menu_personnage = False
                         on = False
                         break
-                    if event.pos[0] >= (int(1080*(WINDOW_X/3)/WINDOW_X)) and event.pos[0] <= (int(1080*(WINDOW_X/3)/WINDOW_X))+613 and event.pos[1] >= (int(1920*(WINDOW_Y/7)/WINDOW_Y))+472 and event.pos[1] <= (int(1920*(WINDOW_Y/7)/WINDOW_Y)) + 676: #info
+                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+472 and event.pos[1] <= (int(WINDOW_Y/7)) + 676: #info
                         menu_principale = False
                         menu_personnage = True
         screen.blit(image_wall, (BACK_X, BACK_Y))
