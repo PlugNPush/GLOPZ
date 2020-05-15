@@ -120,11 +120,14 @@ while on:
                 break
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
-                    if event.pos[0] >= int(1080*(WINDOW_X/3)/WINDOW_X) and event.pos[0] <= int(1080*(WINDOW_X/3)/WINDOW_X)+613 :  #play
-                        if event.pos[1] >= int(1920*(WINDOW_Y/7)/WINDOW_Y) and event.pos[1] <= int(1920*(WINDOW_Y/7)/WINDOW_Y) + 203:
-                            menu_principale = False
-                            menu_personnage = True
-                    if event.pos[0] >= (int(1080*(WINDOW_X/3)/WINDOW_X)) and event.pos[0] <= (int(1080*(WINDOW_X/3)/WINDOW_X))+613 and event.pos[1] >= (int(1920*(WINDOW_Y/7)/WINDOW_Y))+236 and event.pos[1] <= (int(1920*(WINDOW_Y/7)/WINDOW_Y)) + 441: #exit
+
+                    if event.pos[0] >= int(WINDOW_X/4)-10 and event.pos[1] >= int(WINDOW_Y/20) and event.pos[0] <= int(WINDOW_X/4)-10+613 and event.pos[1] >= int(WINDOW_Y/20) + 203 :
+                    #if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= WINDOW_Y/20 and event.pos[1] >= (WINDOW_Y/20) + 203 :
+                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7)) and event.pos[1] <= (int(WINDOW_Y/7)) + 203: #play
+
+                        menu_principale = False
+                        menu_personnage = True
+                    if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+236 and event.pos[1] <= (int(WINDOW_Y/7)) + 441: #exit
                         #pygame.quit()
                         menu_principale = False
                         menu_personnage = False
@@ -181,11 +184,8 @@ while on:
                         menu_personnage = False
                         menu_principale = True
                         break
-        """
         #joueur 1
         j1 = pygame.image.load(curdir + liste[choix_j1]).convert_alpha()
-        #joueur 2
-        j2 = pygame.image.load(curdir + liste[choix_j2]).convert_alpha()
 
         screen.blit(j1, pos_j1)"""
         pygame.display.flip()
