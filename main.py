@@ -120,9 +120,6 @@ while on:
                 break
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
-
-                    if event.pos[0] >= int(WINDOW_X/4)-10 and event.pos[1] >= int(WINDOW_Y/20) and event.pos[0] <= int(WINDOW_X/4)-10+613 and event.pos[1] >= int(WINDOW_Y/20) + 203 :
-                    #if event.pos[0] >= (WINDOW_X/4)-10 and event.pos[0] <= (WINDOW_X/4)-10+613 and event.pos[1] >= WINDOW_Y/20 and event.pos[1] >= (WINDOW_Y/20) + 203 :
                     if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7)) and event.pos[1] <= (int(WINDOW_Y/7)) + 203: #play
 
                         menu_principale = False
@@ -187,7 +184,7 @@ while on:
         #joueur 1
         j1 = pygame.image.load(curdir + liste[choix_j1]).convert_alpha()
 
-        screen.blit(j1, pos_j1)"""
+        screen.blit(j1, pos_j1)
         pygame.display.flip()
     while game:
         break
