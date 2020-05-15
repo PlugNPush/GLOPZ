@@ -173,7 +173,7 @@ while on:
                     if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
                         print("BOUTON 1")
                         perso1 = pygame.image.load(liste_perso[0])
-                        perso1 = pygame.transform.scale(perso1,(46,94))
+                        perso1 = pygame.transform.scale(perso1,(230,470))
                         break
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
