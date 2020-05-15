@@ -82,12 +82,7 @@ blue = pygame.Color(0, 0, 255)
 green = pygame.Color(0, 255, 0)
 null = pygame.Color(166, 253, 255)
 # rectangles choix joueurs
-# Rect en bas (largeur)
-rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) 
-pygame.draw.rect(screen, color_rect_players, rect_players_choice)
-# rectangle separation
-rect_separation = pygame.Rect(int(WINDOW_X/2), 0, 2, int(WINDOW_Y*0.6659) )
-pygame.draw.rect(screen, red, rect_separation)
+
 
 button_player1 = pygame.Rect(700, 800, 100, 50)
 pygame.draw.rect(screen, red, button_player1)
@@ -136,9 +131,20 @@ while on:
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
+        """Sert à vérifier que la variable personnage n'est pas vide"""
+    perso1 = ""
+    perso2 = ""
+    perso3 = ""
+    perso4 = ""
+    perso5 = ""
+    perso6 = ""
     while menu_personnage:
-
         screen.blit(image_wall, (BACK_X, BACK_Y))
+        pygame.draw.rect(screen, red, button_player6)
+        rect_players_choice = pygame.Rect(6, 700, WINDOW_X, WINDOW_Y) 
+        pygame.draw.rect(screen, color_rect_players, rect_players_choice)
+        rect_separation = pygame.Rect(int(WINDOW_X/2), 0, 2, int(WINDOW_Y*0.6659) )
+        pygame.draw.rect(screen, red, rect_separation)
         button_player1 = pygame.Rect(700, 800, 100, 50)
         pygame.draw.rect(screen, red, button_player1)
         button_player2 = pygame.Rect(900, 800, 100, 50)
@@ -150,9 +156,13 @@ while on:
         button_player5 = pygame.Rect(900, 950, 100, 50)
         pygame.draw.rect(screen, blue, button_player5)
         button_player6 = pygame.Rect(1100, 950, 100, 50)
-        pygame.draw.rect(screen, red, button_player6)
+            
+        if perso1: 
+            screen.blit(perso1, pos_j1)
+        if perso2:
+            scren.blit(perso2, pos_)
         pygame.display.flip()
-        
+        liste_perso = ["images/chara_1_face.png", "images/chara_2_face.png"]
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -162,18 +172,19 @@ while on:
                 if event.button == 1:
                     if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
                         print("BOUTON 1")
-                        """n = 1
-                        numero_perso = choix_perso(n)
-                        choix_j1 = sauvegarde_perso(numero_perso)"""
+                        perso1 = pygame.image.load(liste_perso[0])
+                        break
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
+                        perso1 = pygame.image.load(liste_perso[0])
+                        break
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
                         print("BOUTON 3")
-                        menu_personnage = False
-                        menu_principale = True
+                        perso1 = pygame.image.load(liste_perso[0])
                         break
                     elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 4")
+                        perso1 = pygame.image.load(liste_perso[0])
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 5")
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
@@ -181,11 +192,6 @@ while on:
                         menu_personnage = False
                         menu_principale = True
                         break
-        #joueur 1
-        j1 = pygame.image.load(curdir + liste[choix_j1]).convert_alpha()
-
-        screen.blit(j1, pos_j1)
-        pygame.display.flip()
     while game:
         break
         if keys[K_LALT] and keys[K_F4]:
