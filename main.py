@@ -213,6 +213,8 @@ while on:
                         game = True
     while game:
 
+        bloc_1 = pygame.Rect(521, 537, 260, 58)
+        pygame.draw.rect(screen, red, bloc_1)
 
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -346,6 +348,8 @@ while on:
         if pos_j2.x >= WINDOW_X-110:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
 
+        if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
+            pos_j1 = pos_j1.move(0, 537+65)
 
 
 
@@ -368,7 +372,7 @@ while on:
 
 
         #raffraichissement
-        
+        pygame.draw.rect(screen, red, bloc_1)
         pygame.display.flip()
 
         pygame.time.delay(16)
