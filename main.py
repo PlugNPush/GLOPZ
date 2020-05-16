@@ -16,7 +16,7 @@ WINDOW_Y = height
 BACK_X = 0
 BACK_Y = 0
 
-GROUND_Y = int((700 / 1080) * height)
+GROUND_Y = int((752 / 1080) * height)
 COEF_UP = 1.1
 COEF_DOWN = 1.1
 
@@ -50,6 +50,7 @@ j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
 j2_flip = pygame.image.load(curdir + "/images/chara_2_0_flip.png").convert_alpha()
 j2 = pygame.transform.scale(j2, (42, 84))
 j2_flip = pygame.transform.scale(j2_flip, (42, 84))
+
 #j1 = pygame.image.load(curdir + choice[0][0]).convert_alpha()
 #j1_flip = pygame.image.load(curdir + choice[1][0]).convert_alpha()
 
@@ -73,8 +74,8 @@ pass_j2 = True
 alive_j1 = True
 alive_j2 = True
 
-pos_j1 = pos_j1.move(int((345 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
-pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
+pos_j1 = pos_j1.move(int((345 / 1920) * width), int(GROUND_Y-((j1.get_height() / 1080) * height)))
+pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((j2.get_height() / 1080) * height)))
 
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
@@ -225,6 +226,8 @@ while on:
         pygame.draw.rect(screen, red, bloc_2)
         bloc_3 = pygame.Rect(765, 335, 260, 58)
         pygame.draw.rect(screen, red, bloc_3)
+        bloc_4 = pygame.Rect(313, 751, 1263, 300)
+        pygame.draw.rect(screen, red, bloc_4)
 
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -248,7 +251,7 @@ while on:
                 #jump_j1_count += 1
                 coef_jump_j1 = coef_jump_j1/COEF_UP
 
-            elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
+            elif pos_j1.y < int(GROUND_Y-((j1.get_height() / 1080) * height)) :
                 if pass_j1 == True :
                     coef_jump_j1 = 0.1
                     pass_j1 = False
@@ -257,7 +260,7 @@ while on:
                 #jump_j1_count += -1
                 coef_jump_j1 = coef_jump_j1*COEF_DOWN
         
-        elif pos_j1.y < int(GROUND_Y-((30 / 1080) * height)) :
+        elif pos_j1.y < int(GROUND_Y-((j1.get_height() / 1080) * height)) :
             if pass_j1 == True :
                 coef_jump_j1 = 0.1
                 pass_j1 = False
@@ -278,10 +281,7 @@ while on:
         if coef_jump_j1 < 0.1:
             jump_j1 = False
 
-        if pos_j1.y == int(GROUND_Y-((30 / 1080) * height)):
-            coef_jump_j1 = float(1)
-            pass_j1 = True
-            jump_j1 = True
+        
         #if jump_j1_count > 20 :
         #    jump_j1 = False
         #if jump_j1_count == 0 :
@@ -296,7 +296,7 @@ while on:
                 #jump_j2_count += 1
                 coef_jump_j2 = coef_jump_j2/COEF_UP
 
-            elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
+            elif pos_j2.y < int(GROUND_Y-((j2.get_height() / 1080) * height)) :
                 if pass_j2 == True :
                     coef_jump_j2 = 0.1
                     pass_j2 = False
@@ -305,7 +305,7 @@ while on:
                 #jump_j2_count += -1
                 coef_jump_j2 = coef_jump_j2*COEF_DOWN
         
-        elif pos_j2.y < int(GROUND_Y-((30 / 1080) * height)) :
+        elif pos_j2.y < int(GROUND_Y-((j2.get_height() / 1080) * height)) :
             if pass_j2 == True :
                 coef_jump_j2 = 0.1
                 pass_j2 = False
@@ -326,15 +326,7 @@ while on:
         if coef_jump_j2 < 0.1:
             jump_j2 = False
 
-        if pos_j2.y == int(GROUND_Y-((30 / 1080) * height)):
-            coef_jump_j2 = float(1)
-            pass_j2 = True
-            jump_j2 = True
-
-
-        if pos_j1.y >= int(GROUND_Y-((30 / 1080) * height)):
-            pos_j1.y = int(GROUND_Y-((30 / 1080) * height))
-
+        
         if pos_j1.y <= 0:
             pos_j1 = pos_j1.move(0, UP_MOVE)
 
@@ -346,9 +338,7 @@ while on:
         
 
 
-        if pos_j2.y >= int(GROUND_Y-((30 / 1080) * height)):
-            pos_j2.y = int(GROUND_Y-((30 / 1080) * height))
-
+        
         if pos_j2.y <= 0:
             pos_j2 = pos_j2.move(0, UP_MOVE)
 
@@ -359,33 +349,33 @@ while on:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
         """~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~map 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
         """bloc 1"""
-        if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+10 and pos_j1.y < bloc_1.y+58 and pos_j1.y+j1.get_height() > bloc_1.y:
+        if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+10 and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
             pos_j1.x = bloc_1.x-j1.get_width()-1
 
-        if pos_j1.x < bloc_1.x+260 and pos_j1.x > bloc_1.x+250 and pos_j1.y < bloc_1.y+58 and pos_j1.y+j1.get_height() > bloc_1.y:
-            pos_j1.x = bloc_1.x+261
+        if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - 10 and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
+            pos_j1.x = bloc_1.x+bloc_1.w +1
 
-        if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y <= bloc_1.y+58 and pos_j1.y >= bloc_1.y:
-            pos_j1.y = bloc_1.y+59
+        if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y <= bloc_1.y+bloc_1.h and pos_j1.y >= bloc_1.y:
+            pos_j1.y = bloc_1.y+bloc_1.h +1
             jump_j1 = False
 
-        if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y+j1.get_height() <= bloc_1.y+58 and pos_j1.y+j1.get_height() >= bloc_1.y:
+        if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y+j1.get_height() <= bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() >= bloc_1.y:
             pos_j1.y = bloc_1.y-j1.get_height()
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
         
-        if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x+10 and pos_j2.y < bloc_1.y+58 and pos_j2.y+j2.get_height() > bloc_1.y:
+        if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x+10 and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
             pos_j2.x = bloc_1.x-j2.get_width()-1
 
-        if pos_j2.x < bloc_1.x+260 and pos_j2.x > bloc_1.x+250 and pos_j2.y < bloc_1.y+58 and pos_j2.y+j2.get_height() > bloc_1.y:
-            pos_j2.x = bloc_1.x+261
+        if pos_j2.x < bloc_1.x+bloc_1.w and pos_j2.x > bloc_1.x+bloc_1.w - 10 and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
+            pos_j2.x = bloc_1.x+bloc_1.w +1
 
-        if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y <= bloc_1.y+58 and pos_j2.y >= bloc_1.y:
-            pos_j2.y = bloc_1.y+59
+        if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+bloc_1.w and pos_j2.y <= bloc_1.y+bloc_1.h and pos_j2.y >= bloc_1.y:
+            pos_j2.y = bloc_1.y+bloc_1.h +1
             jump_j2 = False
 
-        if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y+j2.get_height() <= bloc_1.y+58 and pos_j2.y+j2.get_height() >= bloc_1.y:
+        if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+bloc_1.w and pos_j2.y+j2.get_height() <= bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() >= bloc_1.y:
             pos_j2.y = bloc_1.y-j2.get_height()
             coef_jump_j2 = float(1)
             pass_j2 = True
@@ -393,33 +383,33 @@ while on:
 
 
         """bloc 2"""
-        if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x+10 and pos_j1.y < bloc_2.y+58 and pos_j1.y+j1.get_height() > bloc_2.y:
+        if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x+10 and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
             pos_j1.x = bloc_2.x-j1.get_width()-1
 
-        if pos_j1.x < bloc_2.x+260 and pos_j1.x > bloc_2.x+250 and pos_j1.y < bloc_2.y+58 and pos_j1.y+j1.get_height() > bloc_2.y:
-            pos_j1.x = bloc_2.x+261
+        if pos_j1.x < bloc_2.x+bloc_2.w and pos_j1.x > bloc_2.x+bloc_2.w - 10 and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
+            pos_j1.x = bloc_2.x+bloc_2.w +1
 
-        if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y <= bloc_2.y+58 and pos_j1.y >= bloc_2.y:
-            pos_j1.y = bloc_2.y+59
+        if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+bloc_2.w and pos_j1.y <= bloc_2.y+bloc_2.h and pos_j1.y >= bloc_2.y:
+            pos_j1.y = bloc_2.y+bloc_2.h +1
             jump_j1 = False
 
-        if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y+j1.get_height() <= bloc_2.y+58 and pos_j1.y+j1.get_height() >= bloc_2.y:
+        if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+bloc_2.w and pos_j1.y+j1.get_height() <= bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() >= bloc_2.y:
             pos_j1.y = bloc_2.y-j1.get_height()
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
         
-        if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x+10 and pos_j2.y < bloc_2.y+58 and pos_j2.y+j2.get_height() > bloc_2.y:
+        if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x+10 and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
             pos_j2.x = bloc_2.x-j2.get_width()-1
 
-        if pos_j2.x < bloc_2.x+260 and pos_j2.x > bloc_2.x+250 and pos_j2.y < bloc_2.y+58 and pos_j2.y+j2.get_height() > bloc_2.y:
-            pos_j2.x = bloc_2.x+261
+        if pos_j2.x < bloc_2.x+bloc_2.w and pos_j2.x > bloc_2.x+bloc_2.w - 10 and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
+            pos_j2.x = bloc_2.x+bloc_2.w +1
 
-        if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y <= bloc_2.y+58 and pos_j2.y >= bloc_2.y:
-            pos_j2.y = bloc_2.y+59
+        if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+bloc_2.w and pos_j2.y <= bloc_2.y+bloc_2.h and pos_j2.y >= bloc_2.y:
+            pos_j2.y = bloc_2.y+bloc_2.h +1
             jump_j2 = False
 
-        if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y+j2.get_height() <= bloc_2.y+58 and pos_j2.y+j2.get_height() >= bloc_2.y:
+        if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+bloc_2.w and pos_j2.y+j2.get_height() <= bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() >= bloc_2.y:
             pos_j2.y = bloc_2.y-j2.get_height()
             coef_jump_j2 = float(1)
             pass_j2 = True
@@ -427,41 +417,61 @@ while on:
         
 
         """bloc 3"""
-        if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x+10 and pos_j1.y < bloc_3.y+58 and pos_j1.y+j1.get_height() > bloc_3.y:
+        if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x+10 and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
             pos_j1.x = bloc_3.x-j1.get_width()-1
 
-        if pos_j1.x < bloc_3.x+260 and pos_j1.x > bloc_3.x+250 and pos_j1.y < bloc_3.y+58 and pos_j1.y+j1.get_height() > bloc_3.y:
-            pos_j1.x = bloc_3.x+261
+        if pos_j1.x < bloc_3.x+bloc_3.w and pos_j1.x > bloc_3.x+bloc_3.w - 10 and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
+            pos_j1.x = bloc_3.x+bloc_3.w +1
 
-        if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y <= bloc_3.y+58 and pos_j1.y >= bloc_3.y:
-            pos_j1.y = bloc_3.y+59
+        if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+bloc_3.w and pos_j1.y <= bloc_3.y+bloc_3.h and pos_j1.y >= bloc_3.y:
+            pos_j1.y = bloc_3.y+bloc_3.h +1
             jump_j1 = False
 
-        if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y+j1.get_height() <= bloc_3.y+58 and pos_j1.y+j1.get_height() >= bloc_3.y:
+        if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+bloc_3.w and pos_j1.y+j1.get_height() <= bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() >= bloc_3.y:
             pos_j1.y = bloc_3.y-j1.get_height()
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
         
-        if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x+10 and pos_j2.y < bloc_3.y+58 and pos_j2.y+j2.get_height() > bloc_3.y:
+        if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x+10 and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
             pos_j2.x = bloc_3.x-j2.get_width()-1
 
-        if pos_j2.x < bloc_3.x+260 and pos_j2.x > bloc_3.x+250 and pos_j2.y < bloc_3.y+58 and pos_j2.y+j2.get_height() > bloc_3.y:
-            pos_j2.x = bloc_3.x+261
+        if pos_j2.x < bloc_3.x+bloc_3.w and pos_j2.x > bloc_3.x+bloc_3.w - 10 and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
+            pos_j2.x = bloc_3.x+bloc_3.w +1
 
-        if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y <= bloc_3.y+58 and pos_j2.y >= bloc_3.y:
-            pos_j2.y = bloc_3.y+59
+        if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+bloc_3.w and pos_j2.y <= bloc_3.y+bloc_3.h and pos_j2.y >= bloc_3.y:
+            pos_j2.y = bloc_3.y+bloc_3.h +1
             jump_j2 = False
 
-        if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y+j2.get_height() <= bloc_3.y+58 and pos_j2.y+j2.get_height() >= bloc_3.y:
+        if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+bloc_3.w and pos_j2.y+j2.get_height() <= bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() >= bloc_3.y:
             pos_j2.y = bloc_3.y-j2.get_height()
             coef_jump_j2 = float(1)
             pass_j2 = True
             jump_j2 = True
-        #if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
-        #    pos_j1 = pos_j1.move(0, 537+59)
-        #if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
-        #    pos_j1 = pos_j1.move(0, 537+59)
+
+        if pos_j1.y == int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x > bloc_4.x and pos_j1.x < bloc_4.x + bloc_4.w:
+            coef_jump_j1 = float(1)
+            pass_j1 = True
+            jump_j1 = True
+
+        if pos_j2.y == int(GROUND_Y-((j2.get_height() / 1080) * height)):
+            coef_jump_j2 = float(1)
+            pass_j2 = True
+            jump_j2 = True
+
+
+        if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x > bloc_4.x and pos_j1.x < bloc_4.x + bloc_4.w:
+            pos_j1.y = int(GROUND_Y-((j1.get_height() / 1080) * height))
+
+        if pos_j2.y >= int(GROUND_Y-((j2.get_height() / 1080) * height)):
+            pos_j2.y = int(GROUND_Y-((j2.get_height() / 1080) * height))
+
+        if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x < bloc_4.x :
+            jump_j1 = False
+            coef_jump_j1 = 0.1
+            pos_j1 = pos_j1.move(0, int(coef_jump_j1*UP_MOVE))
+            coef_jump_j1 = coef_jump_j1*COEF_DOWN
+
 
 
 
@@ -489,6 +499,7 @@ while on:
         #pygame.draw.rect(screen, red, bloc_1)
         #pygame.draw.rect(screen, red, bloc_2)
         #pygame.draw.rect(screen, red, bloc_3)
+        pygame.draw.rect(screen, red, bloc_4)
         pygame.display.flip()
 
         pygame.time.delay(16)
