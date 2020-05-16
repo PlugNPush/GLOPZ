@@ -141,6 +141,7 @@ while on:
                         menu_principale = False
                         menu_personnage = False
                         on = False
+                        game = False
                         break
                     if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+472 and event.pos[1] <= (int(WINDOW_Y/7)) + 676: #info
                         menu_principale = False
