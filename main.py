@@ -362,104 +362,104 @@ while on:
 
         if pos_j2.x >= WINDOW_X-110:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
-
+        """~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~map 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
         """bloc 1"""
-        if pos_j1.x+42 > bloc_1.x and pos_j1.x+42 < bloc_1.x+10 and pos_j1.y < bloc_1.y+58 and pos_j1.y+84 > bloc_1.y:
-            pos_j1.x = bloc_1.x-43
+        if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+10 and pos_j1.y < bloc_1.y+58 and pos_j1.y+j1.get_height() > bloc_1.y:
+            pos_j1.x = bloc_1.x-j1.get_width()-1
 
-        if pos_j1.x < bloc_1.x+260 and pos_j1.x > bloc_1.x+250 and pos_j1.y < bloc_1.y+58 and pos_j1.y+84 > bloc_1.y:
+        if pos_j1.x < bloc_1.x+260 and pos_j1.x > bloc_1.x+250 and pos_j1.y < bloc_1.y+58 and pos_j1.y+j1.get_height() > bloc_1.y:
             pos_j1.x = bloc_1.x+261
 
-        if pos_j1.x+42 >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y <= bloc_1.y+58 and pos_j1.y >= bloc_1.y:
+        if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y <= bloc_1.y+58 and pos_j1.y >= bloc_1.y:
             pos_j1.y = bloc_1.y+59
             jump_j1 = False
 
-        if pos_j1.x+42 >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y+84 <= bloc_1.y+58 and pos_j1.y+84 >= bloc_1.y:
-            pos_j1.y = bloc_1.y-84
+        if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y+j1.get_height() <= bloc_1.y+58 and pos_j1.y+j1.get_height() >= bloc_1.y:
+            pos_j1.y = bloc_1.y-j1.get_height()
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
         
-        if pos_j2.x+42 > bloc_1.x and pos_j2.x+42 < bloc_1.x+10 and pos_j2.y < bloc_1.y+58 and pos_j2.y+84 > bloc_1.y:
-            pos_j2.x = bloc_1.x-43
+        if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x+10 and pos_j2.y < bloc_1.y+58 and pos_j2.y+j2.get_height() > bloc_1.y:
+            pos_j2.x = bloc_1.x-j2.get_width()-1
 
-        if pos_j2.x < bloc_1.x+260 and pos_j2.x > bloc_1.x+250 and pos_j2.y < bloc_1.y+58 and pos_j2.y+84 > bloc_1.y:
+        if pos_j2.x < bloc_1.x+260 and pos_j2.x > bloc_1.x+250 and pos_j2.y < bloc_1.y+58 and pos_j2.y+j2.get_height() > bloc_1.y:
             pos_j2.x = bloc_1.x+261
 
-        if pos_j2.x+42 >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y <= bloc_1.y+58 and pos_j2.y >= bloc_1.y:
+        if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y <= bloc_1.y+58 and pos_j2.y >= bloc_1.y:
             pos_j2.y = bloc_1.y+59
             jump_j2 = False
 
-        if pos_j2.x+42 >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y+84 <= bloc_1.y+58 and pos_j2.y+84 >= bloc_1.y:
-            pos_j2.y = bloc_1.y-84
+        if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y+j2.get_height() <= bloc_1.y+58 and pos_j2.y+j2.get_height() >= bloc_1.y:
+            pos_j2.y = bloc_1.y-j2.get_height()
             coef_jump_j2 = float(1)
             pass_j2 = True
             jump_j2 = True
 
 
         """bloc 2"""
-        if pos_j1.x+42 > bloc_2.x and pos_j1.x+42 < bloc_2.x+10 and pos_j1.y < bloc_2.y+58 and pos_j1.y+84 > bloc_2.y:
-            pos_j1.x = bloc_2.x-43
+        if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x+10 and pos_j1.y < bloc_2.y+58 and pos_j1.y+j1.get_height() > bloc_2.y:
+            pos_j1.x = bloc_2.x-j1.get_width()-1
 
-        if pos_j1.x < bloc_2.x+260 and pos_j1.x > bloc_2.x+250 and pos_j1.y < bloc_2.y+58 and pos_j1.y+84 > bloc_2.y:
+        if pos_j1.x < bloc_2.x+260 and pos_j1.x > bloc_2.x+250 and pos_j1.y < bloc_2.y+58 and pos_j1.y+j1.get_height() > bloc_2.y:
             pos_j1.x = bloc_2.x+261
 
-        if pos_j1.x+42 >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y <= bloc_2.y+58 and pos_j1.y >= bloc_2.y:
+        if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y <= bloc_2.y+58 and pos_j1.y >= bloc_2.y:
             pos_j1.y = bloc_2.y+59
             jump_j1 = False
 
-        if pos_j1.x+42 >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y+84 <= bloc_2.y+58 and pos_j1.y+84 >= bloc_2.y:
-            pos_j1.y = bloc_2.y-84
+        if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y+j1.get_height() <= bloc_2.y+58 and pos_j1.y+j1.get_height() >= bloc_2.y:
+            pos_j1.y = bloc_2.y-j1.get_height()
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
         
-        if pos_j2.x+42 > bloc_2.x and pos_j2.x+42 < bloc_2.x+10 and pos_j2.y < bloc_2.y+58 and pos_j2.y+84 > bloc_2.y:
-            pos_j2.x = bloc_2.x-43
+        if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x+10 and pos_j2.y < bloc_2.y+58 and pos_j2.y+j2.get_height() > bloc_2.y:
+            pos_j2.x = bloc_2.x-j2.get_width()-1
 
-        if pos_j2.x < bloc_2.x+260 and pos_j2.x > bloc_2.x+250 and pos_j2.y < bloc_2.y+58 and pos_j2.y+84 > bloc_2.y:
+        if pos_j2.x < bloc_2.x+260 and pos_j2.x > bloc_2.x+250 and pos_j2.y < bloc_2.y+58 and pos_j2.y+j2.get_height() > bloc_2.y:
             pos_j2.x = bloc_2.x+261
 
-        if pos_j2.x+42 >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y <= bloc_2.y+58 and pos_j2.y >= bloc_2.y:
+        if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y <= bloc_2.y+58 and pos_j2.y >= bloc_2.y:
             pos_j2.y = bloc_2.y+59
             jump_j2 = False
 
-        if pos_j2.x+42 >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y+84 <= bloc_2.y+58 and pos_j2.y+84 >= bloc_2.y:
-            pos_j2.y = bloc_2.y-84
+        if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y+j2.get_height() <= bloc_2.y+58 and pos_j2.y+j2.get_height() >= bloc_2.y:
+            pos_j2.y = bloc_2.y-j2.get_height()
             coef_jump_j2 = float(1)
             pass_j2 = True
             jump_j2 = True
         
 
         """bloc 3"""
-        if pos_j1.x+42 > bloc_3.x and pos_j1.x+42 < bloc_3.x+10 and pos_j1.y < bloc_3.y+58 and pos_j1.y+84 > bloc_3.y:
-            pos_j1.x = bloc_3.x-43
+        if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x+10 and pos_j1.y < bloc_3.y+58 and pos_j1.y+j1.get_height() > bloc_3.y:
+            pos_j1.x = bloc_3.x-j1.get_width()-1
 
-        if pos_j1.x < bloc_3.x+260 and pos_j1.x > bloc_3.x+250 and pos_j1.y < bloc_3.y+58 and pos_j1.y+84 > bloc_3.y:
+        if pos_j1.x < bloc_3.x+260 and pos_j1.x > bloc_3.x+250 and pos_j1.y < bloc_3.y+58 and pos_j1.y+j1.get_height() > bloc_3.y:
             pos_j1.x = bloc_3.x+261
 
-        if pos_j1.x+42 >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y <= bloc_3.y+58 and pos_j1.y >= bloc_3.y:
+        if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y <= bloc_3.y+58 and pos_j1.y >= bloc_3.y:
             pos_j1.y = bloc_3.y+59
             jump_j1 = False
 
-        if pos_j1.x+42 >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y+84 <= bloc_3.y+58 and pos_j1.y+84 >= bloc_3.y:
-            pos_j1.y = bloc_3.y-84
+        if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y+j1.get_height() <= bloc_3.y+58 and pos_j1.y+j1.get_height() >= bloc_3.y:
+            pos_j1.y = bloc_3.y-j1.get_height()
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
         
-        if pos_j2.x+42 > bloc_3.x and pos_j2.x+42 < bloc_3.x+10 and pos_j2.y < bloc_3.y+58 and pos_j2.y+84 > bloc_3.y:
-            pos_j2.x = bloc_3.x-43
+        if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x+10 and pos_j2.y < bloc_3.y+58 and pos_j2.y+j2.get_height() > bloc_3.y:
+            pos_j2.x = bloc_3.x-j2.get_width()-1
 
-        if pos_j2.x < bloc_3.x+260 and pos_j2.x > bloc_3.x+250 and pos_j2.y < bloc_3.y+58 and pos_j2.y+84 > bloc_3.y:
+        if pos_j2.x < bloc_3.x+260 and pos_j2.x > bloc_3.x+250 and pos_j2.y < bloc_3.y+58 and pos_j2.y+j2.get_height() > bloc_3.y:
             pos_j2.x = bloc_3.x+261
 
-        if pos_j2.x+42 >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y <= bloc_3.y+58 and pos_j2.y >= bloc_3.y:
+        if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y <= bloc_3.y+58 and pos_j2.y >= bloc_3.y:
             pos_j2.y = bloc_3.y+59
             jump_j2 = False
 
-        if pos_j2.x+42 >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y+84 <= bloc_3.y+58 and pos_j2.y+84 >= bloc_3.y:
-            pos_j2.y = bloc_3.y-84
+        if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y+j2.get_height() <= bloc_3.y+58 and pos_j2.y+j2.get_height() >= bloc_3.y:
+            pos_j2.y = bloc_3.y-j2.get_height()
             coef_jump_j2 = float(1)
             pass_j2 = True
             jump_j2 = True
