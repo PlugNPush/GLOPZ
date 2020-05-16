@@ -14,7 +14,7 @@ WINDOW_Y = height
 BACK_X = 0
 BACK_Y = 0
 
-GROUND_Y = int((900 / 1080) * height)
+GROUND_Y = int((700 / 1080) * height)
 COEF_UP = 1.1
 COEF_DOWN = 1.1
 
@@ -35,16 +35,19 @@ curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
 image_wall = pygame.image.load(curdir + "/images/wallpaper.png").convert()
 
-#map_1
+map_1 = pygame.image.load(curdir + "/images/maps/map-1.png").convert()
+pos_map_1 = map_1.get_rect()
 
 #joueur 1
 j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
 j1_flip = pygame.image.load(curdir + "/images/chara_1_0_flip.png").convert_alpha()
-
+j1 = pygame.transform.scale(j1, (42, 84))
+j1_flip = pygame.transform.scale(j1_flip, (42, 84))
 #joueur 2
 j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
 j2_flip = pygame.image.load(curdir + "/images/chara_2_0_flip.png").convert_alpha()
-
+j2 = pygame.transform.scale(j2, (42, 84))
+j2_flip = pygame.transform.scale(j2_flip, (42, 84))
 #j1 = pygame.image.load(curdir + choice[0][0]).convert_alpha()
 #j1_flip = pygame.image.load(curdir + choice[1][0]).convert_alpha()
 
@@ -65,7 +68,7 @@ coef_jump_j2 = float(1)
 pass_j1 = True
 pass_j2 = True
 
-pos_j1 = pos_j1.move(int((0 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
+pos_j1 = pos_j1.move(int((345 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
@@ -347,7 +350,7 @@ while on:
 
 
         #recollage des éléments
-        screen.blit(image_wall, (BACK_X, BACK_Y))
+        screen.blit(map_1, pos_map_1)
         if heading_j1 == 1:
             screen.blit(j1, pos_j1)
         else:
