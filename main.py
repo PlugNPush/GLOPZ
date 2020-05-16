@@ -20,7 +20,7 @@ COEF_DOWN = 1.1
 
 UP_MOVE = 30 #vitesse de déplacement
 SIDE_MOVE = 10
-choice = choice_perso()
+#choice = choice_perso()
 
 isMac = platform.system() == "Darwin" or platform.system() == "Linux"
 
@@ -36,12 +36,19 @@ curdir = os.path.dirname(os.path.realpath(__file__))
 image_wall = pygame.image.load(curdir + "/images/wallpaper.png").convert()
 
 #joueur 1
-j1 = pygame.image.load(curdir + choice[0][0]).convert_alpha()
-j1_flip = pygame.image.load(curdir + choice[1][0]).convert_alpha()
+j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
+j1_flip = pygame.image.load(curdir + "/images/chara_1_0_flip.png").convert_alpha()
 
 #joueur 2
-j2 = pygame.image.load(curdir + choice[0][1]).convert_alpha()
-j2_flip = pygame.image.load(curdir + choice[1][1]).convert_alpha()
+j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
+j2_flip = pygame.image.load(curdir + "/images/chara_2_0_flip.png").convert_alpha()
+
+#j1 = pygame.image.load(curdir + choice[0][0]).convert_alpha()
+#j1_flip = pygame.image.load(curdir + choice[1][0]).convert_alpha()
+
+#joueur 2
+#j2 = pygame.image.load(curdir + choice[0][1]).convert_alpha()
+#j2_flip = pygame.image.load(curdir + choice[1][1]).convert_alpha()
 
 pos_j1 = j1.get_rect()
 pos_j2 = j2.get_rect()
@@ -178,28 +185,29 @@ while on:
                         break
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
-                        perso2 = pygame.image.load(liste_perso[1])
+                        #perso2 = pygame.image.load(liste_perso[1])
                         break
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
                         print("BOUTON 3")
-                        perso3 = pygame.image.load(liste_perso[2])
+                        #perso3 = pygame.image.load(liste_perso[2])
                         break
                     elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 4")
-                        perso4 = pygame.image.load(liste_perso[3])
+                        #perso4 = pygame.image.load(liste_perso[3])
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 5")
-                        perso5 = pygame.image.load(liste_perso[4])
+                        #perso5 = pygame.image.load(liste_perso[4])
                     elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                         print("BOUTON 6")
-                        perso6 = pygame.image.load(liste_perso[5])
+                        #perso6 = pygame.image.load(liste_perso[5])
                         break
                     elif event.pos[0] >= 1300 and event.pos[0] <= 1400 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player4
                         print("BOUTON SKIP")
                         menu_personnage = False
                         menu_principale = True
+                        game = True
     while game:
-        break
+        
         if keys[K_LALT] and keys[K_F4]:
             on = False
             break
@@ -211,7 +219,7 @@ while on:
         
         if keys[K_z] if isMac else keys[K_w]:
             if jump_j1 == True :
-                pos_j1 = pos_j1.move(0, -coef_jump_j1*UP_MOVE)
+                pos_j1 = pos_j1.move(0, int(-coef_jump_j1*UP_MOVE))
                 #jump_j1_count += 1
                 coef_jump_j1 = coef_jump_j1/COEF_UP
 
@@ -220,7 +228,7 @@ while on:
                     coef_jump_j1 = 0.1
                     pass_j1 = False
 
-                pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
+                pos_j1 = pos_j1.move(0, int(coef_jump_j1*UP_MOVE))
                 #jump_j1_count += -1
                 coef_jump_j1 = coef_jump_j1*COEF_DOWN
         
@@ -229,7 +237,7 @@ while on:
                 coef_jump_j1 = 0.1
                 pass_j1 = False
 
-            pos_j1 = pos_j1.move(0, coef_jump_j1*UP_MOVE)
+            pos_j1 = pos_j1.move(0, int(coef_jump_j1*UP_MOVE))
             #jump_j1_count += -1
             coef_jump_j1 = coef_jump_j1*COEF_DOWN
             jump_j1 = False
@@ -259,7 +267,7 @@ while on:
 
         if keys[K_UP]:
             if jump_j2 == True :
-                pos_j2 = pos_j2.move(0, -coef_jump_j2*UP_MOVE)
+                pos_j2 = pos_j2.move(0, int(-coef_jump_j2*UP_MOVE))
                 #jump_j2_count += 1
                 coef_jump_j2 = coef_jump_j2/COEF_UP
 
@@ -268,7 +276,7 @@ while on:
                     coef_jump_j2 = 0.1
                     pass_j2 = False
 
-                pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
+                pos_j2 = pos_j2.move(0, int(coef_jump_j2*UP_MOVE))
                 #jump_j2_count += -1
                 coef_jump_j2 = coef_jump_j2*COEF_DOWN
         
@@ -277,7 +285,7 @@ while on:
                 coef_jump_j2 = 0.1
                 pass_j2 = False
 
-            pos_j2 = pos_j2.move(0, coef_jump_j2*UP_MOVE)
+            pos_j2 = pos_j2.move(0, int(coef_jump_j2*UP_MOVE))
             #jump_j2_count += -1
             coef_jump_j2 = coef_jump_j2*COEF_DOWN
             jump_j2 = False
