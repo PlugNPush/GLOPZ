@@ -349,7 +349,17 @@ while on:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
 
         if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
-            pos_j1 = pos_j1.move(0, 537+65)
+            pos_j1.y = 537+59
+        if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y+84 <= 537+58 and pos_j1.y+84 >= 537:
+            pos_j1.y = 536-84
+            coef_jump_j1 = float(1)
+            pass_j1 = True
+            jump_j1 = True
+
+        #if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
+        #    pos_j1 = pos_j1.move(0, 537+59)
+        #if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
+        #    pos_j1 = pos_j1.move(0, 537+59)
 
 
 
