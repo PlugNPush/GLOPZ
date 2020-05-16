@@ -215,6 +215,10 @@ while on:
 
         bloc_1 = pygame.Rect(521, 537, 260, 58)
         pygame.draw.rect(screen, red, bloc_1)
+        bloc_2 = pygame.Rect(1050, 539, 260, 58)
+        pygame.draw.rect(screen, red, bloc_2)
+        bloc_3 = pygame.Rect(765, 335, 260, 58)
+        pygame.draw.rect(screen, red, bloc_3)
 
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -348,14 +352,106 @@ while on:
         if pos_j2.x >= WINDOW_X-110:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
 
-        if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
-            pos_j1.y = 537+59
-        if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y+84 <= 537+58 and pos_j1.y+84 >= 537:
-            pos_j1.y = 536-84
+        """bloc 1"""
+        if pos_j1.x+42 > bloc_1.x and pos_j1.x+42 < bloc_1.x+10 and pos_j1.y < bloc_1.y+58 and pos_j1.y+84 > bloc_1.y:
+            pos_j1.x = bloc_1.x-43
+
+        if pos_j1.x < bloc_1.x+260 and pos_j1.x > bloc_1.x+250 and pos_j1.y < bloc_1.y+58 and pos_j1.y+84 > bloc_1.y:
+            pos_j1.x = bloc_1.x+261
+
+        if pos_j1.x+42 >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y <= bloc_1.y+58 and pos_j1.y >= bloc_1.y:
+            pos_j1.y = bloc_1.y+59
+            jump_j1 = False
+
+        if pos_j1.x+42 >= bloc_1.x and pos_j1.x <= bloc_1.x+260 and pos_j1.y+84 <= bloc_1.y+58 and pos_j1.y+84 >= bloc_1.y:
+            pos_j1.y = bloc_1.y-84
             coef_jump_j1 = float(1)
             pass_j1 = True
             jump_j1 = True
+        
+        if pos_j2.x+42 > bloc_1.x and pos_j2.x+42 < bloc_1.x+10 and pos_j2.y < bloc_1.y+58 and pos_j2.y+84 > bloc_1.y:
+            pos_j2.x = bloc_1.x-43
 
+        if pos_j2.x < bloc_1.x+260 and pos_j2.x > bloc_1.x+250 and pos_j2.y < bloc_1.y+58 and pos_j2.y+84 > bloc_1.y:
+            pos_j2.x = bloc_1.x+261
+
+        if pos_j2.x+42 >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y <= bloc_1.y+58 and pos_j2.y >= bloc_1.y:
+            pos_j2.y = bloc_1.y+59
+            jump_j2 = False
+
+        if pos_j2.x+42 >= bloc_1.x and pos_j2.x <= bloc_1.x+260 and pos_j2.y+84 <= bloc_1.y+58 and pos_j2.y+84 >= bloc_1.y:
+            pos_j2.y = bloc_1.y-84
+            coef_jump_j2 = float(1)
+            pass_j2 = True
+            jump_j2 = True
+
+
+        """bloc 2"""
+        if pos_j1.x+42 > bloc_2.x and pos_j1.x+42 < bloc_2.x+10 and pos_j1.y < bloc_2.y+58 and pos_j1.y+84 > bloc_2.y:
+            pos_j1.x = bloc_2.x-43
+
+        if pos_j1.x < bloc_2.x+260 and pos_j1.x > bloc_2.x+250 and pos_j1.y < bloc_2.y+58 and pos_j1.y+84 > bloc_2.y:
+            pos_j1.x = bloc_2.x+261
+
+        if pos_j1.x+42 >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y <= bloc_2.y+58 and pos_j1.y >= bloc_2.y:
+            pos_j1.y = bloc_2.y+59
+            jump_j1 = False
+
+        if pos_j1.x+42 >= bloc_2.x and pos_j1.x <= bloc_2.x+260 and pos_j1.y+84 <= bloc_2.y+58 and pos_j1.y+84 >= bloc_2.y:
+            pos_j1.y = bloc_2.y-84
+            coef_jump_j1 = float(1)
+            pass_j1 = True
+            jump_j1 = True
+        
+        if pos_j2.x+42 > bloc_2.x and pos_j2.x+42 < bloc_2.x+10 and pos_j2.y < bloc_2.y+58 and pos_j2.y+84 > bloc_2.y:
+            pos_j2.x = bloc_2.x-43
+
+        if pos_j2.x < bloc_2.x+260 and pos_j2.x > bloc_2.x+250 and pos_j2.y < bloc_2.y+58 and pos_j2.y+84 > bloc_2.y:
+            pos_j2.x = bloc_2.x+261
+
+        if pos_j2.x+42 >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y <= bloc_2.y+58 and pos_j2.y >= bloc_2.y:
+            pos_j2.y = bloc_2.y+59
+            jump_j2 = False
+
+        if pos_j2.x+42 >= bloc_2.x and pos_j2.x <= bloc_2.x+260 and pos_j2.y+84 <= bloc_2.y+58 and pos_j2.y+84 >= bloc_2.y:
+            pos_j2.y = bloc_2.y-84
+            coef_jump_j2 = float(1)
+            pass_j2 = True
+            jump_j2 = True
+        
+
+        """bloc 3"""
+        if pos_j1.x+42 > bloc_3.x and pos_j1.x+42 < bloc_3.x+10 and pos_j1.y < bloc_3.y+58 and pos_j1.y+84 > bloc_3.y:
+            pos_j1.x = bloc_3.x-43
+
+        if pos_j1.x < bloc_3.x+260 and pos_j1.x > bloc_3.x+250 and pos_j1.y < bloc_3.y+58 and pos_j1.y+84 > bloc_3.y:
+            pos_j1.x = bloc_3.x+261
+
+        if pos_j1.x+42 >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y <= bloc_3.y+58 and pos_j1.y >= bloc_3.y:
+            pos_j1.y = bloc_3.y+59
+            jump_j1 = False
+
+        if pos_j1.x+42 >= bloc_3.x and pos_j1.x <= bloc_3.x+260 and pos_j1.y+84 <= bloc_3.y+58 and pos_j1.y+84 >= bloc_3.y:
+            pos_j1.y = bloc_3.y-84
+            coef_jump_j1 = float(1)
+            pass_j1 = True
+            jump_j1 = True
+        
+        if pos_j2.x+42 > bloc_3.x and pos_j2.x+42 < bloc_3.x+10 and pos_j2.y < bloc_3.y+58 and pos_j2.y+84 > bloc_3.y:
+            pos_j2.x = bloc_3.x-43
+
+        if pos_j2.x < bloc_3.x+260 and pos_j2.x > bloc_3.x+250 and pos_j2.y < bloc_3.y+58 and pos_j2.y+84 > bloc_3.y:
+            pos_j2.x = bloc_3.x+261
+
+        if pos_j2.x+42 >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y <= bloc_3.y+58 and pos_j2.y >= bloc_3.y:
+            pos_j2.y = bloc_3.y+59
+            jump_j2 = False
+
+        if pos_j2.x+42 >= bloc_3.x and pos_j2.x <= bloc_3.x+260 and pos_j2.y+84 <= bloc_3.y+58 and pos_j2.y+84 >= bloc_3.y:
+            pos_j2.y = bloc_3.y-84
+            coef_jump_j2 = float(1)
+            pass_j2 = True
+            jump_j2 = True
         #if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
         #    pos_j1 = pos_j1.move(0, 537+59)
         #if pos_j1.x >= 521 and pos_j1.x <= 521+260 and pos_j1.y <= 537+58 and pos_j1.y >= 537:
@@ -382,7 +478,9 @@ while on:
 
 
         #raffraichissement
-        pygame.draw.rect(screen, red, bloc_1)
+        #pygame.draw.rect(screen, red, bloc_1)
+        #pygame.draw.rect(screen, red, bloc_2)
+        #pygame.draw.rect(screen, red, bloc_3)
         pygame.display.flip()
 
         pygame.time.delay(16)
