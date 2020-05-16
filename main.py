@@ -207,12 +207,20 @@ while on:
                         menu_principale = True
                         game = True
     while game:
-        
+
+
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            
+            if event.type == QUIT:
+                on = False
+                break
+            
+            
+
         if keys[K_LALT] and keys[K_F4]:
             on = False
             break
-
-        
         if keys[K_s] if isMac else keys[K_s]:
             pos_j1 = pos_j1.move(0, UP_MOVE)
 
