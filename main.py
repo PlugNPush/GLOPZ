@@ -58,8 +58,16 @@ j1_flip_2 = pygame.transform.scale(j1_flip_2, (42, 84))
 #joueur 2
 j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
 j2_flip = pygame.image.load(curdir + "/images/chara_2_0_flip.png").convert_alpha()
+j2_1 = pygame.image.load(curdir + "/images/chara_2_1.png").convert_alpha()
+j2_flip_1 = pygame.image.load(curdir + "/images/chara_2_1_flip.png").convert_alpha()
+j2_2 = pygame.image.load(curdir + "/images/chara_2_2.png").convert_alpha()
+j2_flip_2 = pygame.image.load(curdir + "/images/chara_2_2_flip.png").convert_alpha()
 j2 = pygame.transform.scale(j2, (42, 84))
 j2_flip = pygame.transform.scale(j2_flip, (42, 84))
+j2_1 = pygame.transform.scale(j2_1, (42, 84))
+j2_flip_1 = pygame.transform.scale(j2_flip_1, (42, 84))
+j2_2 = pygame.transform.scale(j2_2, (42, 84))
+j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
 
 #j1 = pygame.image.load(curdir + choice[0][0]).convert_alpha()
 #j1_flip = pygame.image.load(curdir + choice[1][0]).convert_alpha()
@@ -343,10 +351,12 @@ while on:
         if keys[K_RIGHT]:
             pos_j2 = pos_j2.move(SIDE_MOVE, 0)
             heading_j2 = 1
+            move_j2 = True
 
         if keys[K_LEFT]:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
             heading_j2 = 0
+            move_j2 = True
 
         if coef_jump_j2 < 0.1:
             jump_j2 = False
@@ -599,9 +609,34 @@ while on:
 
         if alive_j2 == True :
             if heading_j2 == 1:
-                screen.blit(j2, pos_j2)
+                if move_j2 == True:
+                    compteur_j2 += 1
+                    if compteur_j2 < 10:
+                        screen.blit(j2_1, pos_j2)
+                    elif compteur_j2 < 20:
+                        screen.blit(j2_2, pos_j2)
+                    elif compteur_j2 == 20:
+                        screen.blit(j2_2, pos_j2)
+                        compteur_j2 = 0
+                    move_j2 = False
+
+                else:
+                    screen.blit(j2, pos_j2)
+                    compteur_j2 = 0
             else:
-                screen.blit(j2_flip, pos_j2)
+                if move_j2 == True:
+                    compteur_j2 += 1
+                    if compteur_j2 < 10:
+                        screen.blit(j2_flip_1, pos_j2)
+                    elif compteur_j2 < 20:
+                        screen.blit(j2_flip_2, pos_j2)
+                    elif compteur_j2 == 20:
+                        screen.blit(j2_flip_2, pos_j2)
+                        compteur_j2 = 0
+                    move_j2 = False
+                else:
+                    screen.blit(j2_flip, pos_j2)
+                    compteur_j2 = 0
         else :
             game = False
             menu_principale = True
