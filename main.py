@@ -35,6 +35,8 @@ curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
 image_wall = pygame.image.load(curdir + "/images/wallpaper.png").convert()
 
+#map_1
+
 #joueur 1
 j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
 j1_flip = pygame.image.load(curdir + "/images/chara_1_0_flip.png").convert_alpha()
@@ -252,11 +254,11 @@ while on:
 
         if keys[K_d] if isMac else keys[K_d]:
             pos_j1 = pos_j1.move(SIDE_MOVE, 0)
-            heading_j1 = 0
+            heading_j1 = 1
 
         if keys[K_q] if isMac else keys[K_a]:
             pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
-            heading_j1 = 1
+            heading_j1 = 0
         
         if coef_jump_j1 < 0.1:
             jump_j1 = False
@@ -300,11 +302,11 @@ while on:
 
         if keys[K_RIGHT]:
             pos_j2 = pos_j2.move(SIDE_MOVE, 0)
-            heading_j2 = 0
+            heading_j2 = 1
 
         if keys[K_LEFT]:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
-            heading_j2 = 1
+            heading_j2 = 0
 
         if coef_jump_j2 < 0.1:
             jump_j2 = False
