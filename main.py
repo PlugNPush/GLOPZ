@@ -120,6 +120,7 @@ on = True
 menu_principale = True
 menu_personnage = True
 game = True
+joueur_1 = True
 while on:
     while menu_principale: 
         keys = pygame.key.get_pressed()
@@ -180,7 +181,9 @@ while on:
         if perso1: 
             screen.blit(perso1, pos_j1)
         if perso2:
-            scren.blit(perso2, pos_)
+            scren.blit(perso2, pos_j1)
+       # if perso3:
+       #     screen.blit(perso3, pos_j1)
         pygame.display.flip()
         liste_perso = ["images/chara_1_face.png", "images/chara_2_face.png", "images/chara_3_face.png", "images/chara_4_face.png", "images/chara_5_face.png", "images/chara_6_face.png"]
         keys = pygame.key.get_pressed()
@@ -191,9 +194,10 @@ while on:
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
                     if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
-                        print("BOUTON 1")
-                        perso1 = pygame.image.load(liste_perso[0])
-                        break
+                        if joueur_1 is True:
+                            print("BOUTON 1")
+                            perso1 = pygame.image.load(liste_perso[0])
+                            break
                     elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                         print("BOUTON 2")
                         #perso2 = pygame.image.load(liste_perso[1])
@@ -232,9 +236,10 @@ while on:
             if event.type == QUIT:
                 on = False
                 break
+            elif keys[K_ESCAPE]:
+                game = False
+                menu_personnage = True
             
-            
-
         if keys[K_LALT] and keys[K_F4]:
             on = False
             break
