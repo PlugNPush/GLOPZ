@@ -101,9 +101,16 @@ move_j2 = False
 pos_j1 = pos_j1.move(int((345 / 1920) * width), int(GROUND_Y-((j1.get_height() / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((j2.get_height() / 1080) * height)))
 
+retour = pygame.image.load(curdir + "/images/retour_button.png").convert_alpha()
+retour = pygame.transform.scale(retour, (122, 40))
+pos_retour = retour.get_rect()
+pos_retour = (10, 10)
+
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
 pos_menu = (WINDOW_X/3, WINDOW_Y/7)
+
+
 #placement des images
 screen.blit(image_wall, (BACK_X, BACK_Y))
 screen.blit(j1, pos_j1)
@@ -146,6 +153,7 @@ menu_principale = True
 menu_personnage = True
 game = True
 joueur_1 = True
+info = True
 while on:
     game = True
     alive_j1 = True
@@ -162,22 +170,49 @@ while on:
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
                     if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7)) and event.pos[1] <= (int(WINDOW_Y/7)) + 203: #play
-
                         menu_principale = False
                         menu_personnage = True
+                        game = True
+                        info = False
+
                     if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+236 and event.pos[1] <= (int(WINDOW_Y/7)) + 441: #exit
                         #pygame.quit()
                         menu_principale = False
                         menu_personnage = False
                         on = False
                         game = False
+                        info = False
                         break
+
                     if event.pos[0] >= (int(WINDOW_X/3)) and event.pos[0] <= (int(WINDOW_X/3))+613 and event.pos[1] >= (int(WINDOW_Y/7))+472 and event.pos[1] <= (int(WINDOW_Y/7)) + 676: #info
                         menu_principale = False
-                        menu_personnage = True
+                        menu_personnage = False
+                        game = False
+                        info = True
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
+    
+    while info:
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                on = False
+                break
+            elif keys[K_LALT] and keys[K_F4]:
+                on = False
+                break
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    if event.pos[0] >= 10 and event.pos[0] <= 132 and event.pos[1] >= 10 and event.pos[1] <= 50:
+                        menu_principale = True
+                        info = False
+                        print("RETOUR")
+                        break
+        screen.blit(image_wall, (BACK_X, BACK_Y))
+        screen.blit(retour, pos_retour)
+        pygame.display.flip()
+    
         """Sert à vérifier que la variable personnage n'est pas vide"""
     perso1 = ""
     perso2 = ""
