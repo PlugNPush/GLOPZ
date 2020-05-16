@@ -22,6 +22,8 @@ COEF_DOWN = 1.1
 
 UP_MOVE = 30 #vitesse de déplacement
 SIDE_MOVE = 10
+
+LEG_CHANGE = 5
 #choice = choice_perso()
 
 isMac = platform.system() == "Darwin" or platform.system() == "Linux"
@@ -43,8 +45,16 @@ pos_map_1 = map_1.get_rect()
 #joueur 1
 j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
 j1_flip = pygame.image.load(curdir + "/images/chara_1_0_flip.png").convert_alpha()
+j1_1 = pygame.image.load(curdir + "/images/chara_1_1.png").convert_alpha()
+j1_flip_1 = pygame.image.load(curdir + "/images/chara_1_1_flip.png").convert_alpha()
+j1_2 = pygame.image.load(curdir + "/images/chara_1_2.png").convert_alpha()
+j1_flip_2 = pygame.image.load(curdir + "/images/chara_1_2_flip.png").convert_alpha()
 j1 = pygame.transform.scale(j1, (42, 84))
 j1_flip = pygame.transform.scale(j1_flip, (42, 84))
+j1_1 = pygame.transform.scale(j1_1, (42, 84))
+j1_flip_1 = pygame.transform.scale(j1_flip_1, (42, 84))
+j1_2 = pygame.transform.scale(j1_2, (42, 84))
+j1_flip_2 = pygame.transform.scale(j1_flip_2, (42, 84))
 #joueur 2
 j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
 j2_flip = pygame.image.load(curdir + "/images/chara_2_0_flip.png").convert_alpha()
@@ -73,6 +83,12 @@ pass_j2 = True
 
 alive_j1 = True
 alive_j2 = True
+
+compteur_j1 = 0
+compteur_j2 = 0
+
+move_j1 = False
+move_j2 = False
 
 pos_j1 = pos_j1.move(int((345 / 1920) * width), int(GROUND_Y-((j1.get_height() / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((j2.get_height() / 1080) * height)))
@@ -280,10 +296,12 @@ while on:
         if keys[K_d] if isMac else keys[K_d]:
             pos_j1 = pos_j1.move(SIDE_MOVE, 0)
             heading_j1 = 1
+            move_j1 = True
 
         if keys[K_q] if isMac else keys[K_a]:
             pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
             heading_j1 = 0
+            move_j1 = True
         
         if coef_jump_j1 < 0.1:
             jump_j1 = False
@@ -536,11 +554,39 @@ while on:
         #recollage des éléments
         screen.blit(map_1, pos_map_1)
 
+
+
+
         if alive_j1 == True :
             if heading_j1 == 1:
-                screen.blit(j1, pos_j1)
+                if move_j1 == True:
+                    compteur_j1 += 1
+                    if compteur_j1 < 10:
+                        screen.blit(j1_1, pos_j1)
+                    elif compteur_j1 < 20:
+                        screen.blit(j1_2, pos_j1)
+                    elif compteur_j1 == 20:
+                        screen.blit(j1_2, pos_j1)
+                        compteur_j1 = 0
+                    move_j1 = False
+
+                else:
+                    screen.blit(j1, pos_j1)
+                    compteur_j1 = 0
             else:
-                screen.blit(j1_flip, pos_j1)
+                if move_j1 == True:
+                    compteur_j1 += 1
+                    if compteur_j1 < 10:
+                        screen.blit(j1_flip_1, pos_j1)
+                    elif compteur_j1 < 20:
+                        screen.blit(j1_flip_2, pos_j1)
+                    elif compteur_j1 == 20:
+                        screen.blit(j1_flip_2, pos_j1)
+                        compteur_j1 = 0
+                    move_j1 = False
+                else:
+                    screen.blit(j1_flip, pos_j1)
+                    compteur_j1 = 0
         else :
             game = False
             menu_principale = True
