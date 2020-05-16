@@ -123,6 +123,9 @@ menu_personnage = True
 game = True
 joueur_1 = True
 while on:
+    game = True
+    alive_j1 = True
+    alive_j2 = True
     while menu_principale: 
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -223,7 +226,6 @@ while on:
                         menu_principale = True
                         game = True
     while game:
-
         bloc_1 = pygame.Rect(521, 537, 260, 58)
         pygame.draw.rect(screen, red, bloc_1)
         bloc_2 = pygame.Rect(1050, 539, 260, 58)
@@ -352,7 +354,6 @@ while on:
 
         if pos_j2.x >= WINDOW_X-110:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
-        """~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~map 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
         """bloc 1"""
         if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+10 and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
             pos_j1.x = bloc_1.x-j1.get_width()-1
@@ -473,11 +474,17 @@ while on:
 
         if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x < bloc_4.x :
             jump_j1 = False
-            coef_jump_j1 = 0.1
-            pos_j1 = pos_j1.move(0, int(coef_jump_j1*UP_MOVE))
+            if pass_j1 == True :
+                coef_jump_j1 = 0.1
+                pass_j1 = False
+            down = int(coef_jump_j1*UP_MOVE) #pour éviter le overflow
+            if down > 1000 :
+                coef_jump_j1 = 100
+            pos_j1 = pos_j1.move(0, down)
             coef_jump_j1 = coef_jump_j1*COEF_DOWN
 
-
+        if pos_j1.y >= height - j1.get_height() - 1:
+            alive_j1 = False
 
 
         #recollage des éléments
@@ -488,6 +495,13 @@ while on:
                 screen.blit(j1, pos_j1)
             else:
                 screen.blit(j1_flip, pos_j1)
+        else :
+            game = False
+            menu_principale = True
+            pos_j1.x = int((345 / 1920) * width)
+            pos_j1.y = int(GROUND_Y-((j1.get_height() / 1080) * height))
+            pos_j2.x = int((1500 / 1920) * width)
+            pos_j2.y = int(GROUND_Y-((j2.get_height() / 1080) * height))
             
 
 
