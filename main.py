@@ -469,10 +469,12 @@ while on:
         if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x > bloc_4.x and pos_j1.x < bloc_4.x + bloc_4.w:
             pos_j1.y = int(GROUND_Y-((j1.get_height() / 1080) * height))
 
-        if pos_j2.y >= int(GROUND_Y-((j2.get_height() / 1080) * height)):
+        if pos_j2.y >= int(GROUND_Y-((j2.get_height() / 1080) * height)) and pos_j2.x > bloc_4.x and pos_j2.x < bloc_4.x + bloc_4.w:
             pos_j2.y = int(GROUND_Y-((j2.get_height() / 1080) * height))
 
-        if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x < bloc_4.x :
+
+
+        if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x+j1.get_width() < bloc_4.x :
             jump_j1 = False
             if pass_j1 == True :
                 coef_jump_j1 = 0.1
@@ -486,6 +488,50 @@ while on:
         if pos_j1.y >= height - j1.get_height() - 1:
             alive_j1 = False
 
+
+        if pos_j2.y >= int(GROUND_Y-((j2.get_height() / 1080) * height)) and pos_j2.x+j2.get_width() < bloc_4.x :
+            jump_j2 = False
+            if pass_j2 == True :
+                coef_jump_j2 = 0.1
+                pass_j2 = False
+            down = int(coef_jump_j2*UP_MOVE) #pour éviter le overflow
+            if down > 1000 :
+                coef_jump_j2 = 100
+            pos_j2 = pos_j2.move(0, down)
+            coef_jump_j2 = coef_jump_j2*COEF_DOWN
+
+        if pos_j2.y >= height - j2.get_height() - 1:
+            alive_j2 = False
+
+
+        if pos_j1.y >= int(GROUND_Y-((j1.get_height() / 1080) * height)) and pos_j1.x > bloc_4.x + bloc_4.w :
+            jump_j1 = False
+            if pass_j1 == True :
+                coef_jump_j1 = 0.1
+                pass_j1 = False
+            down = int(coef_jump_j1*UP_MOVE) #pour éviter le overflow
+            if down > 1000 :
+                coef_jump_j1 = 100
+            pos_j1 = pos_j1.move(0, down)
+            coef_jump_j1 = coef_jump_j1*COEF_DOWN
+
+        if pos_j1.y >= height - j1.get_height() - 1:
+            alive_j1 = False
+
+
+        if pos_j2.y >= int(GROUND_Y-((j2.get_height() / 1080) * height)) and pos_j2.x > bloc_4.x + bloc_4.w :
+            jump_j2 = False
+            if pass_j2 == True :
+                coef_jump_j2 = 0.1
+                pass_j2 = False
+            down = int(coef_jump_j2*UP_MOVE) #pour éviter le overflow
+            if down > 1000 :
+                coef_jump_j2 = 100
+            pos_j2 = pos_j2.move(0, down)
+            coef_jump_j2 = coef_jump_j2*COEF_DOWN
+
+        if pos_j2.y >= height - j2.get_height() - 1:
+            alive_j2 = False
 
         #recollage des éléments
         screen.blit(map_1, pos_map_1)
@@ -510,6 +556,13 @@ while on:
                 screen.blit(j2, pos_j2)
             else:
                 screen.blit(j2_flip, pos_j2)
+        else :
+            game = False
+            menu_principale = True
+            pos_j1.x = int((345 / 1920) * width)
+            pos_j1.y = int(GROUND_Y-((j1.get_height() / 1080) * height))
+            pos_j2.x = int((1500 / 1920) * width)
+            pos_j2.y = int(GROUND_Y-((j2.get_height() / 1080) * height))
 
 
 
