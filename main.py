@@ -571,7 +571,7 @@ while on:
         #pygame.draw.rect(screen, red, bloc_1)
         #pygame.draw.rect(screen, red, bloc_2)
         #pygame.draw.rect(screen, red, bloc_3)
-        pygame.draw.rect(screen, red, bloc_4)
+        #pygame.draw.rect(screen, red, bloc_4)
         pygame.display.flip()
 
         pygame.time.delay(16)
