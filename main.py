@@ -8,6 +8,8 @@ import platform
 pygame.init()
 
 width, height = int(pygame.display.Info().current_w), int(pygame.display.Info().current_h)
+print(width)
+print(height)
 WINDOW_X = width
 WINDOW_Y = height
 
@@ -67,6 +69,9 @@ coef_jump_j1 = float(1)
 coef_jump_j2 = float(1)
 pass_j1 = True
 pass_j2 = True
+
+alive_j1 = True
+alive_j2 = True
 
 pos_j1 = pos_j1.move(int((345 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
 pos_j2 = pos_j2.move(int((1500 / 1920) * width), int(GROUND_Y-((30 / 1080) * height)))
@@ -461,18 +466,20 @@ while on:
 
         #recollage des éléments
         screen.blit(map_1, pos_map_1)
-        if heading_j1 == 1:
-            screen.blit(j1, pos_j1)
-        else:
-            screen.blit(j1_flip, pos_j1)
-        
+
+        if alive_j1 == True :
+            if heading_j1 == 1:
+                screen.blit(j1, pos_j1)
+            else:
+                screen.blit(j1_flip, pos_j1)
+            
 
 
-
-        if heading_j2 == 1:
-            screen.blit(j2, pos_j2)
-        else:
-            screen.blit(j2_flip, pos_j2)
+        if alive_j2 == True :
+            if heading_j2 == 1:
+                screen.blit(j2, pos_j2)
+            else:
+                screen.blit(j2_flip, pos_j2)
 
 
 
