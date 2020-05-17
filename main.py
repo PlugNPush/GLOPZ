@@ -106,11 +106,6 @@ pos_map2_button = map2_button.get_rect()
 pos_map2_button.x = 550
 pos_map2_button.y = 550
 
-print(pos_map1_button.x)
-print(pos_map1_button.y)
-print(map1_button.get_width())
-print(map1_button.get_height())
-
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
 pos_menu.x = WINDOW_X/3
