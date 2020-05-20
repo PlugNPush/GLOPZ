@@ -38,7 +38,7 @@ else:
 
 curdir = os.path.dirname(os.path.realpath(__file__))
 #chargement des images
-image_wall = pygame.image.load(curdir + "/images/wallpaper.png").convert()
+image_wall = pygame.image.load(curdir + "/images/screen_menu.png").convert()
 
 
 
@@ -210,7 +210,7 @@ pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
 #chargement des images des personnages
-liste_perso = {pygame.image.load("/images/chara_1_face.png"), pygame.load("/images/chara_3_0_flip.png")}
+#liste_perso = {pygame.image.load("/images/chara_1_face.png"), pygame.load("/images/chara_3_0_flip.png")}
 
 #boucle en attente d'évènement
 on = True
