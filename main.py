@@ -82,18 +82,25 @@ map_2_preview = pygame.transform.scale(map_2, (384, 216))
 map_3 = pygame.image.load(curdir + "/images/maps/hangar.png").convert()
 map_3_preview = pygame.transform.scale(map_3, (384, 216))
 
+map_4 = pygame.image.load(curdir + "/images/maps/mars.png").convert()
+map_4_preview = pygame.transform.scale(map_4, (384, 216))
+
 pos_map_1 = map_1.get_rect()
 pos_map_2 = map_2.get_rect()
 pos_map_3 = map_3.get_rect()
+pos_map_4 = map_4.get_rect()
 pos_map_1_preview = map_1_preview.get_rect()
 pos_map_2_preview = map_2_preview.get_rect()
 pos_map_3_preview = map_3_preview.get_rect()
+pos_map_4_preview = map_4_preview.get_rect()
 pos_map_1_preview.x = 100
 pos_map_1_preview.y = 300
 pos_map_2_preview.x = 550
 pos_map_2_preview.y = 300
 pos_map_3_preview.x = 1000
 pos_map_3_preview.y = 300
+pos_map_4_preview.x = 1450
+pos_map_4_preview.y = 300
 
 retour = pygame.image.load(curdir + "/images/retour_button.png").convert_alpha()
 retour = pygame.transform.scale(retour, (122, 40))
@@ -118,6 +125,13 @@ map3_button = pygame.transform.scale(map3_button, (384, 128))
 pos_map3_button = map3_button.get_rect()
 pos_map3_button.x = 1000
 pos_map3_button.y = 550
+
+map4_button = pygame.image.load(curdir + "/images/map4_button.png").convert_alpha()
+map4_button = pygame.transform.scale(map4_button, (384, 128))
+pos_map4_button = map4_button.get_rect()
+pos_map4_button.x = 1450
+pos_map4_button.y = 550
+
 
 menu = pygame.image.load(curdir + "/images/menu_button.png").convert_alpha()
 pos_menu = menu.get_rect()
@@ -241,7 +255,6 @@ while on:
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
-    
     while info:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -358,6 +371,7 @@ while on:
                         game = True
                         UP_MOVE = 30
                         COEF_UP = 1.1
+                        COEF_DOWN = 1.1
                         choice_map = 1
                         count_bloc = 3
                         bloc_1 = pygame.Rect(521, 537, 260, 58)
@@ -375,6 +389,7 @@ while on:
                         game = True
                         UP_MOVE = 30
                         COEF_UP = 1.1
+                        COEF_DOWN = 1.1
                         choice_map = 2
                         count_bloc = 5
                         bloc_1 = pygame.Rect(104, 649, 1718, 200)
@@ -394,6 +409,7 @@ while on:
                         game = True
                         UP_MOVE = 30
                         COEF_UP = 1.08
+                        COEF_DOWN = 1.1
                         choice_map = 3
                         count_bloc = 1
                         bloc_1 = pygame.Rect(321, 587, 1251, 60)
@@ -403,13 +419,30 @@ while on:
                         pos_j2.x = int((1820 / 1920) * width)
                         pos_j2.y = int(bloc_base.y-((j2.get_height() / 1080) * height))
                         break
+                        
+                    if event.pos[0] >= pos_map4_button.x and event.pos[0] <= pos_map4_button.x + map4_button.get_width() and event.pos[1] >= pos_map4_button.y and event.pos[1] <= pos_map4_button.y + map4_button.get_height():
+                        menu_map = False
+                        game = True
+                        UP_MOVE = 30
+                        COEF_UP = 1.03
+                        COEF_DOWN = 1.03
+                        choice_map = 4
+                        count_bloc = 0
+                        bloc_base = pygame.Rect(0, 1000, 1920, 300)
+                        pos_j1.x = int((100 / 1920) * width)
+                        pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
+                        pos_j2.x = int((1820 / 1920) * width)
+                        pos_j2.y = int(bloc_base.y-((j2.get_height() / 1080) * height))
+                        break
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(map_1_preview, pos_map_1_preview)
         screen.blit(map_2_preview, pos_map_2_preview)
         screen.blit(map_3_preview, pos_map_3_preview)
+        screen.blit(map_4_preview, pos_map_4_preview)
         screen.blit(map1_button, pos_map1_button)
         screen.blit(map2_button, pos_map2_button)
         screen.blit(map3_button, pos_map3_button)
+        screen.blit(map4_button, pos_map4_button)
         pygame.display.flip()
     while game:
         
@@ -795,6 +828,8 @@ while on:
             screen.blit(map_2, pos_map_2)
         if choice_map == 3:
             screen.blit(map_3, pos_map_3)
+        if choice_map == 4:
+            screen.blit(map_4, pos_map_4)
 
 
 
