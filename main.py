@@ -138,6 +138,12 @@ pos_menu = menu.get_rect()
 pos_menu.x = WINDOW_X/3
 pos_menu.y = WINDOW_Y/7
 
+img_info = pygame.image.load(curdir + "/images/info.png").convert_alpha()
+pos_info = img_info.get_rect()
+pos_info.x = 200
+pos_info.y = 150
+
+
 
 #j1 = pygame.image.load(curdir + choice[0][0]).convert_alpha()
 #j1_flip = pygame.image.load(curdir + choice[1][0]).convert_alpha()
@@ -274,6 +280,7 @@ while on:
                         break
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(retour, pos_retour)
+        screen.blit(img_info, pos_info)
         pygame.display.flip()
     
         """Sert à vérifier que la variable personnage n'est pas vide"""
