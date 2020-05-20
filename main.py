@@ -209,6 +209,9 @@ button_player6 = pygame.Rect(1100, 950, 100, 50)
 pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
+#chargement des images des personnages
+liste_perso = {pygame.image.load("/images/chara_1_face.png"), pygame.load("/images/chara_3_0_flip.png")}
+
 #boucle en attente d'évènement
 on = True
 menu_principale = True
