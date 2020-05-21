@@ -230,7 +230,7 @@ joueur_1 = True
 info = True
 
 while on:
-    song_menu = mixer.music.load(curdir + "/Audio/music_map_serenite.mp3")
+    song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
     mixer.music.play(-1)
     game = True
     alive_j1 = True
@@ -386,7 +386,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map1 = mixer.music.load(curdir + "/Audio/music_map_la_street.mp3")
+                        song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
@@ -407,7 +407,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map2 = mixer.music.load(curdir + "/Audio/music_map_tension.mp3")
+                        song_map2 = mixer.music.load(curdir + "/audio/music_map_tension.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
@@ -430,7 +430,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map3 = mixer.music.load(curdir + "/Audio/music_map_festif.mp3")
+                        song_map3 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.08
@@ -449,7 +449,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map4 = mixer.music.load(curdir + "/Audio/music_map_bataille.mp3")
+                        song_map4 = mixer.music.load(curdir + "/audio/music_map_bataille.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.03
