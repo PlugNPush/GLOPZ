@@ -3,6 +3,7 @@ from pygame.locals import *
 from function import *
 import os
 import platform
+from pygame import mixer
 #toutes les coordonnées:
 
 pygame.init()
@@ -33,7 +34,7 @@ isMac = platform.system() == "Darwin" or platform.system() == "Linux"
 if platform.system() == "Linux":
     screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y))
 else:
-    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y), FULLSCREEN)
+    screen = pygame.display.set_mode((WINDOW_X, WINDOW_Y),FULLSCREEN)
 
 
 curdir = os.path.dirname(os.path.realpath(__file__))
@@ -226,7 +227,10 @@ menu_map = True
 game = True
 joueur_1 = True
 info = True
+
 while on:
+    song_menu = mixer.music.load(curdir + "/Audio/music_map_serenite.mp3")
+    mixer.music.play(-1)
     game = True
     alive_j1 = True
     alive_j2 = True
@@ -379,6 +383,9 @@ while on:
                     if event.pos[0] >= pos_map1_button.x and event.pos[0] <= pos_map1_button.x + map1_button.get_width() and event.pos[1] >= pos_map1_button.y and event.pos[1] <= pos_map1_button.y + map1_button.get_height():
                         menu_map = False
                         game = True
+                        mixer.music.stop()
+                        song_map1 = mixer.music.load(curdir + "/Audio/music_map_la_street.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
                         COEF_DOWN = 1.1
@@ -397,6 +404,9 @@ while on:
                     if event.pos[0] >= pos_map2_button.x and event.pos[0] <= pos_map2_button.x + map2_button.get_width() and event.pos[1] >= pos_map2_button.y and event.pos[1] <= pos_map2_button.y + map2_button.get_height():
                         menu_map = False
                         game = True
+                        mixer.music.stop()
+                        song_map2 = mixer.music.load(curdir + "/Audio/music_map_tension.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
                         COEF_DOWN = 1.1
@@ -417,6 +427,9 @@ while on:
                     if event.pos[0] >= pos_map3_button.x and event.pos[0] <= pos_map3_button.x + map3_button.get_width() and event.pos[1] >= pos_map3_button.y and event.pos[1] <= pos_map3_button.y + map3_button.get_height():
                         menu_map = False
                         game = True
+                        mixer.music.stop()
+                        song_map3 = mixer.music.load(curdir + "/Audio/music_map_festif.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.08
                         COEF_DOWN = 1.1
@@ -433,6 +446,9 @@ while on:
                     if event.pos[0] >= pos_map4_button.x and event.pos[0] <= pos_map4_button.x + map4_button.get_width() and event.pos[1] >= pos_map4_button.y and event.pos[1] <= pos_map4_button.y + map4_button.get_height():
                         menu_map = False
                         game = True
+                        mixer.music.stop()
+                        song_map4 = mixer.music.load(curdir + "/Audio/music_map_bataille.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.03
                         COEF_DOWN = 1.03
@@ -877,6 +893,7 @@ while on:
         else :
             game = False
             menu_principale = True
+            mixer.music.stop()
             pos_j1.x = int((345 / 1920) * width)
             pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
             pos_j2.x = int((1500 / 1920) * width)
@@ -917,6 +934,7 @@ while on:
         else :
             game = False
             menu_principale = True
+            mixer.music.stop()
             pos_j1.x = int((345 / 1920) * width)
             pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
             pos_j2.x = int((1500 / 1920) * width)
