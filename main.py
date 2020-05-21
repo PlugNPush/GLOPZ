@@ -50,6 +50,7 @@ j1_1 = pygame.image.load(curdir + "/images/chara_1_1.png").convert_alpha()
 j1_flip_1 = pygame.image.load(curdir + "/images/chara_1_1_flip.png").convert_alpha()
 j1_2 = pygame.image.load(curdir + "/images/chara_1_2.png").convert_alpha()
 j1_flip_2 = pygame.image.load(curdir + "/images/chara_1_2_flip.png").convert_alpha()
+#resize des sprites joueur
 j1 = pygame.transform.scale(j1, (42, 84))
 j1_flip = pygame.transform.scale(j1_flip, (42, 84))
 j1_1 = pygame.transform.scale(j1_1, (42, 84))
@@ -72,7 +73,7 @@ j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
 
 
 
-
+#charger les maps
 map_1 = pygame.image.load(curdir + "/images/maps/map-1.png").convert()
 map_1_preview = pygame.transform.scale(map_1, (384, 216))
 
@@ -264,6 +265,7 @@ while on:
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
+        listbite = choice_perso()
     while info:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -458,7 +460,7 @@ while on:
         
 
         keys = pygame.key.get_pressed()
-        for event in pygame.event.get():
+        for event in pygame.event.get(): 
             
             if event.type == QUIT:
                 on = False
@@ -846,7 +848,7 @@ while on:
 
         if alive_j1 == True :
             if heading_j1 == 1:
-                if move_j1 == True:
+                if move_j1 == True: #si je joueur a bougé
                     compteur_j1 += 1
                     if compteur_j1 < 10:
                         screen.blit(j1_1, pos_j1)
