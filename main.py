@@ -306,9 +306,6 @@ while on:
                 if joueur_1 is True:
                     if event.button == 1:
                         if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player1 ; 0 pour x et 1 pour y
-                if event.button == 1:
-                    if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player1 ; 0 pour x et 1 pour y
-                        if joueur_1 is True:
                             print("BOUTON 1")
                             j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
                             j1_flip = pygame.image.load(curdir + "/images/chara_1_0_flip.png").convert_alpha()
