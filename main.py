@@ -200,6 +200,8 @@ button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * heigh
 pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
+"""JAUGE"""
+
 #chargment des jauges de vie
 jauge_100 = pygame.image.load(curdir + "/images/hp_full.png").convert_alpha()
 jauge_90 = pygame.image.load(curdir + "/images/hp_90.png").convert_alpha()
@@ -229,6 +231,35 @@ jauge_0 = pygame.transform.scale(jauge_0, (int(906/5), int(155/5) ))
 #position des jauges
 pos_jauge_j1 = (10, 10)
 pos_jauge_j2 = (1725, 10)
+
+"""MENU ARMES"""
+#chargememnt des armes
+ak_neutral = pygame.image.load(curdir + "/images/icon/AK/neutral.png").convert_alpha()
+grenade_neutral = pygame.image.load(curdir + "/images/icon/grenade/neutral.png").convert_alpha()
+uzi_neutral = pygame.image.load(curdir + "/images/icon/UZI/neutral.png").convert_alpha()
+rpg_neutral = pygame.image.load(curdir + "/images/icon/RPG/neutral.png").convert_alpha()
+shotgun_neutral = pygame.image.load(curdir + "/images/icon/shotgun/neutral.png").convert_alpha()
+
+#redimension des armes
+ak_neutral = pygame.transform.scale(ak_neutral, (int(463/10), int(469/10) ))
+grenade_neutral = pygame.transform.scale(grenade_neutral, (int(463/10), int(469/10) ))
+uzi_neutral = pygame.transform.scale(uzi_neutral, (int(463/10), int(469/10) ))
+rpg_neutral = pygame.transform.scale(rpg_neutral, (int(463/10), int(469/10) ))
+shotgun_neutral = pygame.transform.scale(shotgun_neutral, (int(463/10), int(469/10) ))
+
+#positions des armes pour j1
+pos_ak_j1 = (10, 1000)
+pos_grenade_j1 = (60, 1000)
+pos_uzi_j1 = (110, 1000)
+pos_rpg_j1 = (160, 1000)
+pos_shotgun_j1 = (210, 1000)
+
+#positions des armes pour j2
+pos_shotgun_j2 = (WINDOW_X-255, 1000)
+pos_rpg_j2 = (WINDOW_X-205, 1000)
+pos_uzi_j2 = (WINDOW_X-155, 1000)
+pos_grenade_j2 = (WINDOW_X-105, 1000)
+pos_ak_j2 = (WINDOW_X-55, 1000)
 
 #boucle en attente d'évènement
 on = True
@@ -1150,6 +1181,21 @@ while on:
         """AFFICHAGE DES JAUGES DE VIE"""
         screen.blit(jauge_100, pos_jauge_j1)
         screen.blit(jauge_100, pos_jauge_j2)
+
+        """AFFICHAGE DES ARMES J1"""
+        screen.blit(ak_neutral, pos_ak_j1)
+        screen.blit(grenade_neutral, pos_grenade_j1)
+        screen.blit(uzi_neutral, pos_uzi_j1)
+        screen.blit(rpg_neutral, pos_rpg_j1)
+        screen.blit(shotgun_neutral, pos_shotgun_j1)
+
+        """AFFICHAGE DES ARMES J2"""
+        screen.blit(shotgun_neutral, pos_shotgun_j2)
+        screen.blit(rpg_neutral, pos_rpg_j2)
+        screen.blit(uzi_neutral, pos_uzi_j2)
+        screen.blit(grenade_neutral, pos_grenade_j2)
+        screen.blit(ak_neutral, pos_ak_j2)
+
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
         #pygame.draw.rect(screen, red, bloc_2)
