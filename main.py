@@ -212,11 +212,12 @@ joueur_1 = True
 info = True
 
 while on:
-    #song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
-    #mixer.music.play(-1)
+    song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
+    mixer.music.play(-1)
     game = True
     alive_j1 = True
     alive_j2 = True
+    victory = False
     while menu_principale:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -238,6 +239,7 @@ while on:
                         #pygame.quit()
                         menu_principale = False
                         menu_personnage = False
+                        menu_map = False
                         on = False
                         game = False
                         info = False
@@ -548,8 +550,8 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        #song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
-                        #mixer.music.play(-1)
+                        song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
                         COEF_DOWN = 1.1
@@ -592,8 +594,8 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        #song_map3 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
-                        #mixer.music.play(-1)
+                        song_map3 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.08
                         COEF_DOWN = 1.1
@@ -648,7 +650,7 @@ while on:
                 break
             elif keys[K_ESCAPE]:
                 game = False
-                menu_personnage = True
+                menu_principale = True
             
         if keys[K_LALT] and keys[K_F4]:
             on = False
@@ -766,17 +768,19 @@ while on:
         """bloc 1"""
         if count_bloc >= 1:
             if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+((15 / 1920) * width) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
-                pos_j1.x = bloc_1.x-j1.get_width()-1
+                pos_j1.x = bloc_1.x-j1.get_width()-1 #par le coté gauche
+                
 
             if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - ((15 / 1920) * width) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
-                pos_j1.x = bloc_1.x+bloc_1.w +1
+                pos_j1.x = bloc_1.x+bloc_1.w +1  #par le coté droit
 
             if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y <= bloc_1.y+bloc_1.h and pos_j1.y >= bloc_1.y:
-                pos_j1.y = bloc_1.y+bloc_1.h +1
+                pos_j1.y = bloc_1.y+bloc_1.h +1 #par dessous
                 jump_j1 = False
+                
 
             if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y+j1.get_height() <= bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() >= bloc_1.y:
-                pos_j1.y = bloc_1.y-j1.get_height()
+                pos_j1.y = bloc_1.y-j1.get_height() #par dessus
                 coef_jump_j1 = float(1)
                 pass_j1 = True
                 jump_j1 = True
@@ -1061,6 +1065,8 @@ while on:
             game = False
             menu_principale = True
             mixer.music.stop()
+            winner = 2
+            victory = True
             pos_j1.x = int(int((345 / 1920) * width))
             pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
             pos_j2.x = int(int((1500 / 1920) * width))
@@ -1102,6 +1108,8 @@ while on:
             game = False
             menu_principale = True
             mixer.music.stop()
+            winner = 1
+            victory = True
             pos_j1.x = int(int((345 / 1920) * width))
             pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
             pos_j2.x = int(int((1500 / 1920) * width))
@@ -1120,4 +1128,32 @@ while on:
         pygame.display.flip()
 
         pygame.time.delay(16)
+    passage = True
+    while victory == True :
+        if winner == 1 :
+            if passage == True :
+                win_background = pygame.image.load(curdir + "/images/j1_win.png").convert()
+                passage = False
+        else :
+            if passage == True :
+                win_background = pygame.image.load(curdir + "/images/j2_win.png").convert()
+                passage = False
+        
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                on = False
+                break
+            elif keys[K_LALT] and keys[K_F4]:
+                on = False
+                break
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    if event.pos[0] >= (522 / 1920) * width and event.pos[0] <= (662 / 1920) * width and event.pos[1] >= (736 / 1080) * height and event.pos[1] <= (822 / 1080) * height:
+                        victory = False
+                        menu_principale = True
+
+        screen.blit(win_background, (BACK_X, BACK_Y))
+        pygame.display.flip()
+        
 pygame.quit()
