@@ -172,6 +172,7 @@ face_6 = pygame.transform.scale(face_6, (face_6.get_width()*2, face_6.get_height
 #face_6_big = pygame.transform.scale(face_6, (face_6.get_width()*7, face_6.get_height()*7))
 
 fond_vs = pygame.image.load(curdir + "/images/fond_vs.png").convert_alpha()
+fond_vs = pygame.transform.scale(fond_vs, (width, int((736/1080)* height)))
 vs = pygame.image.load(curdir + "/images/vs.png").convert_alpha()
 vs = pygame.transform.scale(vs, (int(vs.get_width()/2), int(vs.get_height()/2)))
 
@@ -679,9 +680,9 @@ while on:
                             break
         screen.blit(fond_vs, (BACK_X, BACK_Y))
 
-        rect_separation = pygame.Rect(int((WINDOW_X/2)/ 1920 * width), int((0 / 1080) * height), int((2 / 1920) * width), int((WINDOW_Y / 1080) * height))
+        rect_separation = pygame.Rect(int(WINDOW_X/2), int((0 / 1080) * height), int((2 / 1920) * width), int(WINDOW_Y / 1080))
         pygame.draw.rect(screen, red, rect_separation)
-        rect_players_choice = pygame.Rect(int((0/ 1920) * width), int((700 / 1080) * height), int((WINDOW_X / 1920) * width), int((WINDOW_Y / 1080) * height))
+        rect_players_choice = pygame.Rect(int((0/ 1920) * width), int((700 / 1080) * height), int(WINDOW_X), int(WINDOW_Y))
         pygame.draw.rect(screen, color_rect_players, rect_players_choice)
         button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
         pygame.draw.rect(screen, green2, button_player1)
@@ -695,7 +696,7 @@ while on:
         pygame.draw.rect(screen, green2, button_player5)
         button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
         pygame.draw.rect(screen, green2, button_player6)
-        screen.blit(vs, (int((WINDOW_X/2)-vs.get_width()/2), int(((WINDOW_X/2)/2)/2)))
+        screen.blit(vs, (int((WINDOW_X/2)-vs.get_width()/2), int(WINDOW_X/8)))
         screen.blit(face_1, (int(button_player1.x+(button_player1.w/2)-face_1.get_width()/2), int(button_player1.y-face_1.get_height()+20)))
         screen.blit(face_2, (int(button_player2.x+(button_player2.w/2)-face_2.get_width()/2), int(button_player2.y-face_2.get_height()+20)))
         screen.blit(face_3, (int(button_player3.x+(button_player3.w/2)-face_3.get_width()/2), int(button_player3.y-face_3.get_height()+20)))
@@ -708,11 +709,11 @@ while on:
             screen.blit(choix2, (WINDOW_X-100-choix2.get_width(), int((3/4)*WINDOW_Y)))
         if joueur_1 == False and joueur_2 == True:
             j1_preview_bis = pygame.transform.scale(j1_preview, (j1_preview.get_width()*7, j1_preview.get_height()*7))
-            screen.blit(j1_preview_bis, (int(((WINDOW_X/2)/2)-j1_preview_bis.get_width()/2), 50))
+            screen.blit(j1_preview_bis, (int((WINDOW_X/4)-j1_preview_bis.get_width()/2), 50))
         if joueur_1 == False and joueur_2 == False:
             j2_preview_bis = pygame.transform.scale(j2_preview, (j2_preview.get_width()*7, j2_preview.get_height()*7))
-            screen.blit(j2_preview_bis, (int(((WINDOW_X/2)+(WINDOW_X/2)/2)-j2_preview_bis.get_width()/2), 50))
-            screen.blit(j1_preview_bis, ((int(((WINDOW_X/2)/2)-j1_preview_bis.get_width()/2), 50)))
+            screen.blit(j2_preview_bis, (int((WINDOW_X/2)+(WINDOW_X/4)-j2_preview_bis.get_width()/2), 50))
+            screen.blit(j1_preview_bis, (int((WINDOW_X/4)-j1_preview_bis.get_width()/2), 50))
         pygame.display.flip()
         if joueur_1 == False and joueur_2 == False:
             pygame.time.delay(1000)
