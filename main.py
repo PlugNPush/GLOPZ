@@ -149,6 +149,30 @@ pos_info = img_info.get_rect()
 pos_info.x = int(WINDOW_X/2 - (1500/2))
 pos_info.y = int(WINDOW_Y/2 - (800/2))
 
+
+face_1 = pygame.image.load(curdir + "/images/chara_1_face.png").convert_alpha()
+face_2 = pygame.image.load(curdir + "/images/chara_2_face.png").convert_alpha()
+face_3 = pygame.image.load(curdir + "/images/chara_3_face.png").convert_alpha()
+face_4 = pygame.image.load(curdir + "/images/chara_4_face.png").convert_alpha()
+face_5 = pygame.image.load(curdir + "/images/chara_5_face.png").convert_alpha()
+face_6 = pygame.image.load(curdir + "/images/chara_6_face.png").convert_alpha()
+
+face_1 = pygame.transform.scale(face_1, (face_1.get_width()*2, face_1.get_height()*2))
+face_2 = pygame.transform.scale(face_2, (face_2.get_width()*2, face_2.get_height()*2))
+face_3 = pygame.transform.scale(face_3, (face_3.get_width()*2, face_3.get_height()*2))
+face_4 = pygame.transform.scale(face_4, (face_4.get_width()*2, face_4.get_height()*2))
+face_5 = pygame.transform.scale(face_5, (face_5.get_width()*2, face_5.get_height()*2))
+face_6 = pygame.transform.scale(face_6, (face_6.get_width()*2, face_6.get_height()*2))
+
+#face_1_big = pygame.transform.scale(face_1, (face_1.get_width()*7, face_1.get_height()*7))
+#face_2_big = pygame.transform.scale(face_2, (face_2.get_width()*7, face_2.get_height()*7))
+#face_3_big = pygame.transform.scale(face_3, (face_3.get_width()*7, face_3.get_height()*7))
+#face_4_big = pygame.transform.scale(face_4, (face_4.get_width()*7, face_4.get_height()*7))
+#face_5_big = pygame.transform.scale(face_5, (face_5.get_width()*7, face_5.get_height()*7))
+#face_6_big = pygame.transform.scale(face_6, (face_6.get_width()*7, face_6.get_height()*7))
+
+vs = pygame.image.load(curdir + "/images/vs.png").convert_alpha()
+vs = pygame.transform.scale(vs, (int(vs.get_width()/2), int(vs.get_height()/2)))
 #pos_j2 = j2.get_rect()
 heading_j1 = 1 #1 = droite; 0 = gauche
 heading_j2 = 0
@@ -184,6 +208,7 @@ red = pygame.Color(255, 0, 0)
 blue = pygame.Color(0, 0, 255)
 green = pygame.Color(0, 255, 0)
 null = pygame.Color(166, 253, 255)
+green2 = pygame.Color(26, 54, 63)
 
 # rectangles choix joueurs
 button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
@@ -307,32 +332,20 @@ while on:
         pygame.display.flip()
 
     while menu_personnage:
-        screen.blit(image_wall, (BACK_X, BACK_Y))
-        pygame.draw.rect(screen, red, button_player6)
-        rect_players_choice = pygame.Rect(int((6/ 1920) * width), int((700 / 1080) * height), int((WINDOW_X / 1920) * width), int((WINDOW_Y / 1080) * height))
-        pygame.draw.rect(screen, color_rect_players, rect_players_choice)
-        rect_separation = pygame.Rect(int((int(WINDOW_X/2)/ 1920) * width), int((0 / 1080) * height), int((2 / 1920) * width), int((int(WINDOW_Y*0.6659 / 1080) * height)) )
-        pygame.draw.rect(screen, red, rect_separation)
-        button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-        pygame.draw.rect(screen, red, button_player1)
-        button_player2 = pygame.Rect(int((900/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-        pygame.draw.rect(screen, green, button_player2)
-        button_player3 = pygame.Rect(int((1100/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-        pygame.draw.rect(screen, blue, button_player3)
-        button_player4 = pygame.Rect(int((700/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-        pygame.draw.rect(screen, red, button_player4)
-        button_player5 = pygame.Rect(int((900/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-        pygame.draw.rect(screen, blue, button_player5)
-        button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-        pygame.draw.rect(screen, blue, button_player6)
 
-        pygame.display.flip()
+        
 
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
                 on = False
                 break
+            elif keys[K_ESCAPE]:
+                game = False
+                menu_principale = True
+                menu_map = False
+                victory = False
+                menu_personnage = False
             elif event.type == pygame.MOUSEBUTTONUP:
 
                 if joueur_1 is True:
@@ -346,7 +359,7 @@ while on:
                             j1_2 = pygame.image.load(curdir + "/images/chara_1_2.png").convert_alpha()
                             j1_flip_2 = pygame.image.load(curdir + "/images/chara_1_2_flip.png").convert_alpha()
                             pos_j1 = j1.get_rect()
-
+                            j1_preview = face_1
                             j1 = pygame.transform.scale(j1, (42, 84))
                             j1_flip = pygame.transform.scale(j1_flip, (42, 84))
                             j1_1 = pygame.transform.scale(j1_1, (42, 84))
@@ -365,6 +378,7 @@ while on:
                             j1_2 = pygame.image.load(curdir + "/images/chara_2_2.png").convert_alpha()
                             j1_flip_2 = pygame.image.load(curdir + "/images/chara_2_2_flip.png").convert_alpha()
                             pos_j1 = j1.get_rect()
+                            j1_preview = face_2
 
                             j1 = pygame.transform.scale(j1, (42, 84))
                             j1_flip = pygame.transform.scale(j1_flip, (42, 84))
@@ -384,6 +398,7 @@ while on:
                             j1_2 = pygame.image.load(curdir + "/images/chara_3_2.png").convert_alpha()
                             j1_flip_2 = pygame.image.load(curdir + "/images/chara_3_2_flip.png").convert_alpha()
                             pos_j1 = j1.get_rect()
+                            j1_preview = face_3
 
                             j1 = pygame.transform.scale(j1, (42, 84))
                             j1_flip = pygame.transform.scale(j1_flip, (42, 84))
@@ -403,6 +418,7 @@ while on:
                             j1_2 = pygame.image.load(curdir + "/images/chara_4_2.png").convert_alpha()
                             j1_flip_2 = pygame.image.load(curdir + "/images/chara_4_2_flip.png").convert_alpha()
                             pos_j1 = j1.get_rect()
+                            j1_preview = face_4
 
                             j1 = pygame.transform.scale(j1, (42, 84))
                             j1_flip = pygame.transform.scale(j1_flip, (42, 84))
@@ -422,6 +438,7 @@ while on:
                             j1_2 = pygame.image.load(curdir + "/images/chara_5_2.png").convert_alpha()
                             j1_flip_2 = pygame.image.load(curdir + "/images/chara_5_2_flip.png").convert_alpha()
                             pos_j1 = j1.get_rect()
+                            j1_preview = face_5
 
                             j1 = pygame.transform.scale(j1, (42, 84))
                             j1_flip = pygame.transform.scale(j1_flip, (42, 84))
@@ -441,6 +458,7 @@ while on:
                             j1_2 = pygame.image.load(curdir + "/images/chara_6_2.png").convert_alpha()
                             j1_flip_2 = pygame.image.load(curdir + "/images/chara_6_2_flip.png").convert_alpha()
                             pos_j1 = j1.get_rect()
+                            j1_preview = face_6
 
                             j1 = pygame.transform.scale(j1, (42, 84))
                             j1_flip = pygame.transform.scale(j1_flip, (42, 84))
@@ -462,6 +480,7 @@ while on:
                             j2_2 = pygame.image.load(curdir + "/images/chara_1_2.png").convert_alpha()
                             j2_flip_2 = pygame.image.load(curdir + "/images/chara_1_2_flip.png").convert_alpha()
                             pos_j2 = j2.get_rect()
+                            j2_preview = face_1
 
                             j2 = pygame.transform.scale(j2, (42, 84))
                             j2_flip = pygame.transform.scale(j2_flip, (42, 84))
@@ -470,6 +489,7 @@ while on:
                             j2_2 = pygame.transform.scale(j2_2, (42, 84))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
                             menu_personnage = False
+                            joueur_2 = False
                             break
                         elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
                             j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
@@ -479,6 +499,7 @@ while on:
                             j2_2 = pygame.image.load(curdir + "/images/chara_2_2.png").convert_alpha()
                             j2_flip_2 = pygame.image.load(curdir + "/images/chara_2_2_flip.png").convert_alpha()
                             pos_j2 = j2.get_rect()
+                            j2_preview = face_2
 
                             j2 = pygame.transform.scale(j2, (42, 84))
                             j2_flip = pygame.transform.scale(j2_flip, (42, 84))
@@ -487,6 +508,7 @@ while on:
                             j2_2 = pygame.transform.scale(j2_2, (42, 84))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
                             menu_personnage = False
+                            joueur_2 = False
                             break
                         elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
                             j2 = pygame.image.load(curdir + "/images/chara_3_0.png").convert_alpha()
@@ -496,6 +518,7 @@ while on:
                             j2_2 = pygame.image.load(curdir + "/images/chara_3_2.png").convert_alpha()
                             j2_flip_2 = pygame.image.load(curdir + "/images/chara_3_2_flip.png").convert_alpha()
                             pos_j2 = j2.get_rect()
+                            j2_preview = face_3
 
                             j2 = pygame.transform.scale(j2, (42, 84))
                             j2_flip = pygame.transform.scale(j2_flip, (42, 84))
@@ -504,6 +527,7 @@ while on:
                             j2_2 = pygame.transform.scale(j2_2, (42, 84))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
                             menu_personnage = False
+                            joueur_2 = False
                             break
                         elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                             j2 = pygame.image.load(curdir + "/images/chara_4_0.png").convert_alpha()
@@ -513,6 +537,7 @@ while on:
                             j2_2 = pygame.image.load(curdir + "/images/chara_4_2.png").convert_alpha()
                             j2_flip_2 = pygame.image.load(curdir + "/images/chara_4_2_flip.png").convert_alpha()
                             pos_j2 = j2.get_rect()
+                            j2_preview = face_4
 
                             j2 = pygame.transform.scale(j2, (42, 84))
                             j2_flip = pygame.transform.scale(j2_flip, (42, 84))
@@ -521,6 +546,7 @@ while on:
                             j2_2 = pygame.transform.scale(j2_2, (42, 84))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
                             menu_personnage = False
+                            joueur_2 = False
                             break
                         elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                             j2 = pygame.image.load(curdir + "/images/chara_5_0.png").convert_alpha()
@@ -530,6 +556,7 @@ while on:
                             j2_2 = pygame.image.load(curdir + "/images/chara_5_2.png").convert_alpha()
                             j2_flip_2 = pygame.image.load(curdir + "/images/chara_5_2_flip.png").convert_alpha()
                             pos_j2 = j2.get_rect()
+                            j2_preview = face_5
 
                             j2 = pygame.transform.scale(j2, (42, 84))
                             j2_flip = pygame.transform.scale(j2_flip, (42, 84))
@@ -538,6 +565,7 @@ while on:
                             j2_2 = pygame.transform.scale(j2_2, (42, 84))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
                             menu_personnage = False
+                            joueur_2 = False
                             break
                         elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
                             j2 = pygame.image.load(curdir + "/images/chara_6_0.png").convert_alpha()
@@ -547,6 +575,7 @@ while on:
                             j2_2 = pygame.image.load(curdir + "/images/chara_6_2.png").convert_alpha()
                             j2_flip_2 = pygame.image.load(curdir + "/images/chara_6_2_flip.png").convert_alpha()
                             pos_j2 = j2.get_rect()
+                            j2_preview = face_6
 
                             j2 = pygame.transform.scale(j2, (42, 84))
                             j2_flip = pygame.transform.scale(j2_flip, (42, 84))
@@ -555,7 +584,44 @@ while on:
                             j2_2 = pygame.transform.scale(j2_2, (42, 84))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (42, 84))
                             menu_personnage = False
+                            joueur_2 = False
                             break
+        screen.blit(image_wall, (BACK_X, BACK_Y))
+
+        rect_separation = pygame.Rect(int((WINDOW_X/2)/ 1920 * width), int((0 / 1080) * height), int((2 / 1920) * width), int((WINDOW_Y / 1080) * height))
+        pygame.draw.rect(screen, red, rect_separation)
+        rect_players_choice = pygame.Rect(int((0/ 1920) * width), int((700 / 1080) * height), int((WINDOW_X / 1920) * width), int((WINDOW_Y / 1080) * height))
+        pygame.draw.rect(screen, color_rect_players, rect_players_choice)
+        button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
+        pygame.draw.rect(screen, green2, button_player1)
+        button_player2 = pygame.Rect(int((900/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
+        pygame.draw.rect(screen, green2, button_player2)
+        button_player3 = pygame.Rect(int((1100/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
+        pygame.draw.rect(screen, green2, button_player3)
+        button_player4 = pygame.Rect(int((700/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
+        pygame.draw.rect(screen, green2, button_player4)
+        button_player5 = pygame.Rect(int((900/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
+        pygame.draw.rect(screen, green2, button_player5)
+        button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
+        pygame.draw.rect(screen, green2, button_player6)
+        screen.blit(vs, (int((WINDOW_X/2)-vs.get_width()/2), int(((WINDOW_X/2)/2)/2)))
+        screen.blit(face_1, (int(button_player1.x+(button_player1.w/2)-face_1.get_width()/2), int(button_player1.y-face_1.get_height()+20)))
+        screen.blit(face_2, (int(button_player2.x+(button_player2.w/2)-face_2.get_width()/2), int(button_player2.y-face_2.get_height()+20)))
+        screen.blit(face_3, (int(button_player3.x+(button_player3.w/2)-face_3.get_width()/2), int(button_player3.y-face_3.get_height()+20)))
+        screen.blit(face_4, (int(button_player4.x+(button_player4.w/2)-face_4.get_width()/2), int(button_player4.y-face_4.get_height()+20)))
+        screen.blit(face_5, (int(button_player5.x+(button_player5.w/2)-face_5.get_width()/2), int(button_player5.y-face_5.get_height()+20)))
+        screen.blit(face_6, (int(button_player6.x+(button_player6.w/2)-face_6.get_width()/2), int(button_player6.y-face_6.get_height()+20)))
+        
+        if joueur_1 == False and joueur_2 == True:
+            j1_preview_bis = pygame.transform.scale(j1_preview, (j1_preview.get_width()*7, j1_preview.get_height()*7))
+            screen.blit(j1_preview_bis, (int(((WINDOW_X/2)/2)-j1_preview_bis.get_width()/2), 50))
+        if joueur_1 == False and joueur_2 == False:
+            j2_preview_bis = pygame.transform.scale(j2_preview, (j2_preview.get_width()*7, j2_preview.get_height()*7))
+            screen.blit(j2_preview_bis, (int(((WINDOW_X/2)+(WINDOW_X/2)/2)-j2_preview_bis.get_width()/2), 50))
+            screen.blit(j1_preview_bis, ((int(((WINDOW_X/2)/2)-j1_preview_bis.get_width()/2), 50)))
+        pygame.display.flip()
+        if joueur_1 == False and joueur_2 == False:
+            pygame.time.delay(1000)
 
     while menu_map:
         keys = pygame.key.get_pressed()
