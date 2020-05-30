@@ -57,12 +57,44 @@ def choice_perso():
 #
     full_choice = [choice, choice_flip]
     return full_choice
-def choix_perso(numero_personnage):
-    if numero_personnage == 1:
-        return "personnage1"
-    elif numero_personnage == 2:
-        return "personnage2"
 
-def sauvegarde_perso(personnageN):
-    liste_personnage = {personnage1 : "/images/Sakuya.png", personage2 : "/images/Papacito.png"}
-    return liste_personnage.personnageN
+def niveau_vie(posJ1, projectile, niveau_vie):
+
+    if niveau_vie == 100 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_90, pos_hp)
+    else if niveau_vie == 90 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_80, pos_hp)
+    else if niveau_vie == 80 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_70, pos_hp)
+    else if niveau_vie == 70 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_60, pos_hp)
+    else if niveau_vie == 60 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_50, pos_hp)
+    else if niveau_vie == 50 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_40, pos_hp)
+    else if niveau_vie == 40 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_30, pos_hp)
+    else if niveau_vie == 30 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_20, pos_hp)
+    else if niveau_vie == 20 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_10, pos_hp)
+    else if niveau_vie == 10 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            screen.blit(hp_0, pos_hp)
+    else if niveau_vie == 0 and hit == 1:
+        if projectile.x == pos_j1.x or projectile.y == pos_j1.y:
+            game = False
+            """affichage ecran victoire"""
+    
+
+
+            
