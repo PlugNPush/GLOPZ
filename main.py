@@ -217,6 +217,7 @@ while on:
     game = True
     alive_j1 = True
     alive_j2 = True
+    victory = False
     while menu_principale:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -1061,6 +1062,8 @@ while on:
             game = False
             menu_principale = True
             mixer.music.stop()
+            winner = 2
+            victory = True
             pos_j1.x = int(int((345 / 1920) * width))
             pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
             pos_j2.x = int(int((1500 / 1920) * width))
@@ -1102,6 +1105,8 @@ while on:
             game = False
             menu_principale = True
             mixer.music.stop()
+            winner = 1
+            victory = True
             pos_j1.x = int(int((345 / 1920) * width))
             pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
             pos_j2.x = int(int((1500 / 1920) * width))
@@ -1120,4 +1125,32 @@ while on:
         pygame.display.flip()
 
         pygame.time.delay(16)
+    passage = True
+    while victory == True :
+        if winner == 1 :
+            if passage == True :
+                win_background = pygame.image.load(curdir + "/images/j1_win.png").convert()
+                passage = False
+        else :
+            if passage == True :
+                win_background = pygame.image.load(curdir + "/images/j2_win.png").convert()
+                passage = False
+        
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                on = False
+                break
+            elif keys[K_LALT] and keys[K_F4]:
+                on = False
+                break
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    if event.pos[0] >= (522 / 1920) * width and event.pos[0] <= (662 / 1920) * width and event.pos[1] >= (736 / 1080) * height and event.pos[1] <= (822 / 1080) * height:
+                        victory = False
+                        menu_principale = True
+
+        screen.blit(win_background, (BACK_X, BACK_Y))
+        pygame.display.flip()
+        
 pygame.quit()
