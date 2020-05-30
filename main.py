@@ -202,7 +202,7 @@ pygame.key.set_repeat(1, 10)
 
 
 #couleurs
-color_rect_players = pygame.Color(196, 184, 189)
+color_rect_players = pygame.Color(200, 200, 200)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
 blue = pygame.Color(0, 0, 255)
