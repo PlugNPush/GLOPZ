@@ -286,6 +286,9 @@ pos_jauge_j1 = (10, 10)
 pos_jauge_j2 = (1725, 10)
 
 """MENU ARMES"""
+count_weapon_j1 = 0
+count_weapon_j2 = 0
+
 #chargememnt des armes
 ak_neutral = pygame.image.load(curdir + "/images/icon/AK/neutral.png").convert_alpha()
 grenade_neutral = pygame.image.load(curdir + "/images/icon/grenade/neutral.png").convert_alpha()
@@ -300,14 +303,28 @@ uzi_neutral = pygame.transform.scale(uzi_neutral, (int(463/10), int(469/10) ))
 rpg_neutral = pygame.transform.scale(rpg_neutral, (int(463/10), int(469/10) ))
 shotgun_neutral = pygame.transform.scale(shotgun_neutral, (int(463/10), int(469/10) ))
 
-#positions des armes pour j1
+#chargement des armes en utilisation J1
+ak_neutral_use = pygame.image.load(curdir + "/images/icon/AK/full.png").convert_alpha()
+grenade_neutral_use = pygame.image.load(curdir + "/images/icon/grenade/full.png").convert_alpha()
+uzi_neutral_use = pygame.image.load(curdir + "/images/icon/UZI/full.png").convert_alpha()
+rpg_neutral_use = pygame.image.load(curdir + "/images/icon/RPG/full.png").convert_alpha()
+shotgun_neutral_use = pygame.image.load(curdir + "/images/icon/shotgun/full.png").convert_alpha()
+
+#redimension des armes en utilisation J2
+ak_neutral_use = pygame.transform.scale(ak_neutral_use,  (int(463/10), int(469/10) ))
+grenade_neutral_use = pygame.transform.scale(grenade_neutral_use,  (int(463/10), int(469/10) ))
+uzi_neutral_use = pygame.transform.scale(uzi_neutral_use,  (int(463/10), int(469/10) ))
+rpg_neutral_use = pygame.transform.scale(rpg_neutral_use,  (int(463/10), int(469/10) ))
+shotgun_neutral_use = pygame.transform.scale(shotgun_neutral_use,  (int(463/10), int(469/10) ))
+
+#positions des armes pour J1
 pos_ak_j1 = (10, 1000)
 pos_grenade_j1 = (60, 1000)
 pos_uzi_j1 = (110, 1000)
 pos_rpg_j1 = (160, 1000)
 pos_shotgun_j1 = (210, 1000)
 
-#positions des armes pour j2
+#positions des armes pour J2
 pos_shotgun_j2 = (WINDOW_X-255, 1000)
 pos_rpg_j2 = (WINDOW_X-205, 1000)
 pos_uzi_j2 = (WINDOW_X-155, 1000)
@@ -330,6 +347,8 @@ while on:
     alive_j1 = True
     alive_j2 = True
     victory = False
+    pass_weapon_j1 = True
+    pass_weapon_j2 = True
     while menu_principale:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -810,7 +829,24 @@ while on:
                 game = False
                 menu_principale = True
                 menu_map = True
-            
+
+#switch des armes
+            elif keys[K_e]:
+                if pass_weapon_j1 is True:
+                    count_weapon_j1 += 1
+                    pass_weapon_j1 = False
+            else:
+                pass_weapon_j1 = True   
+
+            if keys[K_RSHIFT]:
+                if pass_weapon_j2 is True:
+                    count_weapon_j2 += 1
+                    pass_weapon_j2 = False
+            else:
+                pass_weapon_j2 = True
+
+                 
+
         if keys[K_LALT] and keys[K_F4]:
             on = False
             break
@@ -1294,6 +1330,34 @@ while on:
         screen.blit(uzi_neutral, pos_uzi_j2)
         screen.blit(grenade_neutral, pos_grenade_j2)
         screen.blit(ak_neutral, pos_ak_j2)
+
+        """COMPTEUR SWITCH ARMES J1"""
+        if count_weapon_j1 == 6:
+            count_weapon_j1 = 1
+        if count_weapon_j1 == 1:
+            screen.blit(ak_neutral_use, pos_ak_j1)
+        elif count_weapon_j1 == 2:
+            screen.blit(grenade_neutral_use, pos_grenade_j1)
+        elif count_weapon_j1 == 3:
+            screen.blit(uzi_neutral_use, pos_uzi_j1)
+        elif count_weapon_j1 == 4:
+            screen.blit(rpg_neutral_use, pos_rpg_j1)
+        elif count_weapon_j1 == 5:
+            screen.blit(shotgun_neutral_use, pos_shotgun_j1)
+
+        """COMPTEUR SWITCH ARMES J2"""
+        if count_weapon_j2 == 6:
+            count_weapon_j2 = 1
+        if count_weapon_j2 == 1:
+            screen.blit(ak_neutral_use, pos_ak_j2)
+        elif count_weapon_j2 == 2:
+            screen.blit(grenade_neutral_use, pos_grenade_j2)
+        elif count_weapon_j2 == 3:
+            screen.blit(uzi_neutral_use, pos_uzi_j2)
+        elif count_weapon_j2 == 4:
+            screen.blit(rpg_neutral_use, pos_rpg_j2)
+        elif count_weapon_j2 == 5:
+            screen.blit(shotgun_neutral_use, pos_shotgun_j2)
 
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
