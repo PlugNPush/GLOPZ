@@ -171,6 +171,7 @@ face_6 = pygame.transform.scale(face_6, (face_6.get_width()*2, face_6.get_height
 #face_5_big = pygame.transform.scale(face_5, (face_5.get_width()*7, face_5.get_height()*7))
 #face_6_big = pygame.transform.scale(face_6, (face_6.get_width()*7, face_6.get_height()*7))
 
+fond_vs = pygame.image.load(curdir + "/images/fond_vs.png").convert_alpha()
 vs = pygame.image.load(curdir + "/images/vs.png").convert_alpha()
 vs = pygame.transform.scale(vs, (int(vs.get_width()/2), int(vs.get_height()/2)))
 
@@ -341,8 +342,8 @@ joueur_1 = True
 info = True
 
 while on:
-    #song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
-    #mixer.music.play(-1)
+    song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
+    mixer.music.play(-1)
     game = True
     alive_j1 = True
     alive_j2 = True
@@ -664,7 +665,7 @@ while on:
                             menu_personnage = False
                             joueur_2 = False
                             break
-        screen.blit(image_wall, (BACK_X, BACK_Y))
+        screen.blit(fond_vs, (BACK_X, BACK_Y))
 
         rect_separation = pygame.Rect(int((WINDOW_X/2)/ 1920 * width), int((0 / 1080) * height), int((2 / 1920) * width), int((WINDOW_Y / 1080) * height))
         pygame.draw.rect(screen, red, rect_separation)
@@ -727,8 +728,8 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        #song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
-                        #mixer.music.play(-1)
+                        song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
+                        mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
                         COEF_DOWN = 1.1
