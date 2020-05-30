@@ -173,6 +173,9 @@ face_6 = pygame.transform.scale(face_6, (face_6.get_width()*2, face_6.get_height
 
 vs = pygame.image.load(curdir + "/images/vs.png").convert_alpha()
 vs = pygame.transform.scale(vs, (int(vs.get_width()/2), int(vs.get_height()/2)))
+
+choix1 = pygame.image.load(curdir + "/images/choix1.png").convert_alpha()
+choix2 = pygame.image.load(curdir + "/images/choix2.png").convert_alpha()
 #pos_j2 = j2.get_rect()
 heading_j1 = 1 #1 = droite; 0 = gauche
 heading_j2 = 0
@@ -642,7 +645,10 @@ while on:
         screen.blit(face_4, (int(button_player4.x+(button_player4.w/2)-face_4.get_width()/2), int(button_player4.y-face_4.get_height()+20)))
         screen.blit(face_5, (int(button_player5.x+(button_player5.w/2)-face_5.get_width()/2), int(button_player5.y-face_5.get_height()+20)))
         screen.blit(face_6, (int(button_player6.x+(button_player6.w/2)-face_6.get_width()/2), int(button_player6.y-face_6.get_height()+20)))
-        
+        if joueur_1 == True:
+            screen.blit(choix1, (100, int((3/4)*WINDOW_Y)))
+        if joueur_2 == True:
+            screen.blit(choix2, (WINDOW_X-100-choix2.get_width(), int((3/4)*WINDOW_Y)))
         if joueur_1 == False and joueur_2 == True:
             j1_preview_bis = pygame.transform.scale(j1_preview, (j1_preview.get_width()*7, j1_preview.get_height()*7))
             screen.blit(j1_preview_bis, (int(((WINDOW_X/2)/2)-j1_preview_bis.get_width()/2), 50))
