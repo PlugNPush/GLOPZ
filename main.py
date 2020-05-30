@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-from function import *
+#from function import *
 import os
 import platform
 from pygame import mixer
@@ -253,7 +253,7 @@ while on:
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
-        listbite = choice_perso()
+
     while info:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
