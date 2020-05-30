@@ -229,9 +229,10 @@ pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
 """JAUGE"""
-
-#chargment des jauges de vie
+#commune 
 jauge_100 = pygame.image.load(curdir + "/images/hp_full.png").convert_alpha()
+
+#chargment des jauges de vie J1
 jauge_90 = pygame.image.load(curdir + "/images/hp_90.png").convert_alpha()
 jauge_80 = pygame.image.load(curdir + "/images/hp_80.png").convert_alpha()
 jauge_70 = pygame.image.load(curdir + "/images/hp_70.png").convert_alpha()
@@ -243,7 +244,7 @@ jauge_20 = pygame.image.load(curdir + "/images/hp_20.png").convert_alpha()
 jauge_10 = pygame.image.load(curdir + "/images/hp_10.png").convert_alpha()
 jauge_0 = pygame.image.load(curdir + "/images/hp_0.png").convert_alpha()
 
-#redimmension des jauges 
+#redimmension des jauges J1
 jauge_100 = pygame.transform.scale(jauge_100, (int(906/5), int(155/5) ))
 jauge_90 = pygame.transform.scale(jauge_90, (int(906/5), int(155/5) ))
 jauge_80 = pygame.transform.scale(jauge_80, (int(906/5), int(155/5) ))
@@ -254,6 +255,30 @@ jauge_40 = pygame.transform.scale(jauge_40, (int(906/5), int(155/5) ))
 jauge_30 = pygame.transform.scale(jauge_30, (int(906/5), int(155/5) ))
 jauge_20 = pygame.transform.scale(jauge_20, (int(906/5), int(155/5) ))
 jauge_10 = pygame.transform.scale(jauge_10, (int(906/5), int(155/5) ))
+
+#charmgement des images flip J2
+jauge_90_flip = pygame.image.load(curdir + "/images/hp_90_flip.png").convert_alpha()
+jauge_80_flip = pygame.image.load(curdir + "/images/hp_80_flip.png").convert_alpha()
+jauge_70_flip = pygame.image.load(curdir + "/images/hp_70_flip.png").convert_alpha()
+jauge_60_flip = pygame.image.load(curdir + "/images/hp_60_flip.png").convert_alpha()
+jauge_50_flip = pygame.image.load(curdir + "/images/hp_50_flip.png").convert_alpha()
+jauge_40_flip = pygame.image.load(curdir + "/images/hp_40_flip.png").convert_alpha()
+jauge_30_flip = pygame.image.load(curdir + "/images/hp_30_flip.png").convert_alpha()
+jauge_20_flip = pygame.image.load(curdir + "/images/hp_20_flip.png").convert_alpha()
+jauge_10_flip = pygame.image.load(curdir + "/images/hp_10_flip.png").convert_alpha()
+
+#redimension des jauges J2
+jauge_90_flip  = pygame.transform.scale(jauge_90_flip , (int(906/5), int(155/5) ))
+jauge_80_flip  = pygame.transform.scale(jauge_80_flip , (int(906/5), int(155/5) ))
+jauge_70_flip  = pygame.transform.scale(jauge_70_flip , (int(906/5), int(155/5) ))
+jauge_60_flip  = pygame.transform.scale(jauge_60_flip , (int(906/5), int(155/5) ))
+jauge_50_flip  = pygame.transform.scale(jauge_50_flip , (int(906/5), int(155/5) ))
+jauge_40_flip  = pygame.transform.scale(jauge_40_flip , (int(906/5), int(155/5) ))
+jauge_30_flip  = pygame.transform.scale(jauge_30_flip , (int(906/5), int(155/5) ))
+jauge_20_flip  = pygame.transform.scale(jauge_20_flip , (int(906/5), int(155/5) ))
+jauge_10_flip  = pygame.transform.scale(jauge_10_flip , (int(906/5), int(155/5) ))
+
+#commmune
 jauge_0 = pygame.transform.scale(jauge_0, (int(906/5), int(155/5) ))
 
 #position des jauges
@@ -1250,8 +1275,10 @@ while on:
             pos_j2.y = int(bloc_base.y-((j2.get_height() / 1080) * height))
 
 
-        """AFFICHAGE DES JAUGES DE VIE"""
+        """AFFICHAGE DES JAUGES DE VIE J1"""
         screen.blit(jauge_100, pos_jauge_j1)
+
+        """AFFICHAGE DES JAUGES DE VIE J2"""
         screen.blit(jauge_100, pos_jauge_j2)
 
         """AFFICHAGE DES ARMES J1"""
