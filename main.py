@@ -239,6 +239,7 @@ while on:
                         #pygame.quit()
                         menu_principale = False
                         menu_personnage = False
+                        menu_map = False
                         on = False
                         game = False
                         info = False
@@ -649,7 +650,7 @@ while on:
                 break
             elif keys[K_ESCAPE]:
                 game = False
-                menu_personnage = True
+                menu_principale = True
             
         if keys[K_LALT] and keys[K_F4]:
             on = False
@@ -767,17 +768,19 @@ while on:
         """bloc 1"""
         if count_bloc >= 1:
             if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+((15 / 1920) * width) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
-                pos_j1.x = bloc_1.x-j1.get_width()-1
+                pos_j1.x = bloc_1.x-j1.get_width()-1 #par le coté gauche
+                
 
             if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - ((15 / 1920) * width) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
-                pos_j1.x = bloc_1.x+bloc_1.w +1
+                pos_j1.x = bloc_1.x+bloc_1.w +1  #par le coté droit
 
             if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y <= bloc_1.y+bloc_1.h and pos_j1.y >= bloc_1.y:
-                pos_j1.y = bloc_1.y+bloc_1.h +1
+                pos_j1.y = bloc_1.y+bloc_1.h +1 #par dessous
                 jump_j1 = False
+                
 
             if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y+j1.get_height() <= bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() >= bloc_1.y:
-                pos_j1.y = bloc_1.y-j1.get_height()
+                pos_j1.y = bloc_1.y-j1.get_height() #par dessus
                 coef_jump_j1 = float(1)
                 pass_j1 = True
                 jump_j1 = True
