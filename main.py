@@ -234,6 +234,9 @@ while on:
                         menu_personnage = True
                         game = True
                         info = False
+                        menu_map = True
+                        joueur_1 = True
+                        joueur_2 = False
 
                     if event.pos[0] >= (int(WINDOW_X/2 - (612/2))) and event.pos[0] <= (int(WINDOW_X/2 - (612/2)))+612 and event.pos[1] >= (int(WINDOW_Y/2 - (676/2)))+236 and event.pos[1] <= (int(WINDOW_Y/2 - (676/2))) + 441: #exit
                         #pygame.quit()
@@ -253,7 +256,6 @@ while on:
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
-        listbite = choice_perso()
     while info:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -651,6 +653,7 @@ while on:
             elif keys[K_ESCAPE]:
                 game = False
                 menu_principale = True
+                menu_map = True
             
         if keys[K_LALT] and keys[K_F4]:
             on = False
