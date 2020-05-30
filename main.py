@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-from function import *
+#from function import *
 import os
 import platform
 from pygame import mixer
@@ -184,9 +184,8 @@ red = pygame.Color(255, 0, 0)
 blue = pygame.Color(0, 0, 255)
 green = pygame.Color(0, 255, 0)
 null = pygame.Color(166, 253, 255)
+
 # rectangles choix joueurs
-
-
 button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
 pygame.draw.rect(screen, red, button_player1)
 button_player2 = pygame.Rect(int((900/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
@@ -201,6 +200,35 @@ button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * heigh
 pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
+#chargment des jauges de vie
+jauge_100 = pygame.image.load(curdir + "/images/hp_full.png").convert_alpha()
+jauge_90 = pygame.image.load(curdir + "/images/hp_90.png").convert_alpha()
+jauge_80 = pygame.image.load(curdir + "/images/hp_80.png").convert_alpha()
+jauge_70 = pygame.image.load(curdir + "/images/hp_70.png").convert_alpha()
+jauge_60 = pygame.image.load(curdir + "/images/hp_60.png").convert_alpha()
+jauge_50 = pygame.image.load(curdir + "/images/hp_50.png").convert_alpha()
+jauge_40 = pygame.image.load(curdir + "/images/hp_40.png").convert_alpha()
+jauge_30 = pygame.image.load(curdir + "/images/hp_30.png").convert_alpha()
+jauge_20 = pygame.image.load(curdir + "/images/hp_20.png").convert_alpha()
+jauge_10 = pygame.image.load(curdir + "/images/hp_10.png").convert_alpha()
+jauge_0 = pygame.image.load(curdir + "/images/hp_0.png").convert_alpha()
+
+#redimmension des jauges 
+jauge_100 = pygame.transform.scale(jauge_100, (int(906/5), int(155/5) ))
+jauge_90 = pygame.transform.scale(jauge_90, (int(906/5), int(155/5) ))
+jauge_80 = pygame.transform.scale(jauge_80, (int(906/5), int(155/5) ))
+jauge_70 = pygame.transform.scale(jauge_70, (int(906/5), int(155/5) ))
+jauge_60 = pygame.transform.scale(jauge_60, (int(906/5), int(155/5) ))
+jauge_50 = pygame.transform.scale(jauge_50, (int(906/5), int(155/5) ))
+jauge_40 = pygame.transform.scale(jauge_40, (int(906/5), int(155/5) ))
+jauge_30 = pygame.transform.scale(jauge_30, (int(906/5), int(155/5) ))
+jauge_20 = pygame.transform.scale(jauge_20, (int(906/5), int(155/5) ))
+jauge_10 = pygame.transform.scale(jauge_10, (int(906/5), int(155/5) ))
+jauge_0 = pygame.transform.scale(jauge_0, (int(906/5), int(155/5) ))
+
+#position des jauges
+pos_jauge_j1 = (10, 10)
+pos_jauge_j2 = (1725, 10)
 
 #boucle en attente d'évènement
 on = True
@@ -212,8 +240,8 @@ joueur_1 = True
 info = True
 
 while on:
-    song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
-    mixer.music.play(-1)
+    #song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
+    #mixer.music.play(-1)
     game = True
     alive_j1 = True
     alive_j2 = True
@@ -253,7 +281,7 @@ while on:
         screen.blit(image_wall, (BACK_X, BACK_Y))
         screen.blit(menu, pos_menu)
         pygame.display.flip()
-        listbite = choice_perso()
+
     while info:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -550,8 +578,8 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
-                        mixer.music.play(-1)
+                        #song_map1 = mixer.music.load(curdir + "/audio/music_map_la_street.mp3")
+                        #mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.1
                         COEF_DOWN = 1.1
@@ -1116,8 +1144,9 @@ while on:
             pos_j2.y = int(bloc_base.y-((j2.get_height() / 1080) * height))
 
 
-
-
+        """AFFICHAGE DES JAUGES DE VIE"""
+        screen.blit(jauge_100, pos_jauge_j1)
+        screen.blit(jauge_100, pos_jauge_j2)
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
         #pygame.draw.rect(screen, red, bloc_2)
