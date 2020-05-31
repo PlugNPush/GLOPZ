@@ -206,7 +206,7 @@ move_j2 = False
 pygame.display.flip()
 
 #fréquence de répétition des touches
-pygame.key.set_repeat(int((1 / 1920) * width), int((10 / 1080) * height))
+pygame.key.set_repeat(1, 10)
 
 
 #couleurs
