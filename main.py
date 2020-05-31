@@ -975,7 +975,7 @@ while on:
             reload_status_weapon4_j2 = 0
         if reload_status_weapon5_j2 > 60*4:
             reload_status_weapon5_j2 = 0
-            weapon3_j2 = 20
+            weapon5_j2 = 5
         
         # Auto reload
         if reload_status_weapon1_j1 == 0 and weapon1_j1 <= 0:
@@ -1032,11 +1032,11 @@ while on:
         if keys[K_LALT] and keys[K_F4]:
             on = False
             break
-        if keys[K_s] if isMac else keys[K_s]:
+        if keys[K_s]:
             pos_j1 = pos_j1.move(0, UP_MOVE)
 
         
-        if keys[K_z] if isMac else keys[K_w]:
+        if keys[K_z]:
             if jump_j1 == True :
                 pos_j1 = pos_j1.move(0, int(-coef_jump_j1*UP_MOVE))
                 #jump_j1_count += 1
@@ -1061,12 +1061,12 @@ while on:
             coef_jump_j1 = coef_jump_j1*COEF_DOWN
             jump_j1 = False
 
-        if keys[K_d] if isMac else keys[K_d]:
+        if keys[K_d]:
             pos_j1 = pos_j1.move(SIDE_MOVE, 0)
             heading_j1 = 1
             move_j1 = True
 
-        if keys[K_q] if isMac else keys[K_a]:
+        if keys[K_q]:
             pos_j1 = pos_j1.move(-SIDE_MOVE, 0)
             heading_j1 = 0
             move_j1 = True
@@ -1077,6 +1077,7 @@ while on:
                 if count_weapon_j1 == 1 and weapon1_j1 > 0:
                     weapon1_j1 -= 1
                     cooldown = True
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j1 == 3 and weapon3_j1 > 0:
                     weapon3_j1 -= 1
                     cooldown = True
@@ -1152,7 +1153,7 @@ while on:
             heading_j2 = 0
             move_j2 = True
 
-        if keys[K_EXCLAIM]:
+        if keys[K_EQUALS] if isMac else keys[K_EXCLAIM]:
             # Tirer
             if cooldown == False:
                 if count_weapon_j2 == 1 and weapon1_j2 > 0:
