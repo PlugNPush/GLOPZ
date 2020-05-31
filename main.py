@@ -235,7 +235,7 @@ pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
 """JAUGE"""
-#commune 
+#commune
 jauge_100 = pygame.image.load(curdir + "/images/hp_full.png").convert_alpha()
 
 #chargment des jauges de vie J1
@@ -316,12 +316,68 @@ uzi_neutral_use = pygame.image.load(curdir + "/images/icon/UZI/full.png").conver
 rpg_neutral_use = pygame.image.load(curdir + "/images/icon/RPG/full.png").convert_alpha()
 shotgun_neutral_use = pygame.image.load(curdir + "/images/icon/shotgun/full.png").convert_alpha()
 
+ak_neutral_use50 = pygame.image.load(curdir + "/images/icon/AK/full_50.png").convert_alpha()
+uzi_neutral_use50 = pygame.image.load(curdir + "/images/icon/UZI/full_50.png").convert_alpha()
+shotgun_neutral_use50 = pygame.image.load(curdir + "/images/icon/shotgun/full_50.png").convert_alpha()
+
+ak_neutral_use_empty = pygame.image.load(curdir + "/images/icon/AK/empty.png").convert_alpha()
+grenade_neutral_use_empty = pygame.image.load(curdir + "/images/icon/grenade/empty.png").convert_alpha()
+uzi_neutral_use_empty = pygame.image.load(curdir + "/images/icon/UZI/empty.png").convert_alpha()
+rpg_neutral_use_empty = pygame.image.load(curdir + "/images/icon/RPG/empty.png").convert_alpha()
+shotgun_neutral_use_empty = pygame.image.load(curdir + "/images/icon/shotgun/empty.png").convert_alpha()
+
+ak_neutral_use_reload25 = pygame.image.load(curdir + "/images/icon/AK/reload_25.png").convert_alpha()
+grenade_neutral_use_reload25 = pygame.image.load(curdir + "/images/icon/grenade/reload_25.png").convert_alpha()
+uzi_neutral_use_reload25 = pygame.image.load(curdir + "/images/icon/UZI/reload_25.png").convert_alpha()
+rpg_neutral_use_reload25 = pygame.image.load(curdir + "/images/icon/RPG/reload_25.png").convert_alpha()
+shotgun_neutral_use_reload25 = pygame.image.load(curdir + "/images/icon/shotgun/reload_25.png").convert_alpha()
+
+ak_neutral_use_reload50 = pygame.image.load(curdir + "/images/icon/AK/reload_50.png").convert_alpha()
+grenade_neutral_use_reload50 = pygame.image.load(curdir + "/images/icon/grenade/reload_50.png").convert_alpha()
+uzi_neutral_use_reload50 = pygame.image.load(curdir + "/images/icon/UZI/reload_50.png").convert_alpha()
+rpg_neutral_use_reload50 = pygame.image.load(curdir + "/images/icon/RPG/reload_50.png").convert_alpha()
+shotgun_neutral_use_reload50 = pygame.image.load(curdir + "/images/icon/shotgun/reload_50.png").convert_alpha()
+
+ak_neutral_use_reload75 = pygame.image.load(curdir + "/images/icon/AK/reload_75.png").convert_alpha()
+grenade_neutral_use_reload75 = pygame.image.load(curdir + "/images/icon/grenade/reload_75.png").convert_alpha()
+uzi_neutral_use_reload75 = pygame.image.load(curdir + "/images/icon/UZI/reload_75.png").convert_alpha()
+rpg_neutral_use_reload75 = pygame.image.load(curdir + "/images/icon/RPG/reload_75.png").convert_alpha()
+shotgun_neutral_use_reload75 = pygame.image.load(curdir + "/images/icon/shotgun/reload_75.png").convert_alpha()
+
 #redimension des armes en utilisation J2
-ak_neutral_use = pygame.transform.scale(ak_neutral_use,  (int(463/10), int(469/10) ))
-grenade_neutral_use = pygame.transform.scale(grenade_neutral_use,  (int(463/10), int(469/10) ))
-uzi_neutral_use = pygame.transform.scale(uzi_neutral_use,  (int(463/10), int(469/10) ))
-rpg_neutral_use = pygame.transform.scale(rpg_neutral_use,  (int(463/10), int(469/10) ))
-shotgun_neutral_use = pygame.transform.scale(shotgun_neutral_use,  (int(463/10), int(469/10) ))
+ak_neutral_use = pygame.transform.scale(ak_neutral_use, (int(463/10), int(469/10)))
+grenade_neutral_use = pygame.transform.scale(grenade_neutral_use, (int(463/10), int(469/10)))
+uzi_neutral_use = pygame.transform.scale(uzi_neutral_use, (int(463/10), int(469/10)))
+rpg_neutral_use = pygame.transform.scale(rpg_neutral_use, (int(463/10), int(469/10)))
+shotgun_neutral_use = pygame.transform.scale(shotgun_neutral_use, (int(463/10), int(469/10)))
+
+ak_neutral_use50 = pygame.transform.scale(ak_neutral_use50, (int(463/10), int(469/10)))
+uzi_neutral_use50 = pygame.transform.scale(uzi_neutral_use50, (int(463/10), int(469/10)))
+shotgun_neutral_use50 = pygame.transform.scale(shotgun_neutral_use50, (int(463/10), int(469/10)))
+
+ak_neutral_use_empty = pygame.transform.scale(ak_neutral_use_empty, (int(463/10), int(469/10)))
+grenade_neutral_use_empty = pygame.transform.scale(grenade_neutral_use_empty, (int(463/10), int(469/10)))
+uzi_neutral_use_empty = pygame.transform.scale(uzi_neutral_use_empty, (int(463/10), int(469/10)))
+rpg_neutral_use_empty = pygame.transform.scale(rpg_neutral_use_empty, (int(463/10), int(469/10)))
+shotgun_neutral_use_empty = pygame.transform.scale(shotgun_neutral_use_empty, (int(463/10), int(469/10)))
+
+ak_neutral_use_reload25 = pygame.transform.scale(ak_neutral_use_reload25, (int(463/10), int(469/10)))
+grenade_neutral_use_reload25 = pygame.transform.scale(grenade_neutral_use_reload25, (int(463/10), int(469/10)))
+uzi_neutral_use_reload25 = pygame.transform.scale(uzi_neutral_use_reload25, (int(463/10), int(469/10)))
+rpg_neutral_use_reload25 = pygame.transform.scale(rpg_neutral_use_reload25, (int(463/10), int(469/10)))
+shotgun_neutral_use_reload25 = pygame.transform.scale(shotgun_neutral_use_reload25, (int(463/10), int(469/10)))
+
+ak_neutral_use_reload50 = pygame.transform.scale(ak_neutral_use_reload50, (int(463/10), int(469/10)))
+grenade_neutral_use_reload50 = pygame.transform.scale(grenade_neutral_use_reload50, (int(463/10), int(469/10)))
+uzi_neutral_use_reload50 = pygame.transform.scale(uzi_neutral_use_reload50, (int(463/10), int(469/10)))
+rpg_neutral_use_reload50 = pygame.transform.scale(rpg_neutral_use_reload50, (int(463/10), int(469/10)))
+shotgun_neutral_use_reload50 = pygame.transform.scale(shotgun_neutral_use_reload50, (int(463/10), int(469/10)))
+
+ak_neutral_use_reload75 = pygame.transform.scale(ak_neutral_use_reload75, (int(463/10), int(469/10)))
+grenade_neutral_use_reload75 = pygame.transform.scale(grenade_neutral_use_reload75, (int(463/10), int(469/10)))
+uzi_neutral_use_reload75 = pygame.transform.scale(uzi_neutral_use_reload75, (int(463/10), int(469/10)))
+rpg_neutral_use_reload75 = pygame.transform.scale(rpg_neutral_use_reload75, (int(463/10), int(469/10)))
+shotgun_neutral_use_reload75 = pygame.transform.scale(shotgun_neutral_use_reload75, (int(463/10), int(469/10)))
 
 #positions des armes pour J1
 pos_ak_j1 = ((10 / 1920) * width, (1000 / 1080) * height)
@@ -345,6 +401,9 @@ menu_map = True
 game = True
 joueur_1 = True
 info = True
+
+cooldown = False
+cooldown2 = False
 
 while on:
     song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
@@ -837,15 +896,109 @@ while on:
         
     UP_MOVE = int((UP_MOVE / 1080) * height)
     SIDE_MOVE = int((SIDE_MOVE / 1920) * width)
-    #COEF_UP = (COEF_UP / 1080) * height
-    #COEF_DOWN = (COEF_DOWN / 1080) * height
+
     count_weapon_j1 = 1
     count_weapon_j2 = 1
+    
+    reload_status_weapon1_j1 = 0
+    reload_status_weapon3_j1 = 0
+    reload_status_weapon5_j1 = 0
+    reload_status_weapon1_j2 = 0
+    reload_status_weapon3_j2 = 0
+    reload_status_weapon5_j2 = 0
+    
+    # Armes non rechargeables
+    reload_status_weapon2_j1 = 0
+    reload_status_weapon4_j1 = 0
+    reload_status_weapon2_j2 = 0
+    reload_status_weapon4_j2 = 0
+    
+    # Quantité de munitions maximales et initiales
+    weapon1_j1 = 30
+    weapon3_j1 = 20
+    weapon5_j1 = 5
+    weapon1_j2 = 30
+    weapon3_j2 = 20
+    weapon5_j2 = 5
+    
+    
     pass_blit_j1 = True
     pass_blit_j2 = True
     while game:
         fpsClock.tick(60)
-
+        
+        if reload_status_weapon1_j1 > 0:
+            reload_status_weapon1_j1 += 1
+        if reload_status_weapon2_j1 > 0:
+            reload_status_weapon2_j1 += 1
+        if reload_status_weapon3_j1 > 0:
+            reload_status_weapon3_j1 += 1
+        if reload_status_weapon4_j1 > 0:
+            reload_status_weapon4_j1 += 1
+        if reload_status_weapon5_j1 > 0:
+            reload_status_weapon5_j1 += 1
+            
+        if reload_status_weapon1_j2 > 0:
+            reload_status_weapon1_j2 += 1
+        if reload_status_weapon2_j2 > 0:
+            reload_status_weapon2_j2 += 1
+        if reload_status_weapon3_j2 > 0:
+            reload_status_weapon3_j2 += 1
+        if reload_status_weapon4_j2 > 0:
+            reload_status_weapon4_j2 += 1
+        if reload_status_weapon5_j2 > 0:
+            reload_status_weapon5_j2 += 1
+            
+        if reload_status_weapon1_j1 > 60*3:
+            reload_status_weapon1_j1 = 0
+            weapon1_j1 = 30
+        if reload_status_weapon2_j1 > 60*2:
+            reload_status_weapon2_j1 = 0
+        if reload_status_weapon3_j1 > 60*2:
+            reload_status_weapon3_j1 = 0
+            weapon3_j1 = 20
+        if reload_status_weapon4_j1 > 60*3:
+            reload_status_weapon4_j1 = 0
+        if reload_status_weapon5_j1 > 60*4:
+            reload_status_weapon5_j1 = 0
+            weapon5_j1 = 5
+            
+        if reload_status_weapon1_j2 > 60*3:
+            reload_status_weapon1_j2 = 0
+            weapon1_j2 = 30
+        if reload_status_weapon2_j2 > 60*2:
+            reload_status_weapon2_j2 = 0
+        if reload_status_weapon3_j2 > 60*2:
+            reload_status_weapon3_j2 = 0
+            weapon3_j2 = 20
+        if reload_status_weapon4_j2 > 60*3:
+            reload_status_weapon4_j2 = 0
+        if reload_status_weapon5_j2 > 60*4:
+            reload_status_weapon5_j2 = 0
+            weapon3_j2 = 20
+        
+        # Auto reload
+        if reload_status_weapon1_j1 == 0 and weapon1_j1 <= 0:
+            pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/ak47-reload.mp3"))
+            reload_status_weapon1_j1 = 1
+        if reload_status_weapon3_j1 == 0 and weapon3_j1 <= 0:
+            pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/uzi-reload.mp3"))
+            reload_status_weapon3_j1 = 1
+        if reload_status_weapon5_j1 == 0 and weapon5_j1 <= 0:
+            pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/shotgun-reload.mp3"))
+            reload_status_weapon5_j1 = 1
+            
+        if reload_status_weapon1_j2 == 0 and weapon1_j2 <= 0:
+            pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/ak47-reload.mp3"))
+            reload_status_weapon1_j2 = 1
+        if reload_status_weapon3_j2 == 0 and weapon3_j2 <= 0:
+            pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/uzi-reload.mp3"))
+            reload_status_weapon3_j2 = 1
+        if reload_status_weapon5_j2 == 0 and weapon5_j2 <= 0:
+            pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/shotgun-reload.mp3"))
+            reload_status_weapon5_j2 = 1
+            
+        
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             
@@ -864,7 +1017,7 @@ while on:
                     pass_weapon_j1 = False
                     pass_blit_j1 = True
             else:
-                pass_weapon_j1 = True   
+                pass_weapon_j1 = True
 
             if keys[K_RSHIFT]:
                 if pass_weapon_j2 is True:
@@ -918,12 +1071,40 @@ while on:
             heading_j1 = 0
             move_j1 = True
         
-        #if keys[K_v]:
-        #    tirer j1
+        if keys[K_v]:
+            # Tirer
+            if cooldown == False:
+                if count_weapon_j1 == 1 and weapon1_j1 > 0:
+                    weapon1_j1 -= 1
+                    cooldown = True
+                elif count_weapon_j1 == 3 and weapon3_j1 > 0:
+                    weapon3_j1 -= 1
+                    cooldown = True
+                elif count_weapon_j1 == 5 and weapon5_j1 > 0:
+                    weapon5_j1 -= 1
+                    cooldown = True
+                elif count_weapon_j1 == 2 and reload_status_weapon2_j1 == 0:
+                    reload_status_weapon2_j1 = 1
+                    cooldown = True
+                elif count_weapon_j1 == 4 and reload_status_weapon4_j1 == 0:
+                    reload_status_weapon4_j1 = 1
+                    cooldown = True
+        else:
+            cooldown = False
 
-        #if keys[K_r]:
-        #    recharger j1
-        
+        if keys[K_r]:
+            # Initier le rechargement
+            if count_weapon_j1 == 1 and reload_status_weapon1_j1 == 0:
+                pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/ak47-reload.mp3"))
+                reload_status_weapon1_j1 = 1
+            elif count_weapon_j1 == 3 and reload_status_weapon3_j1 == 0:
+                pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/uzi-reload.mp3"))
+                reload_status_weapon3_j1 = 1
+            elif count_weapon_j1 == 5 and reload_status_weapon5_j1 == 0:
+                pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/shotgun-reload.mp3"))
+                reload_status_weapon5_j1 = 1
+            
+                
         if coef_jump_j1 < 0.1:
             jump_j1 = False
 
@@ -971,11 +1152,38 @@ while on:
             heading_j2 = 0
             move_j2 = True
 
-        #if keys[K_!]:
-        #    tirer j2
-
-        #if keys[K_RCTRL]:
-        #    recharger j2
+        if keys[K_EXCLAIM]:
+            # Tirer
+            if cooldown == False:
+                if count_weapon_j2 == 1 and weapon1_j2 > 0:
+                    weapon1_j2 -= 1
+                    cooldown2 = True
+                elif count_weapon_j2 == 3 and weapon3_j2 > 0:
+                    weapon3_j2 -= 1
+                    cooldown2 = True
+                elif count_weapon_j2 == 5 and weapon5_j2 > 0:
+                    weapon5_j2 -= 1
+                    cooldown2 = True
+                elif count_weapon_j2 == 2 and reload_status_weapon2_j2 == 0:
+                    reload_status_weapon2_j2 = 1
+                    cooldown2 = True
+                elif count_weapon_j2 == 4 and reload_status_weapon4_j2 == 0:
+                    reload_status_weapon4_j2 = 1
+                    cooldown2 = True
+            else:
+                cooldown2 = False
+                
+        if keys[K_RCTRL]:
+            # Initier le rechargement
+            if count_weapon_j2 == 1 and reload_status_weapon1_j2 == 0:
+                pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/ak47-reload.mp3"))
+                reload_status_weapon1_j2 = 1
+            if count_weapon_j2 == 3 and reload_status_weapon3_j2 == 0:
+                pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/uzi-reload.mp3"))
+                reload_status_weapon3_j2 = 1
+            if count_weapon_j2 == 5 and reload_status_weapon5_j2 == 0:
+                pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/shotgun-reload.mp3"))
+                reload_status_weapon5_j2 = 1
 
 
         if coef_jump_j2 < 0.1:
@@ -1004,11 +1212,11 @@ while on:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
         """bloc 1"""
         if count_bloc >= 1:
-            if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+SIDE_MOVE and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
+            if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x+((15 / 1920) * width) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
                 pos_j1.x = bloc_1.x-j1.get_width()-1 #par le coté gauche
                 
 
-            if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - SIDE_MOVE and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
+            if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - ((15 / 1920) * width) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
                 pos_j1.x = bloc_1.x+bloc_1.w +1  #par le coté droit
 
             if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y <= bloc_1.y+bloc_1.h and pos_j1.y >= bloc_1.y:
@@ -1022,10 +1230,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x+SIDE_MOVE and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
+            if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x+((15 / 1920) * width) and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
                 pos_j2.x = bloc_1.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_1.x+bloc_1.w and pos_j2.x > bloc_1.x+bloc_1.w - SIDE_MOVE and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
+            if pos_j2.x < bloc_1.x+bloc_1.w and pos_j2.x > bloc_1.x+bloc_1.w - ((15 / 1920) * width) and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
                 pos_j2.x = bloc_1.x+bloc_1.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+bloc_1.w and pos_j2.y <= bloc_1.y+bloc_1.h and pos_j2.y >= bloc_1.y:
@@ -1041,10 +1249,10 @@ while on:
 
         """bloc 2"""
         if count_bloc >= 2:
-            if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x+SIDE_MOVE and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
+            if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x+((15 / 1920) * width) and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
                 pos_j1.x = bloc_2.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_2.x+bloc_2.w and pos_j1.x > bloc_2.x+bloc_2.w - SIDE_MOVE and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
+            if pos_j1.x < bloc_2.x+bloc_2.w and pos_j1.x > bloc_2.x+bloc_2.w - ((15 / 1920) * width) and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
                 pos_j1.x = bloc_2.x+bloc_2.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+bloc_2.w and pos_j1.y <= bloc_2.y+bloc_2.h and pos_j1.y >= bloc_2.y:
@@ -1057,10 +1265,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x+SIDE_MOVE and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
+            if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x+((15 / 1920) * width) and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
                 pos_j2.x = bloc_2.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_2.x+bloc_2.w and pos_j2.x > bloc_2.x+bloc_2.w - SIDE_MOVE and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
+            if pos_j2.x < bloc_2.x+bloc_2.w and pos_j2.x > bloc_2.x+bloc_2.w - ((15 / 1920) * width) and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
                 pos_j2.x = bloc_2.x+bloc_2.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+bloc_2.w and pos_j2.y <= bloc_2.y+bloc_2.h and pos_j2.y >= bloc_2.y:
@@ -1076,10 +1284,10 @@ while on:
 
         """bloc 3"""
         if count_bloc >= 3:
-            if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x+SIDE_MOVE and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
+            if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x+((15 / 1920) * width) and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
                 pos_j1.x = bloc_3.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_3.x+bloc_3.w and pos_j1.x > bloc_3.x+bloc_3.w - SIDE_MOVE and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
+            if pos_j1.x < bloc_3.x+bloc_3.w and pos_j1.x > bloc_3.x+bloc_3.w - ((15 / 1920) * width) and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
                 pos_j1.x = bloc_3.x+bloc_3.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+bloc_3.w and pos_j1.y <= bloc_3.y+bloc_3.h and pos_j1.y >= bloc_3.y:
@@ -1092,10 +1300,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x+SIDE_MOVE and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
+            if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x+((15 / 1920) * width) and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
                 pos_j2.x = bloc_3.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_3.x+bloc_3.w and pos_j2.x > bloc_3.x+bloc_3.w - SIDE_MOVE and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
+            if pos_j2.x < bloc_3.x+bloc_3.w and pos_j2.x > bloc_3.x+bloc_3.w - ((15 / 1920) * width) and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
                 pos_j2.x = bloc_3.x+bloc_3.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+bloc_3.w and pos_j2.y <= bloc_3.y+bloc_3.h and pos_j2.y >= bloc_3.y:
@@ -1110,10 +1318,10 @@ while on:
 
 
         if count_bloc >= 4:
-            if pos_j1.x+j1.get_width() > bloc_4.x and pos_j1.x+j1.get_width() < bloc_4.x+SIDE_MOVE and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
+            if pos_j1.x+j1.get_width() > bloc_4.x and pos_j1.x+j1.get_width() < bloc_4.x+((15 / 1920) * width) and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
                 pos_j1.x = bloc_4.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_4.x+bloc_4.w and pos_j1.x > bloc_4.x+bloc_4.w - SIDE_MOVE and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
+            if pos_j1.x < bloc_4.x+bloc_4.w and pos_j1.x > bloc_4.x+bloc_4.w - ((15 / 1920) * width) and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
                 pos_j1.x = bloc_4.x+bloc_4.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_4.x and pos_j1.x <= bloc_4.x+bloc_4.w and pos_j1.y <= bloc_4.y+bloc_4.h and pos_j1.y >= bloc_4.y:
@@ -1126,10 +1334,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_4.x and pos_j2.x+j2.get_width() < bloc_4.x+SIDE_MOVE and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
+            if pos_j2.x+j2.get_width() > bloc_4.x and pos_j2.x+j2.get_width() < bloc_4.x+((15 / 1920) * width) and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
                 pos_j2.x = bloc_4.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_4.x+bloc_4.w and pos_j2.x > bloc_4.x+bloc_4.w - SIDE_MOVE and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
+            if pos_j2.x < bloc_4.x+bloc_4.w and pos_j2.x > bloc_4.x+bloc_4.w - ((15 / 1920) * width) and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
                 pos_j2.x = bloc_4.x+bloc_4.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_4.x and pos_j2.x <= bloc_4.x+bloc_4.w and pos_j2.y <= bloc_4.y+bloc_4.h and pos_j2.y >= bloc_4.y:
@@ -1144,10 +1352,10 @@ while on:
         
 
         if count_bloc >= 5:
-            if pos_j1.x+j1.get_width() > bloc_5.x and pos_j1.x+j1.get_width() < bloc_5.x+SIDE_MOVE and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
+            if pos_j1.x+j1.get_width() > bloc_5.x and pos_j1.x+j1.get_width() < bloc_5.x+((15 / 1920) * width) and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
                 pos_j1.x = bloc_5.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_5.x+bloc_5.w and pos_j1.x > bloc_5.x+bloc_5.w - SIDE_MOVE and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
+            if pos_j1.x < bloc_5.x+bloc_5.w and pos_j1.x > bloc_5.x+bloc_5.w - ((15 / 1920) * width) and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
                 pos_j1.x = bloc_5.x+bloc_5.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_5.x and pos_j1.x <= bloc_5.x+bloc_5.w and pos_j1.y <= bloc_5.y+bloc_5.h and pos_j1.y >= bloc_5.y:
@@ -1160,10 +1368,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_5.x and pos_j2.x+j2.get_width() < bloc_5.x+SIDE_MOVE and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
+            if pos_j2.x+j2.get_width() > bloc_5.x and pos_j2.x+j2.get_width() < bloc_5.x+((15 / 1920) * width) and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
                 pos_j2.x = bloc_5.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_5.x+bloc_5.w and pos_j2.x > bloc_5.x+bloc_5.w - SIDE_MOVE and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
+            if pos_j2.x < bloc_5.x+bloc_5.w and pos_j2.x > bloc_5.x+bloc_5.w - ((15 / 1920) * width) and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
                 pos_j2.x = bloc_5.x+bloc_5.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_5.x and pos_j2.x <= bloc_5.x+bloc_5.w and pos_j2.y <= bloc_5.y+bloc_5.h and pos_j2.y >= bloc_5.y:
@@ -1471,29 +1679,141 @@ while on:
         if count_weapon_j1 == 6:
             count_weapon_j1 = 1
         if count_weapon_j1 == 1:
-            screen.blit(ak_neutral_use, pos_ak_j1)
+            if reload_status_weapon1_j1 == 0:
+                if weapon1_j1 > 30/2:
+                    screen.blit(ak_neutral_use, pos_ak_j1)
+                elif weapon1_j1 > 0:
+                    screen.blit(ak_neutral_use50, pos_ak_j1)
+                else:
+                    screen.blit(ak_neutral_use_empty, pos_ak_j1)
+            elif reload_status_weapon1_j1 <= ((60*3)/4) * 1:
+                screen.blit(ak_neutral_use_reload25, pos_ak_j1)
+            elif reload_status_weapon1_j1 <= ((60*3)/4) * 2:
+                screen.blit(ak_neutral_use_reload50, pos_ak_j1)
+            elif reload_status_weapon1_j1 <= ((60*3)/4) * 3:
+                screen.blit(ak_neutral_use_reload75, pos_ak_j1)
+            
         elif count_weapon_j1 == 2:
-            screen.blit(grenade_neutral_use, pos_grenade_j1)
+            if reload_status_weapon2_j1 == 0:
+                screen.blit(grenade_neutral_use, pos_grenade_j1)
+            elif reload_status_weapon2_j1 <= ((60*2)/4) * 1:
+                screen.blit(grenade_neutral_use_reload25, pos_grenade_j1)
+            elif reload_status_weapon2_j1 <= ((60*2)/4) * 2:
+                screen.blit(grenade_neutral_use_reload50, pos_grenade_j1)
+            elif reload_status_weapon2_j1 <= ((60*2)/4) * 3:
+                screen.blit(grenade_neutral_use_reload75, pos_grenade_j1)
+                
         elif count_weapon_j1 == 3:
-            screen.blit(uzi_neutral_use, pos_uzi_j1)
+            if reload_status_weapon3_j1 == 0:
+                if weapon3_j1 > 20/2:
+                    screen.blit(uzi_neutral_use, pos_uzi_j1)
+                elif weapon3_j1 > 0:
+                    screen.blit(uzi_neutral_use50, pos_uzi_j1)
+                else:
+                    screen.blit(uzi_neutral_use_empty, pos_uzi_j1)
+            elif reload_status_weapon3_j1 <= ((60*2)/4) * 1:
+                screen.blit(uzi_neutral_use_reload25, pos_uzi_j1)
+            elif reload_status_weapon3_j1 <= ((60*2)/4) * 2:
+                screen.blit(uzi_neutral_use_reload50, pos_uzi_j1)
+            elif reload_status_weapon3_j1 <= ((60*2)/4) * 3:
+                screen.blit(uzi_neutral_use_reload75, pos_uzi_j1)
+        
+            
         elif count_weapon_j1 == 4:
-            screen.blit(rpg_neutral_use, pos_rpg_j1)
+            if reload_status_weapon4_j1 == 0:
+                screen.blit(rpg_neutral_use, pos_rpg_j1)
+            elif reload_status_weapon4_j1 <= ((60*3)/4) * 1:
+                screen.blit(rpg_neutral_use_reload25, pos_rpg_j1)
+            elif reload_status_weapon4_j1 <= ((60*3)/4) * 2:
+                screen.blit(rpg_neutral_use_reload50, pos_rpg_j1)
+            elif reload_status_weapon4_j1 <= ((60*3)/4) * 3:
+                screen.blit(rpg_neutral_use_reload75, pos_rpg_j1)
+            
         elif count_weapon_j1 == 5:
-            screen.blit(shotgun_neutral_use, pos_shotgun_j1)
+            if reload_status_weapon5_j1 == 0:
+                if weapon5_j1 > 5/2:
+                    screen.blit(shotgun_neutral_use, pos_shotgun_j1)
+                elif weapon5_j1 > 0:
+                    screen.blit(shotgun_neutral_use50, pos_shotgun_j1)
+                else:
+                    screen.blit(uzi_neutral_use_empty, pos_shotgun_j1)
+            elif reload_status_weapon5_j1 <= ((60*4)/4) * 1:
+                screen.blit(shotgun_neutral_use_reload25, pos_shotgun_j1)
+            elif reload_status_weapon5_j1 <= ((60*4)/4) * 2:
+                screen.blit(shotgun_neutral_use_reload50, pos_shotgun_j1)
+            elif reload_status_weapon5_j1 <= ((60*4)/4) * 3:
+                screen.blit(shotgun_neutral_use_reload75, pos_shotgun_j1)
+            
 
         """COMPTEUR SWITCH ARMES J2"""
         if count_weapon_j2 == 6:
             count_weapon_j2 = 1
         if count_weapon_j2 == 1:
-            screen.blit(ak_neutral_use, pos_ak_j2)
+            if reload_status_weapon1_j2 == 0:
+                if weapon1_j2 > 30/2:
+                    screen.blit(ak_neutral_use, pos_ak_j2)
+                elif weapon1_j2 > 0:
+                    screen.blit(ak_neutral_use50, pos_ak_j2)
+                else:
+                    screen.blit(ak_neutral_use_empty, pos_ak_j2)
+            elif reload_status_weapon1_j2 <= ((60*3)/4) * 1:
+                screen.blit(ak_neutral_use_reload25, pos_ak_j2)
+            elif reload_status_weapon1_j2 <= ((60*3)/4) * 2:
+                screen.blit(ak_neutral_use_reload50, pos_ak_j2)
+            elif reload_status_weapon1_j2 <= ((60*3)/4) * 3:
+                screen.blit(ak_neutral_use_reload75, pos_ak_j2)
+            
         elif count_weapon_j2 == 2:
-            screen.blit(grenade_neutral_use, pos_grenade_j2)
+            if reload_status_weapon2_j2 == 0:
+                screen.blit(grenade_neutral_use, pos_grenade_j2)
+            elif reload_status_weapon2_j2 <= ((60*2)/4) * 1:
+                screen.blit(grenade_neutral_use_reload25, pos_grenade_j2)
+            elif reload_status_weapon2_j2 <= ((60*2)/4) * 2:
+                screen.blit(grenade_neutral_use_reload50, pos_grenade_j2)
+            elif reload_status_weapon2_j2 <= ((60*2)/4) * 3:
+                screen.blit(grenade_neutral_use_reload75, pos_grenade_j2)
+                
         elif count_weapon_j2 == 3:
-            screen.blit(uzi_neutral_use, pos_uzi_j2)
+            if reload_status_weapon3_j2 == 0:
+                if weapon3_j2 > 20/2:
+                    screen.blit(uzi_neutral_use, pos_uzi_j2)
+                elif weapon3_j2 > 0:
+                    screen.blit(uzi_neutral_use50, pos_uzi_j2)
+                else:
+                    screen.blit(uzi_neutral_use_empty, pos_uzi_j2)
+            elif reload_status_weapon3_j2 <= ((60*2)/4) * 1:
+                screen.blit(uzi_neutral_use_reload25, pos_uzi_j2)
+            elif reload_status_weapon3_j2 <= ((60*2)/4) * 2:
+                screen.blit(uzi_neutral_use_reload50, pos_uzi_j2)
+            elif reload_status_weapon3_j2 <= ((60*2)/4) * 3:
+                screen.blit(uzi_neutral_use_reload75, pos_uzi_j2)
+        
+            
         elif count_weapon_j2 == 4:
-            screen.blit(rpg_neutral_use, pos_rpg_j2)
+            if reload_status_weapon4_j2 == 0:
+                screen.blit(rpg_neutral_use, pos_rpg_j2)
+            elif reload_status_weapon4_j2 <= ((60*3)/4) * 1:
+                screen.blit(rpg_neutral_use_reload25, pos_rpg_j2)
+            elif reload_status_weapon4_j2 <= ((60*3)/4) * 2:
+                screen.blit(rpg_neutral_use_reload50, pos_rpg_j2)
+            elif reload_status_weapon4_j2 <= ((60*3)/4) * 3:
+                screen.blit(rpg_neutral_use_reload75, pos_rpg_j2)
+            
         elif count_weapon_j2 == 5:
-            screen.blit(shotgun_neutral_use, pos_shotgun_j2)
+            if reload_status_weapon5_j2 == 0:
+                if weapon5_j2 > 5/2:
+                    screen.blit(shotgun_neutral_use, pos_shotgun_j2)
+                elif weapon5_j2 > 0:
+                    screen.blit(shotgun_neutral_use50, pos_shotgun_j2)
+                else:
+                    screen.blit(uzi_neutral_use_empty, pos_shotgun_j2)
+            elif reload_status_weapon5_j2 <= ((60*4)/4) * 1:
+                screen.blit(shotgun_neutral_use_reload25, pos_shotgun_j2)
+            elif reload_status_weapon5_j2 <= ((60*4)/4) * 2:
+                screen.blit(shotgun_neutral_use_reload50, pos_shotgun_j2)
+            elif reload_status_weapon5_j2 <= ((60*4)/4) * 3:
+                screen.blit(shotgun_neutral_use_reload75, pos_shotgun_j2)
+            
 
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
