@@ -43,6 +43,7 @@ image_wall = pygame.image.load(curdir + "/images/screen_menu.png").convert()
 image_wall = pygame.transform.scale(image_wall, (width, height))
 
 
+fpsClock = pygame.time.Clock()
 
 #joueur 1
 j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
@@ -355,6 +356,7 @@ while on:
     pass_weapon_j1 = True
     pass_weapon_j2 = True
     while menu_principale:
+        fpsClock.tick(15)
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -393,6 +395,7 @@ while on:
         screen.blit(menu, pos_menu)
         pygame.display.flip()
     while info:
+        fpsClock.tick(15)
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -415,7 +418,7 @@ while on:
         pygame.display.flip()
 
     while menu_personnage:
-
+        fpsClock.tick(15)
         
 
         keys = pygame.key.get_pressed()
@@ -722,6 +725,7 @@ while on:
             pygame.time.delay(1000)
 
     while menu_map:
+        fpsClock.tick(15)
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -840,7 +844,7 @@ while on:
     pass_blit_j1 = True
     pass_blit_j2 = True
     while game:
-        
+        fpsClock.tick(60)
 
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -1500,9 +1504,10 @@ while on:
         #pygame.draw.rect(screen, red, bloc_base)
         pygame.display.flip()
 
-        pygame.time.delay(16)
+        #pygame.time.delay(16)
     passage = True
     while victory == True :
+        fpsClock.tick(15)
         if winner == 1 :
             if passage == True :
                 win_background = pygame.image.load(curdir + "/images/j1_win.png").convert()
