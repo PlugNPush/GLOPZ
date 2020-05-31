@@ -178,6 +178,9 @@ vs = pygame.transform.scale(vs, (int(vs.get_width()/2), int(vs.get_height()/2)))
 
 choix1 = pygame.image.load(curdir + "/images/choix1.png").convert_alpha()
 choix2 = pygame.image.load(curdir + "/images/choix2.png").convert_alpha()
+choix1 = pygame.transform.scale(choix1, (int((300 / 1920) * width) , int((200 / 1080) * height)))
+choix2 = pygame.transform.scale(choix2, (int((300 / 1920) * width) , int((200 / 1080) * height)))
+
 #pos_j2 = j2.get_rect()
 heading_j1 = 1 #1 = droite; 0 = gauche
 heading_j2 = 0
@@ -203,7 +206,7 @@ move_j2 = False
 pygame.display.flip()
 
 #fréquence de répétition des touches
-pygame.key.set_repeat(1, 10)
+pygame.key.set_repeat(int((1 / 1920) * width), int((10 / 1080) * height))
 
 
 #couleurs
@@ -247,16 +250,16 @@ jauge_10 = pygame.image.load(curdir + "/images/hp_10.png").convert_alpha()
 jauge_0 = pygame.image.load(curdir + "/images/hp_0.png").convert_alpha()
 
 #redimmension des jauges J1
-jauge_100 = pygame.transform.scale(jauge_100, (int(906/5), int(155/5) ))
-jauge_90 = pygame.transform.scale(jauge_90, (int(906/5), int(155/5) ))
-jauge_80 = pygame.transform.scale(jauge_80, (int(906/5), int(155/5) ))
-jauge_70 = pygame.transform.scale(jauge_70, (int(906/5), int(155/5) ))
-jauge_60 = pygame.transform.scale(jauge_60, (int(906/5), int(155/5) ))
-jauge_50 = pygame.transform.scale(jauge_50, (int(906/5), int(155/5) ))
-jauge_40 = pygame.transform.scale(jauge_40, (int(906/5), int(155/5) ))
-jauge_30 = pygame.transform.scale(jauge_30, (int(906/5), int(155/5) ))
-jauge_20 = pygame.transform.scale(jauge_20, (int(906/5), int(155/5) ))
-jauge_10 = pygame.transform.scale(jauge_10, (int(906/5), int(155/5) ))
+jauge_100 = pygame.transform.scale(jauge_100, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_90 = pygame.transform.scale(jauge_90, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_80 = pygame.transform.scale(jauge_80, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_70 = pygame.transform.scale(jauge_70, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_60 = pygame.transform.scale(jauge_60, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_50 = pygame.transform.scale(jauge_50, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_40 = pygame.transform.scale(jauge_40, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_30 = pygame.transform.scale(jauge_30, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_20 = pygame.transform.scale(jauge_20, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_10 = pygame.transform.scale(jauge_10, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
 
 #charmgement des images flip J2
 jauge_90_flip = pygame.image.load(curdir + "/images/hp_90_flip.png").convert_alpha()
@@ -270,22 +273,22 @@ jauge_20_flip = pygame.image.load(curdir + "/images/hp_20_flip.png").convert_alp
 jauge_10_flip = pygame.image.load(curdir + "/images/hp_10_flip.png").convert_alpha()
 
 #redimension des jauges J2
-jauge_90_flip  = pygame.transform.scale(jauge_90_flip , (int(906/5), int(155/5) ))
-jauge_80_flip  = pygame.transform.scale(jauge_80_flip , (int(906/5), int(155/5) ))
-jauge_70_flip  = pygame.transform.scale(jauge_70_flip , (int(906/5), int(155/5) ))
-jauge_60_flip  = pygame.transform.scale(jauge_60_flip , (int(906/5), int(155/5) ))
-jauge_50_flip  = pygame.transform.scale(jauge_50_flip , (int(906/5), int(155/5) ))
-jauge_40_flip  = pygame.transform.scale(jauge_40_flip , (int(906/5), int(155/5) ))
-jauge_30_flip  = pygame.transform.scale(jauge_30_flip , (int(906/5), int(155/5) ))
-jauge_20_flip  = pygame.transform.scale(jauge_20_flip , (int(906/5), int(155/5) ))
-jauge_10_flip  = pygame.transform.scale(jauge_10_flip , (int(906/5), int(155/5) ))
+jauge_90_flip  = pygame.transform.scale(jauge_90_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_80_flip  = pygame.transform.scale(jauge_80_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_70_flip  = pygame.transform.scale(jauge_70_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_60_flip  = pygame.transform.scale(jauge_60_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_50_flip  = pygame.transform.scale(jauge_50_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_40_flip  = pygame.transform.scale(jauge_40_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_30_flip  = pygame.transform.scale(jauge_30_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_20_flip  = pygame.transform.scale(jauge_20_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
+jauge_10_flip  = pygame.transform.scale(jauge_10_flip , (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
 
 #commmune
-jauge_0 = pygame.transform.scale(jauge_0, (int(906/5), int(155/5) ))
+jauge_0 = pygame.transform.scale(jauge_0, (int((906/5) / 1920 * width), int((155/5) / 1080 * height)))
 
 #position des jauges
-pos_jauge_j1 = (10, 10)
-pos_jauge_j2 = (1725, 10)
+pos_jauge_j1 = ((10 / 1920) * width, (10 / 1080) * height)
+pos_jauge_j2 = ((1725 / 1920) * width, (10 / 1080) * height)
 
 """MENU ARMES"""
 count_weapon_j1 = 0
@@ -320,18 +323,18 @@ rpg_neutral_use = pygame.transform.scale(rpg_neutral_use,  (int(463/10), int(469
 shotgun_neutral_use = pygame.transform.scale(shotgun_neutral_use,  (int(463/10), int(469/10) ))
 
 #positions des armes pour J1
-pos_ak_j1 = (10, 1000)
-pos_grenade_j1 = (60, 1000)
-pos_uzi_j1 = (110, 1000)
-pos_rpg_j1 = (160, 1000)
-pos_shotgun_j1 = (210, 1000)
+pos_ak_j1 = ((10 / 1920) * width, (1000 / 1080) * height)
+pos_grenade_j1 = ((60 / 1920) * width, (1000 / 1080) * height)
+pos_uzi_j1 = ((110 / 1920) * width, (1000 / 1080) * height)
+pos_rpg_j1 = ((160 / 1920) * width, (1000 / 1080) * height)
+pos_shotgun_j1 = ((210 / 1920) * width, (1000 / 1080) * height)
 
 #positions des armes pour J2
-pos_shotgun_j2 = (WINDOW_X-255, 1000)
-pos_rpg_j2 = (WINDOW_X-205, 1000)
-pos_uzi_j2 = (WINDOW_X-155, 1000)
-pos_grenade_j2 = (WINDOW_X-105, 1000)
-pos_ak_j2 = (WINDOW_X-55, 1000)
+pos_shotgun_j2 = (WINDOW_X-((255 / 1920) * width), (1000 / 1080) * height)
+pos_rpg_j2 = (WINDOW_X-((205 / 1920) * width), (1000 / 1080) * height)
+pos_uzi_j2 = (WINDOW_X-((155 / 1920) * width), (1000 / 1080) * height)
+pos_grenade_j2 = (WINDOW_X-((105 / 1920) * width), (1000 / 1080) * height)
+pos_ak_j2 = (WINDOW_X-((55 / 1920) * width), (1000 / 1080) * height)
 
 #boucle en attente d'évènement
 on = True
@@ -450,7 +453,7 @@ while on:
                             joueur_1 = False
                             joueur_2 = True
                             break
-                        elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
+                        elif event.pos[0] >= (900 / 1920) * width and event.pos[0] <= (1000 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player2
                             print("BOUTON 2")
                             curdir_j1 = curdir + "/images/characters/2"
                             j1 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
@@ -471,7 +474,7 @@ while on:
                             joueur_1 = False
                             joueur_2 = True
                             break
-                        elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
+                        elif event.pos[0] >= (1100 / 1920) * width and event.pos[0] <= (1200 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height:#rect player3
                             print("BOUTON 3")
                             curdir_j1 = curdir + "/images/characters/3"
                             j1 = pygame.image.load(curdir + "/images/chara_3_0.png").convert_alpha()
@@ -492,7 +495,7 @@ while on:
                             joueur_1 = False
                             joueur_2 = True
                             break
-                        elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        elif event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (950 / 1080) * height and event.pos[1] <= (1000 / 1080) * height:#rect player4
                             print("BOUTON 4")
                             curdir_j1 = curdir + "/images/characters/4"
                             j1 = pygame.image.load(curdir + "/images/chara_4_0.png").convert_alpha()
@@ -513,7 +516,7 @@ while on:
                             joueur_1 = False
                             joueur_2 = True
                             break
-                        elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        elif event.pos[0] >= (900 / 1920) * width and event.pos[0] <= (1000 / 1920) * width and event.pos[1] >= (950 / 1080) * height and event.pos[1] <= (1000 / 1080) * height:#rect player4
                             print("BOUTON 5")
                             curdir_j1 = curdir + "/images/characters/5"
                             j1 = pygame.image.load(curdir + "/images/chara_5_0.png").convert_alpha()
@@ -534,7 +537,7 @@ while on:
                             joueur_1 = False
                             joueur_2 = True
                             break
-                        elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        elif event.pos[0] >= (1100 / 1920) * width and event.pos[0] <= (1200 / 1920) * width and event.pos[1] >= (950 / 1080) * height and event.pos[1] <= (1000 / 1080) * height:#rect player4
                             print("BOUTON 6")
                             curdir_j1 = curdir + "/images/characters/6"
                             j1 = pygame.image.load(curdir + "/images/chara_6_0.png").convert_alpha()
@@ -558,7 +561,7 @@ while on:
 
                 if joueur_2 is True:
                     if event.button == 1:
-                        if event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player1 ; 0 pour x et 1 pour y 
+                        if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player1 ; 0 pour x et 1 pour y
                             curdir_j2 = curdir + "/images/characters/1"
                             j2 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
                             j2_flip = pygame.image.load(curdir + "/images/chara_1_0_flip.png").convert_alpha()
@@ -578,7 +581,7 @@ while on:
                             menu_personnage = False
                             joueur_2 = False
                             break
-                        elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 800 and event.pos[1] <= 850: #rect player2
+                        elif event.pos[0] >= (900 / 1920) * width and event.pos[0] <= (1000 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player2
                             curdir_j2 = curdir + "/images/characters/2"
                             j2 = pygame.image.load(curdir + "/images/chara_2_0.png").convert_alpha()
                             j2_flip = pygame.image.load(curdir + "/images/chara_2_0_flip.png").convert_alpha()
@@ -598,7 +601,7 @@ while on:
                             menu_personnage = False
                             joueur_2 = False
                             break
-                        elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 800 and event.pos[1] <= 850:#rect player3
+                        elif event.pos[0] >= (1100 / 1920) * width and event.pos[0] <= (1200 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height:#rect player3
                             curdir_j2 = curdir + "/images/characters/3"
                             j2 = pygame.image.load(curdir + "/images/chara_3_0.png").convert_alpha()
                             j2_flip = pygame.image.load(curdir + "/images/chara_3_0_flip.png").convert_alpha()
@@ -618,7 +621,7 @@ while on:
                             menu_personnage = False
                             joueur_2 = False
                             break
-                        elif event.pos[0] >= 700 and event.pos[0] <= 800 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        elif event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (950 / 1080) * height and event.pos[1] <= (1000 / 1080) * height:#rect player4
                             curdir_j2 = curdir + "/images/characters/4"
                             j2 = pygame.image.load(curdir + "/images/chara_4_0.png").convert_alpha()
                             j2_flip = pygame.image.load(curdir + "/images/chara_4_0_flip.png").convert_alpha()
@@ -638,7 +641,7 @@ while on:
                             menu_personnage = False
                             joueur_2 = False
                             break
-                        elif event.pos[0] >= 900 and event.pos[0] <= 1000 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        elif event.pos[0] >= (900 / 1920) * width and event.pos[0] <= (1000 / 1920) * width and event.pos[1] >= (950 / 1080) * height and event.pos[1] <= (1000 / 1080) * height:#rect player4
                             curdir_j2 = curdir + "/images/characters/5"
                             j2 = pygame.image.load(curdir + "/images/chara_5_0.png").convert_alpha()
                             j2_flip = pygame.image.load(curdir + "/images/chara_5_0_flip.png").convert_alpha()
@@ -658,7 +661,7 @@ while on:
                             menu_personnage = False
                             joueur_2 = False
                             break
-                        elif event.pos[0] >= 1100 and event.pos[0] <= 1200 and event.pos[1] >= 950 and event.pos[1] <= 1000:#rect player4
+                        elif event.pos[0] >= (1100 / 1920) * width and event.pos[0] <= (1200 / 1920) * width and event.pos[1] >= (950 / 1080) * height and event.pos[1] <= (1000 / 1080) * height:#rect player4
                             curdir_j2 = curdir + "/images/characters/6"
                             j2 = pygame.image.load(curdir + "/images/chara_6_0.png").convert_alpha()
                             j2_flip = pygame.image.load(curdir + "/images/chara_6_0_flip.png").convert_alpha()
@@ -830,6 +833,8 @@ while on:
         
     UP_MOVE = int((UP_MOVE / 1080) * height)
     SIDE_MOVE = int((SIDE_MOVE / 1920) * width)
+    #COEF_UP = (COEF_UP / 1080) * height
+    #COEF_DOWN = (COEF_DOWN / 1080) * height
     count_weapon_j1 = 1
     count_weapon_j2 = 1
     pass_blit_j1 = True
@@ -880,7 +885,7 @@ while on:
                 #jump_j1_count += 1
                 coef_jump_j1 = coef_jump_j1/COEF_UP
 
-            elif pos_j1.y < int(bloc_base.y-((j1.get_height() / 1080) * height)) :
+            elif pos_j1.y < int(bloc_base.y-j1.get_height()) :
                 if pass_j1 == True :
                     coef_jump_j1 = 0.1
                     pass_j1 = False
@@ -889,7 +894,7 @@ while on:
                 #jump_j1_count += -1
                 coef_jump_j1 = coef_jump_j1*COEF_DOWN
         
-        elif pos_j1.y < int(bloc_base.y-((j1.get_height() / 1080) * height)) :
+        elif pos_j1.y < int(bloc_base.y-j1.get_height()) :
             if pass_j1 == True :
                 coef_jump_j1 = 0.1
                 pass_j1 = False
@@ -933,7 +938,7 @@ while on:
                 #jump_j2_count += 1
                 coef_jump_j2 = coef_jump_j2/COEF_UP
 
-            elif pos_j2.y < int(bloc_base.y-((j2.get_height() / 1080) * height)) :
+            elif pos_j2.y < int(bloc_base.y-j2.get_height()) :
                 if pass_j2 == True :
                     coef_jump_j2 = 0.1
                     pass_j2 = False
@@ -942,7 +947,7 @@ while on:
                 #jump_j2_count += -1
                 coef_jump_j2 = coef_jump_j2*COEF_DOWN
         
-        elif pos_j2.y < int(bloc_base.y-((j2.get_height() / 1080) * height)) :
+        elif pos_j2.y < int(bloc_base.y-j2.get_height()) :
             if pass_j2 == True :
                 coef_jump_j2 = 0.1
                 pass_j2 = False
@@ -1294,12 +1299,12 @@ while on:
                 j1_base_flip_1 = pygame.image.load(curdir_j1 + "/shotgun/1_flip.png").convert_alpha()
                 j1_base_2 = pygame.image.load(curdir_j1 + "/shotgun/2.png").convert_alpha()
                 j1_base_flip_2 = pygame.image.load(curdir_j1 + "/shotgun/2_flip.png").convert_alpha()
-            j1 = pygame.transform.scale(j1_base, (j1_base.get_width()*2, j1_base.get_height()*2))
-            j1_flip = pygame.transform.scale(j1_base_flip, (j1_base.get_width()*2, j1_base.get_height()*2))
-            j1_1 = pygame.transform.scale(j1_base_1, (j1_base.get_width()*2, j1_base.get_height()*2))
-            j1_flip_1 = pygame.transform.scale(j1_base_flip_1, (j1_base.get_width()*2, j1_base.get_height()*2))
-            j1_2 = pygame.transform.scale(j1_base_2, (j1_base.get_width()*2, j1_base.get_height()*2))
-            j1_flip_2 = pygame.transform.scale(j1_base_flip_2, (j1_base.get_width()*2, j1_base.get_height()*2))
+            j1 = pygame.transform.scale(j1_base, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_flip = pygame.transform.scale(j1_base_flip, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_1 = pygame.transform.scale(j1_base_1, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_flip_1 = pygame.transform.scale(j1_base_flip_1, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_2 = pygame.transform.scale(j1_base_2, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_flip_2 = pygame.transform.scale(j1_base_flip_2, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             pass_blit_j1 = False
 
 
@@ -1341,12 +1346,12 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/shotgun/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/shotgun/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/shotgun/2_flip.png").convert_alpha()
-            j2 = pygame.transform.scale(j2_base, (j2_base.get_width()*2, j2_base.get_height()*2))
-            j2_flip = pygame.transform.scale(j2_base_flip, (j2_base.get_width()*2, j2_base.get_height()*2))
-            j2_1 = pygame.transform.scale(j2_base_1, (j2_base.get_width()*2, j2_base.get_height()*2))
-            j2_flip_1 = pygame.transform.scale(j2_base_flip_1, (j2_base.get_width()*2, j2_base.get_height()*2))
-            j2_2 = pygame.transform.scale(j2_base_2, (j2_base.get_width()*2, j2_base.get_height()*2))
-            j2_flip_2 = pygame.transform.scale(j2_base_flip_2, (j2_base.get_width()*2, j2_base.get_height()*2))
+            j2 = pygame.transform.scale(j2_base, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            j2_flip = pygame.transform.scale(j2_base_flip, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            j2_1 = pygame.transform.scale(j2_base_1, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            j2_flip_1 = pygame.transform.scale(j2_base_flip_1, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            j2_2 = pygame.transform.scale(j2_base_2, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            j2_flip_2 = pygame.transform.scale(j2_base_flip_2, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             pass_blit_j2 = False
         
 
@@ -1390,9 +1395,9 @@ while on:
             winner = 2
             victory = True
             pos_j1.x = int(int((345 / 1920) * width))
-            pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
+            pos_j1.y = int(bloc_base.y-j1.get_height())
             pos_j2.x = int(int((1500 / 1920) * width))
-            pos_j2.y = int(bloc_base.y-((j2.get_height() / 1080) * height))
+            pos_j2.y = int(bloc_base.y-j2.get_height())
             
 
 
@@ -1433,9 +1438,9 @@ while on:
             winner = 1
             victory = True
             pos_j1.x = int(int((345 / 1920) * width))
-            pos_j1.y = int(bloc_base.y-((j1.get_height() / 1080) * height))
+            pos_j1.y = int(bloc_base.y-j1.get_height())
             pos_j2.x = int(int((1500 / 1920) * width))
-            pos_j2.y = int(bloc_base.y-((j2.get_height() / 1080) * height))
+            pos_j2.y = int(bloc_base.y-j2.get_height())
 
 
         """AFFICHAGE DES JAUGES DE VIE J1"""
@@ -1501,10 +1506,12 @@ while on:
         if winner == 1 :
             if passage == True :
                 win_background = pygame.image.load(curdir + "/images/j1_win.png").convert()
+                win_background = pygame.transform.scale(win_background, (width, height))
                 passage = False
         else :
             if passage == True :
                 win_background = pygame.image.load(curdir + "/images/j2_win.png").convert()
+                win_background = pygame.transform.scale(win_background, (width, height))
                 passage = False
         
         keys = pygame.key.get_pressed()
