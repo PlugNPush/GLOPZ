@@ -1394,9 +1394,9 @@ while on:
             mixer.music.stop()
             winner = 2
             victory = True
-            pos_j1.x = int(int((345 / 1920) * width))
-            pos_j1.y = int(bloc_base.y-j1.get_height())
-            pos_j2.x = int(int((1500 / 1920) * width))
+            pos_j1.x = int((345 / 1920) * width)
+            pos_j1.y = bloc_base.y-j1.get_height()
+            pos_j2.x = int((1500 / 1920) * width)
             pos_j2.y = int(bloc_base.y-j2.get_height())
             
 
@@ -1437,9 +1437,9 @@ while on:
             mixer.music.stop()
             winner = 1
             victory = True
-            pos_j1.x = int(int((345 / 1920) * width))
+            pos_j1.x = int((345 / 1920) * width)
             pos_j1.y = int(bloc_base.y-j1.get_height())
-            pos_j2.x = int(int((1500 / 1920) * width))
+            pos_j2.x = int((1500 / 1920) * width)
             pos_j2.y = int(bloc_base.y-j2.get_height())
 
 
