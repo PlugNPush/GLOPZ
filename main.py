@@ -909,6 +909,12 @@ while on:
             heading_j1 = 0
             move_j1 = True
         
+        #if keys[K_v]:
+        #    tirer j1
+
+        #if keys[K_r]:
+        #    recharger j2
+        
         if coef_jump_j1 < 0.1:
             jump_j1 = False
 
@@ -955,6 +961,13 @@ while on:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
             heading_j2 = 0
             move_j2 = True
+
+        #if keys[K_!]:
+        #    tirer j2
+
+        #if keys[K_RCTRL]:
+        #    recharger j2
+
 
         if coef_jump_j2 < 0.1:
             jump_j2 = False
