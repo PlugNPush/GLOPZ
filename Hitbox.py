@@ -645,3 +645,20 @@ while run:
     redrawGameWindow()
 
 pygame.quit()
+
+# ---------------------------------------------------------------------------------------------------------------------------
+# class game
+def check_collision(self, sprite, group):
+    return pygame.sprite.spritecollide(sprite, group, False, pygame.sprite.collide_mask)
+
+#classe player
+def move right(self):
+    #sile joueur n'est pas en collision avec un monstre
+    if self.game.check_collision(self, self.game.all.joueur2):
+        self.rect.x += self.velocity
+
+def foward(self):
+    #le déplacement ne se fait que si il n'y a pas de collision avec un groupe de joueur
+    if not self.game.check_collision(self, self.game.all_players):
+        self.rect.x -= self.velocity
+
