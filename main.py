@@ -405,6 +405,23 @@ exp14 = pygame.image.load(curdir + "/images/explosion/14.png").convert_alpha()
 exp15 = pygame.image.load(curdir + "/images/explosion/15.png").convert_alpha()
 exp16 = pygame.image.load(curdir + "/images/explosion/16.png").convert_alpha()
 
+exp1 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp2 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp3 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp4 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp5 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp6 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp7 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp8 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp9 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp10 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp11 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp12 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp13 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp14 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp15 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp16 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+
 
 #positions des armes pour J1
 pos_ak_j1 = ((10 / 1920) * width, (1000 / 1080) * height)
