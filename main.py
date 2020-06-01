@@ -223,17 +223,11 @@ green2 = pygame.Color(26, 54, 63)
 
 # rectangles choix joueurs
 button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, red, button_player1)
 button_player2 = pygame.Rect(int((900/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, green, button_player2)
 button_player3 = pygame.Rect(int((1100/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, blue, button_player3)
 button_player4 = pygame.Rect(int((700/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, red, button_player4)
 button_player5 = pygame.Rect(int((900/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, blue, button_player5)
 button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
 """JAUGE"""
@@ -410,6 +404,23 @@ exp13 = pygame.image.load(curdir + "/images/explosion/13.png").convert_alpha()
 exp14 = pygame.image.load(curdir + "/images/explosion/14.png").convert_alpha()
 exp15 = pygame.image.load(curdir + "/images/explosion/15.png").convert_alpha()
 exp16 = pygame.image.load(curdir + "/images/explosion/16.png").convert_alpha()
+
+exp1 = pygame.transform.scale(exp1, (int((400/1920) * width), int((400 / 1080) * height)))
+exp2 = pygame.transform.scale(exp2, (int((400/1920) * width), int((400 / 1080) * height)))
+exp3 = pygame.transform.scale(exp3, (int((400/1920) * width), int((400 / 1080) * height)))
+exp4 = pygame.transform.scale(exp4, (int((400/1920) * width), int((400 / 1080) * height)))
+exp5 = pygame.transform.scale(exp5, (int((400/1920) * width), int((400 / 1080) * height)))
+exp6 = pygame.transform.scale(exp6, (int((400/1920) * width), int((400 / 1080) * height)))
+exp7 = pygame.transform.scale(exp7, (int((400/1920) * width), int((400 / 1080) * height)))
+exp8 = pygame.transform.scale(exp8, (int((400/1920) * width), int((400 / 1080) * height)))
+exp9 = pygame.transform.scale(exp9, (int((400/1920) * width), int((400 / 1080) * height)))
+exp10 = pygame.transform.scale(exp10, (int((400/1920) * width), int((400 / 1080) * height)))
+exp11 = pygame.transform.scale(exp11, (int((400/1920) * width), int((400 / 1080) * height)))
+exp12 = pygame.transform.scale(exp12, (int((400/1920) * width), int((400 / 1080) * height)))
+exp13 = pygame.transform.scale(exp13, (int((400/1920) * width), int((400 / 1080) * height)))
+exp14 = pygame.transform.scale(exp14, (int((400/1920) * width), int((400 / 1080) * height)))
+exp15 = pygame.transform.scale(exp15, (int((400/1920) * width), int((400 / 1080) * height)))
+exp16 = pygame.transform.scale(exp16, (int((400/1920) * width), int((400 / 1080) * height)))
 
 
 #positions des armes pour J1
@@ -898,7 +909,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map3 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
+                        song_map3 = mixer.music.load(curdir + "/audio/music_map_bataille.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.08
@@ -917,7 +928,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map4 = mixer.music.load(curdir + "/audio/music_map_bataille.mp3")
+                        song_map4 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.03
@@ -2248,8 +2259,8 @@ while on:
                 if bullets[i] == 1:
                     # Attention ! t = temps[i] % 60
                     
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
+                    widths[i] = ((800*cos(angle0[i])*(temps[i]/60))*orientations[i] / 1920) * width + width0[i]
+                    heights[i] = (((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
@@ -2493,8 +2504,8 @@ while on:
    
                         
                 elif bullets[i] == 3: #uzi
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i]
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
+                    widths[i] = ((((800*cos(angle0[i])*(temps[i]/60))*orientations[i]) / 1920) * width) + width0[i]
+                    heights[i] = ((((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
@@ -2664,7 +2675,7 @@ while on:
                         explosion.pop(i)
 
                     elif explosion[i] <= 0:
-                        widths[i] = (30)*orientations[i] + widths[i]
+                        widths[i] = ((((30)*orientations[i]) / 1920) * width) + widths[i]
                         heights[i] = height0[i]+(40/1080)*height
                         screen.blit(bullet4, (widths[i], heights[i]))
                     elif explosion[i] > 0:
@@ -2733,8 +2744,8 @@ while on:
                             explosion.pop(i)
                     
                 elif bullets[i] == 5:
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
+                    widths[i] = ((((800*cos(angle0[i])*(temps[i]/60))*orientations[i]) / 1920) * width) + width0[i]
+                    heights[i] = ((((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
@@ -2895,4 +2906,5 @@ while on:
         screen.blit(win_background, (BACK_X, BACK_Y))
         pygame.display.flip()
         
+
 pygame.quit()
