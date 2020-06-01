@@ -554,10 +554,10 @@ while on:
 
                 if joueur_1 is True: #Tour du joueur pour choisir son personnage
                     if event.button == 1:  #evemenement clique droit
-                    #Condition if, elif pour les cliques dans les zones de sekections des joueurs 0 pour x et 1 pour y 
+                    #Condition if, elif pour les cliques dans les zones de sekections des joueurs 0 pour x et 1 pour y
                         #Puis on charge les images pour chaque personnage ici le perosnnage 1
                             #Dés que le perosnnage est séléctionné, le tour du joueru 1 est passé (false) et c'est le tour du joueur2(true)
-                        if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: 
+                        if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height:
                             print("BOUTON 1")
                             curdir_j1 = curdir + "/images/characters/1"
                             j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
@@ -1082,7 +1082,7 @@ while on:
 
             #Changement d'armes joueur 1 (E) et joueur 2 (SHIFT DROITE)
             elif keys[K_e]: # appuie sur la touche e
-                if pass_weapon_j1 is True: # le joueur 1 peut changer d'arme 
+                if pass_weapon_j1 is True: # le joueur 1 peut changer d'arme
                     count_weapon_j1 += 1 #Compteur qui va permettre de savoir quelle arme il aura
                     pass_weapon_j1 = False # VARIABLE de transition pour eviter une interpretation d'un appuie prolongé
                     pass_blit_j1 = True
@@ -1467,13 +1467,11 @@ while on:
         if count_bloc >= 1:
             if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x + (((67.5 / 1920) * width) if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
                 pos_j1.x = bloc_1.x-j1.get_width()-1 #par le coté gauche
-                print("Cote gauche, avec width = ", (((67.5 / 1920) * width) if count_weapon_j1 == 4 else j1.get_width()), "and count weapon = ", count_weapon_j1)
                 
                 
 
             if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
                 pos_j1.x = bloc_1.x+bloc_1.w +1  #par le coté droit
-                print("Cote droit, avec width = ", j1.get_width())
 
             if pos_j1.x+j1.get_width() >= bloc_1.x and pos_j1.x <= bloc_1.x+bloc_1.w and pos_j1.y <= bloc_1.y+bloc_1.h and pos_j1.y >= bloc_1.y:
                 pos_j1.y = bloc_1.y+bloc_1.h +1 #par dessous
@@ -2395,7 +2393,7 @@ while on:
                     
                     
                 elif bullets[i] == 2: #grenade
-                    temps[i] += 1  
+                    temps[i] += 1
                     if  widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h and explosion[i] <= 0:
                         explosion[i] = 1
                         pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
@@ -2444,7 +2442,7 @@ while on:
                         explosion.pop(i)
 
                     elif explosion[i] <= 0:
-                        widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] 
+                        widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i]
                         heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height #  g = 300 V0 = 400 a = pi/4
                         screen.blit(bullet2, (widths[i], heights[i]))
 
@@ -2584,7 +2582,7 @@ while on:
                     elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
-                        vie_j1 -= 4
+                        vie_j1 -= 3
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2599,7 +2597,7 @@ while on:
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         
-                        vie_j2 -= 4
+                        vie_j2 -= 3
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2639,7 +2637,7 @@ while on:
                             explosion.pop(i)
                 
                 elif bullets[i] == 4: #rocket
-                    temps[i] += 1  
+                    temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h and explosion[i] <= 0:
                         explosion[i] = 1
                         pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
@@ -2824,7 +2822,7 @@ while on:
                     elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
-                        vie_j1 -= 5
+                        vie_j1 -= 3
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2839,7 +2837,7 @@ while on:
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         
-                        vie_j2 -= 5
+                        vie_j2 -= 3
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
