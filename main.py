@@ -4,6 +4,7 @@ from pygame.locals import *
 import os
 import platform
 from pygame import mixer
+from math import *
 #toutes les coordonnées:
 
 pygame.init()
@@ -165,12 +166,7 @@ face_4 = pygame.transform.scale(face_4, (face_4.get_width()*2, face_4.get_height
 face_5 = pygame.transform.scale(face_5, (face_5.get_width()*2, face_5.get_height()*2))
 face_6 = pygame.transform.scale(face_6, (face_6.get_width()*2, face_6.get_height()*2))
 
-#face_1_big = pygame.transform.scale(face_1, (face_1.get_width()*7, face_1.get_height()*7))
-#face_2_big = pygame.transform.scale(face_2, (face_2.get_width()*7, face_2.get_height()*7))
-#face_3_big = pygame.transform.scale(face_3, (face_3.get_width()*7, face_3.get_height()*7))
-#face_4_big = pygame.transform.scale(face_4, (face_4.get_width()*7, face_4.get_height()*7))
-#face_5_big = pygame.transform.scale(face_5, (face_5.get_width()*7, face_5.get_height()*7))
-#face_6_big = pygame.transform.scale(face_6, (face_6.get_width()*7, face_6.get_height()*7))
+
 
 fond_vs = pygame.image.load(curdir + "/images/fond_vs.png").convert_alpha()
 fond_vs = pygame.transform.scale(fond_vs, (width, int((736/1080)* height)))
