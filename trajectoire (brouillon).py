@@ -22,6 +22,7 @@ def grenade():
 # la vitesse de la balle doit etre réaliste : _ralentie au début si lancer de manière parabolique
 #                                             _accéléré de la pointe vers le sol#
 
+http://culturesciencesphysique.ens-lyon.fr/ressource/chute-libre-python-1.xml#modelisation
 
 
 #     ---------------  Projectile   -----------------
