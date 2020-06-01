@@ -892,7 +892,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map3 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
+                        song_map3 = mixer.music.load(curdir + "/audio/music_map_bataille.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.08
@@ -911,7 +911,7 @@ while on:
                         menu_map = False
                         game = True
                         mixer.music.stop()
-                        song_map4 = mixer.music.load(curdir + "/audio/music_map_bataille.mp3")
+                        song_map4 = mixer.music.load(curdir + "/audio/music_map_festif.mp3")
                         mixer.music.play(-1)
                         UP_MOVE = 30
                         COEF_UP = 1.03
@@ -2889,5 +2889,5 @@ while on:
         screen.blit(win_background, (BACK_X, BACK_Y))
         pygame.display.flip()
         
-        
+
 pygame.quit()
