@@ -2259,8 +2259,8 @@ while on:
                 if bullets[i] == 1:
                     # Attention ! t = temps[i] % 60
                     
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
+                    widths[i] = ((800*cos(angle0[i])*(temps[i]/60))*orientations[i] / 1920) * width + width0[i]
+                    heights[i] = (((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
@@ -2504,8 +2504,8 @@ while on:
    
                         
                 elif bullets[i] == 3: #uzi
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i]
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
+                    widths[i] = ((((800*cos(angle0[i])*(temps[i]/60))*orientations[i]) / 1920) * width) + width0[i]
+                    heights[i] = ((((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
@@ -2675,7 +2675,7 @@ while on:
                         explosion.pop(i)
 
                     elif explosion[i] <= 0:
-                        widths[i] = (30)*orientations[i] + widths[i]
+                        widths[i] = ((((30)*orientations[i]) / 1920) * width) + widths[i]
                         heights[i] = height0[i]+(40/1080)*height
                         screen.blit(bullet4, (widths[i], heights[i]))
                     elif explosion[i] > 0:
@@ -2744,8 +2744,8 @@ while on:
                             explosion.pop(i)
                     
                 elif bullets[i] == 5:
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
+                    widths[i] = ((((800*cos(angle0[i])*(temps[i]/60))*orientations[i]) / 1920) * width) + width0[i]
+                    heights[i] = ((((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
