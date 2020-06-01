@@ -1465,12 +1465,13 @@ while on:
             pos_j2 = pos_j2.move(-SIDE_MOVE, 0)
         """bloc 1"""
         if count_bloc >= 1:
-            if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x + j1.get_width() and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
+            if pos_j1.x+j1.get_width() > bloc_1.x and pos_j1.x+j1.get_width() < bloc_1.x + (((67.5 / 1920) * width) if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
                 pos_j1.x = bloc_1.x-j1.get_width()-1 #par le coté gauche
-                print("Cote gauche, avec width = ", j1.get_width())
+                print("Cote gauche, avec width = ", (((67.5 / 1920) * width) if count_weapon_j1 == 4 else j1.get_width()), "and count weapon = ", count_weapon_j1)
+                
                 
 
-            if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - j1.get_width() and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
+            if pos_j1.x < bloc_1.x+bloc_1.w and pos_j1.x > bloc_1.x+bloc_1.w - ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_1.y+bloc_1.h and pos_j1.y+j1.get_height() > bloc_1.y:
                 pos_j1.x = bloc_1.x+bloc_1.w +1  #par le coté droit
                 print("Cote droit, avec width = ", j1.get_width())
 
@@ -1485,10 +1486,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x + j2.get_width() and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
+            if pos_j2.x+j2.get_width() > bloc_1.x and pos_j2.x+j2.get_width() < bloc_1.x + ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
                 pos_j2.x = bloc_1.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_1.x+bloc_1.w and pos_j2.x > bloc_1.x+bloc_1.w - j2.get_width() and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
+            if pos_j2.x < bloc_1.x+bloc_1.w and pos_j2.x > bloc_1.x+bloc_1.w - ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_1.y+bloc_1.h and pos_j2.y+j2.get_height() > bloc_1.y:
                 pos_j2.x = bloc_1.x+bloc_1.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_1.x and pos_j2.x <= bloc_1.x+bloc_1.w and pos_j2.y <= bloc_1.y+bloc_1.h and pos_j2.y >= bloc_1.y:
@@ -1504,10 +1505,10 @@ while on:
 
         """bloc 2"""
         if count_bloc >= 2:
-            if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x + j1.get_width() and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
+            if pos_j1.x+j1.get_width() > bloc_2.x and pos_j1.x+j1.get_width() < bloc_2.x + ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
                 pos_j1.x = bloc_2.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_2.x+bloc_2.w and pos_j1.x > bloc_2.x+bloc_2.w - j1.get_width() and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
+            if pos_j1.x < bloc_2.x+bloc_2.w and pos_j1.x > bloc_2.x+bloc_2.w - ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_2.y+bloc_2.h and pos_j1.y+j1.get_height() > bloc_2.y:
                 pos_j1.x = bloc_2.x+bloc_2.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_2.x and pos_j1.x <= bloc_2.x+bloc_2.w and pos_j1.y <= bloc_2.y+bloc_2.h and pos_j1.y >= bloc_2.y:
@@ -1520,10 +1521,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x + j2.get_width() and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
+            if pos_j2.x+j2.get_width() > bloc_2.x and pos_j2.x+j2.get_width() < bloc_2.x + ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
                 pos_j2.x = bloc_2.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_2.x+bloc_2.w and pos_j2.x > bloc_2.x+bloc_2.w - j2.get_width() and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
+            if pos_j2.x < bloc_2.x+bloc_2.w and pos_j2.x > bloc_2.x+bloc_2.w - ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_2.y+bloc_2.h and pos_j2.y+j2.get_height() > bloc_2.y:
                 pos_j2.x = bloc_2.x+bloc_2.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_2.x and pos_j2.x <= bloc_2.x+bloc_2.w and pos_j2.y <= bloc_2.y+bloc_2.h and pos_j2.y >= bloc_2.y:
@@ -1539,10 +1540,10 @@ while on:
 
         """bloc 3"""
         if count_bloc >= 3:
-            if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x + j1.get_width() and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
+            if pos_j1.x+j1.get_width() > bloc_3.x and pos_j1.x+j1.get_width() < bloc_3.x + ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
                 pos_j1.x = bloc_3.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_3.x+bloc_3.w and pos_j1.x > bloc_3.x+bloc_3.w - j1.get_width() and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
+            if pos_j1.x < bloc_3.x+bloc_3.w and pos_j1.x > bloc_3.x+bloc_3.w - ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_3.y+bloc_3.h and pos_j1.y+j1.get_height() > bloc_3.y:
                 pos_j1.x = bloc_3.x+bloc_3.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_3.x and pos_j1.x <= bloc_3.x+bloc_3.w and pos_j1.y <= bloc_3.y+bloc_3.h and pos_j1.y >= bloc_3.y:
@@ -1555,10 +1556,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x + j2.get_width() and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
+            if pos_j2.x+j2.get_width() > bloc_3.x and pos_j2.x+j2.get_width() < bloc_3.x + ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
                 pos_j2.x = bloc_3.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_3.x+bloc_3.w and pos_j2.x > bloc_3.x+bloc_3.w - j2.get_width() and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
+            if pos_j2.x < bloc_3.x+bloc_3.w and pos_j2.x > bloc_3.x+bloc_3.w - ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_3.y+bloc_3.h and pos_j2.y+j2.get_height() > bloc_3.y:
                 pos_j2.x = bloc_3.x+bloc_3.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_3.x and pos_j2.x <= bloc_3.x+bloc_3.w and pos_j2.y <= bloc_3.y+bloc_3.h and pos_j2.y >= bloc_3.y:
@@ -1573,10 +1574,10 @@ while on:
 
 
         if count_bloc >= 4:
-            if pos_j1.x+j1.get_width() > bloc_4.x and pos_j1.x+j1.get_width() < bloc_4.x + j1.get_width() and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
+            if pos_j1.x+j1.get_width() > bloc_4.x and pos_j1.x+j1.get_width() < bloc_4.x + ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
                 pos_j1.x = bloc_4.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_4.x+bloc_4.w and pos_j1.x > bloc_4.x+bloc_4.w - j1.get_width() and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
+            if pos_j1.x < bloc_4.x+bloc_4.w and pos_j1.x > bloc_4.x+bloc_4.w - ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_4.y+bloc_4.h and pos_j1.y+j1.get_height() > bloc_4.y:
                 pos_j1.x = bloc_4.x+bloc_4.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_4.x and pos_j1.x <= bloc_4.x+bloc_4.w and pos_j1.y <= bloc_4.y+bloc_4.h and pos_j1.y >= bloc_4.y:
@@ -1589,10 +1590,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_4.x and pos_j2.x+j2.get_width() < bloc_4.x + j2.get_width() and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
+            if pos_j2.x+j2.get_width() > bloc_4.x and pos_j2.x+j2.get_width() < bloc_4.x + ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
                 pos_j2.x = bloc_4.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_4.x+bloc_4.w and pos_j2.x > bloc_4.x+bloc_4.w - j2.get_width() and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
+            if pos_j2.x < bloc_4.x+bloc_4.w and pos_j2.x > bloc_4.x+bloc_4.w - ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_4.y+bloc_4.h and pos_j2.y+j2.get_height() > bloc_4.y:
                 pos_j2.x = bloc_4.x+bloc_4.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_4.x and pos_j2.x <= bloc_4.x+bloc_4.w and pos_j2.y <= bloc_4.y+bloc_4.h and pos_j2.y >= bloc_4.y:
@@ -1607,10 +1608,10 @@ while on:
         
 
         if count_bloc >= 5:
-            if pos_j1.x+j1.get_width() > bloc_5.x and pos_j1.x+j1.get_width() < bloc_5.x + j1.get_width() and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
+            if pos_j1.x+j1.get_width() > bloc_5.x and pos_j1.x+j1.get_width() < bloc_5.x + ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
                 pos_j1.x = bloc_5.x-j1.get_width()-1
 
-            if pos_j1.x < bloc_5.x+bloc_5.w and pos_j1.x > bloc_5.x+bloc_5.w - j1.get_width() and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
+            if pos_j1.x < bloc_5.x+bloc_5.w and pos_j1.x > bloc_5.x+bloc_5.w - ((67.5 / 1920) * width if count_weapon_j1 == 4 else j1.get_width()) and pos_j1.y < bloc_5.y+bloc_5.h and pos_j1.y+j1.get_height() > bloc_5.y:
                 pos_j1.x = bloc_5.x+bloc_5.w +1
 
             if pos_j1.x+j1.get_width() >= bloc_5.x and pos_j1.x <= bloc_5.x+bloc_5.w and pos_j1.y <= bloc_5.y+bloc_5.h and pos_j1.y >= bloc_5.y:
@@ -1623,10 +1624,10 @@ while on:
                 pass_j1 = True
                 jump_j1 = True
             
-            if pos_j2.x+j2.get_width() > bloc_5.x and pos_j2.x+j2.get_width() < bloc_5.x + j2.get_width() and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
+            if pos_j2.x+j2.get_width() > bloc_5.x and pos_j2.x+j2.get_width() < bloc_5.x + ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
                 pos_j2.x = bloc_5.x-j2.get_width()-1
 
-            if pos_j2.x < bloc_5.x+bloc_5.w and pos_j2.x > bloc_5.x+bloc_5.w - j2.get_width() and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
+            if pos_j2.x < bloc_5.x+bloc_5.w and pos_j2.x > bloc_5.x+bloc_5.w - ((67.5 / 1920) * width if count_weapon_j2 == 4 else j2.get_width()) and pos_j2.y < bloc_5.y+bloc_5.h and pos_j2.y+j2.get_height() > bloc_5.y:
                 pos_j2.x = bloc_5.x+bloc_5.w +1
 
             if pos_j2.x+j2.get_width() >= bloc_5.x and pos_j2.x <= bloc_5.x+bloc_5.w and pos_j2.y <= bloc_5.y+bloc_5.h and pos_j2.y >= bloc_5.y:
