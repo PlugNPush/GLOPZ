@@ -2318,6 +2318,8 @@ while on:
                         vie_j1 -= 10
                         count_hit_j1 = 20
                         explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+
                     
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height() and explosion[i] <= 0:
                         #hitbox j2
@@ -2325,6 +2327,7 @@ while on:
                         vie_j2 -= 10
                         count_hit_j2 = 20
                         explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
 
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
@@ -2472,40 +2475,23 @@ while on:
                             angle0.pop(i)
                             explosion.pop(i)
                 
-                elif bullets[i] == 4:
-                    widths[i] = (30)*orientations[i] + widths[i] 
-                    heights[i] = height0[i]+(40/1080)*height 
-                    temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
+                elif bullets[i] == 4: #rocket
+                    temps[i] += 1  
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
                         #hitbox j1
                         
                         vie_j1 -= 30
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-                        angle0.pop(i)
-                        explosion.pop(i)
                         count_hit_j1 = 20
+                        explosion[i] = 1
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height() and explosion[i] <= 0:
                         #hitbox j2
                         
                         vie_j2 -= 30
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-                        angle0.pop(i)
-                        explosion.pop(i)
                         count_hit_j2 = 20
+                        explosion[i] = 1
 
+                    
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
@@ -2517,6 +2503,59 @@ while on:
                         angle0.pop(i)
                         explosion.pop(i)
 
+                    elif explosion[i] <= 0:
+                        widths[i] = (30)*orientations[i] + widths[i]
+                        heights[i] = height0[i]+(40/1080)*height
+                        screen.blit(bullet4, (widths[i], heights[i]))
+                    elif explosion[i] > 0:
+                        
+                        if explosion[i] == 1:
+                            screen.blit(exp1, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 2:
+                            screen.blit(exp2, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 3:
+                            screen.blit(exp3, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 4:
+                            screen.blit(exp4, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 5:
+                            screen.blit(exp5, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 6:
+                            screen.blit(exp6, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 7:
+                            screen.blit(exp7, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 8:
+                            screen.blit(exp8, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 9:
+                            screen.blit(exp9, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 10:
+                            screen.blit(exp10, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 11:
+                            screen.blit(exp11, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 12:
+                            screen.blit(exp12, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 13:
+                            screen.blit(exp13, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 14:
+                            screen.blit(exp14, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 15:
+                            screen.blit(exp15, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 16:
+                            screen.blit(exp16, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        explosion[i] += 1
+                        if explosion[i] > 16:
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                            explosion.pop(i)
+                        
+
+                    
+                    
                     else:
                         screen.blit(bullet4, (widths[i], heights[i]))
 
