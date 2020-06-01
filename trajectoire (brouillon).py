@@ -106,7 +106,7 @@ def launch_balle(self):
     self.all_balles.add(Balle(self))
 
 #détecte si la touche  qui permet de tirer est enclenché pour lancer la balle
-if event.key == pygame.K_v:
+if event.key == pygame.[K_v]:
     game.joueur.launch_balle()
 
 #affiche l'ensemble des images de l'ensemble de balle
