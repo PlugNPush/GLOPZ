@@ -394,6 +394,24 @@ uzi_neutral_use_reload75 = pygame.transform.scale(uzi_neutral_use_reload75, (int
 rpg_neutral_use_reload75 = pygame.transform.scale(rpg_neutral_use_reload75, (int(463/10), int(469/10)))
 shotgun_neutral_use_reload75 = pygame.transform.scale(shotgun_neutral_use_reload75, (int(463/10), int(469/10)))
 
+exp1 = pygame.image.load(curdir + "/images/explosion/1.png").convert_alpha()
+exp2 = pygame.image.load(curdir + "/images/explosion/2.png").convert_alpha()
+exp3 = pygame.image.load(curdir + "/images/explosion/3.png").convert_alpha()
+exp4 = pygame.image.load(curdir + "/images/explosion/4.png").convert_alpha()
+exp5 = pygame.image.load(curdir + "/images/explosion/5.png").convert_alpha()
+exp6 = pygame.image.load(curdir + "/images/explosion/6.png").convert_alpha()
+exp7 = pygame.image.load(curdir + "/images/explosion/7.png").convert_alpha()
+exp8 = pygame.image.load(curdir + "/images/explosion/8.png").convert_alpha()
+exp9 = pygame.image.load(curdir + "/images/explosion/9.png").convert_alpha()
+exp10 = pygame.image.load(curdir + "/images/explosion/10.png").convert_alpha()
+exp11 = pygame.image.load(curdir + "/images/explosion/11.png").convert_alpha()
+exp12 = pygame.image.load(curdir + "/images/explosion/12.png").convert_alpha()
+exp13 = pygame.image.load(curdir + "/images/explosion/13.png").convert_alpha()
+exp14 = pygame.image.load(curdir + "/images/explosion/14.png").convert_alpha()
+exp15 = pygame.image.load(curdir + "/images/explosion/15.png").convert_alpha()
+exp16 = pygame.image.load(curdir + "/images/explosion/16.png").convert_alpha()
+
+
 #positions des armes pour J1
 pos_ak_j1 = ((10 / 1920) * width, (1000 / 1080) * height)
 pos_grenade_j1 = ((60 / 1920) * width, (1000 / 1080) * height)
@@ -430,7 +448,8 @@ while on:
     height0 = [0]
     width0 = [0]
     angle0 = [0]
-    
+    explosion = [0]
+
     vie_j1 = 100
     vie_j2 = 100
     
@@ -949,9 +968,13 @@ while on:
     weapon3_j2 = 20
     weapon5_j2 = 5
     
+    count_hit_j1 = 0
+    count_hit_j2 = 0
     
     pass_blit_j1 = True
     pass_blit_j2 = True
+
+    
     while game:
         fpsClock.tick(60)
         
@@ -1113,6 +1136,7 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/48, -pi/48))
+                    explosion.append(0)
                     pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j1 == 3 and weapon3_j1 > 0:
                     weapon3_j1 -= 1
@@ -1125,6 +1149,8 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/30, -pi/30))
+                    explosion.append(0)
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/pistol-shot.mp3"))
                 elif count_weapon_j1 == 5 and weapon5_j1 > 0:
                     weapon5_j1 -= 1
                     cooldown = True
@@ -1136,16 +1162,7 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
-                    
-                    
-                    bullets.append(5)
-                    heights.append(pos_j1.y)
-                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
-                    temps.append(0)
-                    orientations.append(1 if heading_j1 == 1 else -1)
-                    height0.append(pos_j1.y)
-                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
-                    angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
@@ -1155,6 +1172,7 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
@@ -1164,6 +1182,7 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
@@ -1173,6 +1192,19 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
+                    
+                    bullets.append(5)
+                    heights.append(pos_j1.y)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j1 == 1 else -1)
+                    height0.append(pos_j1.y)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/shotgun-shot.mp3"))
+                    
                 elif count_weapon_j1 == 2 and reload_status_weapon2_j1 == 0:
                     reload_status_weapon2_j1 = 1
                     cooldown = True
@@ -1184,6 +1216,7 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(0)
+                    explosion.append(0)
                 elif count_weapon_j1 == 4 and reload_status_weapon4_j1 == 0:
                     reload_status_weapon4_j1 = 1
                     cooldown = True
@@ -1195,6 +1228,8 @@ while on:
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(0)
+                    explosion.append(0)
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-fire.mp3"))
         else:
             cooldown = False
 
@@ -1272,6 +1307,7 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/48, -pi/48))
+                    explosion.append(0)
                     pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j2 == 3 and weapon3_j2 > 0:
                     weapon3_j2 -= 1
@@ -1284,6 +1320,8 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/30, -pi/30))
+                    explosion.append(0)
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/pistol-shot.mp3"))
                 elif count_weapon_j2 == 5 and weapon5_j2 > 0:
                     weapon5_j2 -= 1
                     cooldown2 = True
@@ -1295,14 +1333,7 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
-                    bullets.append(5)
-                    heights.append(pos_j2.y)
-                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
-                    temps.append(0)
-                    orientations.append(1 if heading_j2 == 1 else -1)
-                    height0.append(pos_j2.y)
-                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
-                    angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
 
                     bullets.append(5)
                     heights.append(pos_j2.y)
@@ -1312,6 +1343,7 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
 
                     bullets.append(5)
                     heights.append(pos_j2.y)
@@ -1321,6 +1353,7 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
 
                     bullets.append(5)
                     heights.append(pos_j2.y)
@@ -1330,6 +1363,19 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
+
+                    bullets.append(5)
+                    heights.append(pos_j2.y)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j2 == 1 else -1)
+                    height0.append(pos_j2.y)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    explosion.append(0)
+
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/shotgun-shot.mp3"))
 
                 elif count_weapon_j2 == 2 and reload_status_weapon2_j2 == 0:
                     reload_status_weapon2_j2 = 1
@@ -1342,6 +1388,8 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(0)
+                    explosion.append(0)
+
                 elif count_weapon_j2 == 4 and reload_status_weapon4_j2 == 0:
                     reload_status_weapon4_j2 = 1
                     cooldown2 = True
@@ -1353,6 +1401,9 @@ while on:
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(0)
+                    explosion.append(0)
+
+                    pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-fire.mp3"))
         else:
             cooldown2 = False
                 
@@ -1666,6 +1717,12 @@ while on:
                 j1_base_flip_1 = pygame.image.load(curdir_j1 + "/AK/1_flip.png").convert_alpha()
                 j1_base_2 = pygame.image.load(curdir_j1 + "/AK/2.png").convert_alpha()
                 j1_base_flip_2 = pygame.image.load(curdir_j1 + "/AK/2_flip.png").convert_alpha()
+                j1_base_hit = pygame.image.load(curdir_j1 + "/AK/0_hit.png").convert_alpha()
+                j1_base_hit_flip = pygame.image.load(curdir_j1 + "/AK/0_flip_hit.png").convert_alpha()
+                j1_base_hit_1 = pygame.image.load(curdir_j1 + "/AK/1_hit.png").convert_alpha()
+                j1_base_hit_flip_1 = pygame.image.load(curdir_j1 + "/AK/1_flip_hit.png").convert_alpha()
+                j1_base_hit_2 = pygame.image.load(curdir_j1 + "/AK/2_hit.png").convert_alpha()
+                j1_base_hit_flip_2 = pygame.image.load(curdir_j1 + "/AK/2_flip_hit.png").convert_alpha()
             elif count_weapon_j1 == 2: #grenade
                 j1_base = pygame.image.load(curdir_j1 + "/grenade/0.png").convert_alpha()
                 j1_base_flip = pygame.image.load(curdir_j1 + "/grenade/0_flip.png").convert_alpha()
@@ -1673,6 +1730,12 @@ while on:
                 j1_base_flip_1 = pygame.image.load(curdir_j1 + "/grenade/1_flip.png").convert_alpha()
                 j1_base_2 = pygame.image.load(curdir_j1 + "/grenade/2.png").convert_alpha()
                 j1_base_flip_2 = pygame.image.load(curdir_j1 + "/grenade/2_flip.png").convert_alpha()
+                j1_base_hit = pygame.image.load(curdir_j1 + "/grenade/0_hit.png").convert_alpha()
+                j1_base_hit_flip = pygame.image.load(curdir_j1 + "/grenade/0_flip_hit.png").convert_alpha()
+                j1_base_hit_1 = pygame.image.load(curdir_j1 + "/grenade/1_hit.png").convert_alpha()
+                j1_base_hit_flip_1 = pygame.image.load(curdir_j1 + "/grenade/1_flip_hit.png").convert_alpha()
+                j1_base_hit_2 = pygame.image.load(curdir_j1 + "/grenade/2_hit.png").convert_alpha()
+                j1_base_hit_flip_2 = pygame.image.load(curdir_j1 + "/grenade/2_flip_hit.png").convert_alpha()
             elif count_weapon_j1 == 3: #uzi
                 j1_base = pygame.image.load(curdir_j1 + "/UZI/0.png").convert_alpha()
                 j1_base_flip = pygame.image.load(curdir_j1 + "/UZI/0_flip.png").convert_alpha()
@@ -1680,6 +1743,12 @@ while on:
                 j1_base_flip_1 = pygame.image.load(curdir_j1 + "/UZI/1_flip.png").convert_alpha()
                 j1_base_2 = pygame.image.load(curdir_j1 + "/UZI/2.png").convert_alpha()
                 j1_base_flip_2 = pygame.image.load(curdir_j1 + "/UZI/2_flip.png").convert_alpha()
+                j1_base_hit = pygame.image.load(curdir_j1 + "/UZI/0_hit.png").convert_alpha()
+                j1_base_hit_flip = pygame.image.load(curdir_j1 + "/UZI/0_flip_hit.png").convert_alpha()
+                j1_base_hit_1 = pygame.image.load(curdir_j1 + "/UZI/1_hit.png").convert_alpha()
+                j1_base_hit_flip_1 = pygame.image.load(curdir_j1 + "/UZI/1_flip_hit.png").convert_alpha()
+                j1_base_hit_2 = pygame.image.load(curdir_j1 + "/UZI/2_hit.png").convert_alpha()
+                j1_base_hit_flip_2 = pygame.image.load(curdir_j1 + "/UZI/2_flip_hit.png").convert_alpha()
             elif count_weapon_j1 == 4: #rpg
                 j1_base = pygame.image.load(curdir_j1 + "/RPG/0.png").convert_alpha()
                 j1_base_flip = pygame.image.load(curdir_j1 + "/RPG/0_flip.png").convert_alpha()
@@ -1687,6 +1756,12 @@ while on:
                 j1_base_flip_1 = pygame.image.load(curdir_j1 + "/RPG/1_flip.png").convert_alpha()
                 j1_base_2 = pygame.image.load(curdir_j1 + "/RPG/2.png").convert_alpha()
                 j1_base_flip_2 = pygame.image.load(curdir_j1 + "/RPG/2_flip.png").convert_alpha()
+                j1_base_hit = pygame.image.load(curdir_j1 + "/RPG/0_hit.png").convert_alpha()
+                j1_base_hit_flip = pygame.image.load(curdir_j1 + "/RPG/0_flip_hit.png").convert_alpha()
+                j1_base_hit_1 = pygame.image.load(curdir_j1 + "/RPG/1_hit.png").convert_alpha()
+                j1_base_hit_flip_1 = pygame.image.load(curdir_j1 + "/RPG/1_flip_hit.png").convert_alpha()
+                j1_base_hit_2 = pygame.image.load(curdir_j1 + "/RPG/2_hit.png").convert_alpha()
+                j1_base_hit_flip_2 = pygame.image.load(curdir_j1 + "/RPG/2_flip_hit.png").convert_alpha()
             elif count_weapon_j1 == 5: #shotgun
                 j1_base = pygame.image.load(curdir_j1 + "/shotgun/0.png").convert_alpha()
                 j1_base_flip = pygame.image.load(curdir_j1 + "/shotgun/0_flip.png").convert_alpha()
@@ -1694,12 +1769,24 @@ while on:
                 j1_base_flip_1 = pygame.image.load(curdir_j1 + "/shotgun/1_flip.png").convert_alpha()
                 j1_base_2 = pygame.image.load(curdir_j1 + "/shotgun/2.png").convert_alpha()
                 j1_base_flip_2 = pygame.image.load(curdir_j1 + "/shotgun/2_flip.png").convert_alpha()
+                j1_base_hit = pygame.image.load(curdir_j1 + "/shotgun/0_hit.png").convert_alpha()
+                j1_base_hit_flip = pygame.image.load(curdir_j1 + "/shotgun/0_flip_hit.png").convert_alpha()
+                j1_base_hit_1 = pygame.image.load(curdir_j1 + "/shotgun/1_hit.png").convert_alpha()
+                j1_base_hit_flip_1 = pygame.image.load(curdir_j1 + "/shotgun/1_flip_hit.png").convert_alpha()
+                j1_base_hit_2 = pygame.image.load(curdir_j1 + "/shotgun/2_hit.png").convert_alpha()
+                j1_base_hit_flip_2 = pygame.image.load(curdir_j1 + "/shotgun/2_flip_hit.png").convert_alpha()
             j1 = pygame.transform.scale(j1_base, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             j1_flip = pygame.transform.scale(j1_base_flip, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             j1_1 = pygame.transform.scale(j1_base_1, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             j1_flip_1 = pygame.transform.scale(j1_base_flip_1, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             j1_2 = pygame.transform.scale(j1_base_2, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             j1_flip_2 = pygame.transform.scale(j1_base_flip_2, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_hit = pygame.transform.scale(j1_base_hit, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_hit_flip = pygame.transform.scale(j1_base_hit_flip, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_hit_1 = pygame.transform.scale(j1_base_hit_1, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_hit_flip_1 = pygame.transform.scale(j1_base_hit_flip_1, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_hit_2 = pygame.transform.scale(j1_base_hit_2, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
+            j1_hit_flip_2 = pygame.transform.scale(j1_base_hit_flip_2, (int((j1_base.get_width()*2 / 1920) * width), int((j1_base.get_height()*2 / 1080) * height)))
             pass_blit_j1 = False
 
 
@@ -1713,6 +1800,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/AK/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/AK/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/AK/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/AK/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/AK/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/AK/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/AK/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/AK/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/AK/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 2: #grenade
                 j2_base = pygame.image.load(curdir_j2 + "/grenade/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/grenade/0_flip.png").convert_alpha()
@@ -1720,6 +1814,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/grenade/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/grenade/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/grenade/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/grenade/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/grenade/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/grenade/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/grenade/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/grenade/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/grenade/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 3: #uzi
                 j2_base = pygame.image.load(curdir_j2 + "/UZI/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/UZI/0_flip.png").convert_alpha()
@@ -1727,6 +1828,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/UZI/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/UZI/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/UZI/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/UZI/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/UZI/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/UZI/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/UZI/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/UZI/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/UZI/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 4: #rpg
                 j2_base = pygame.image.load(curdir_j2 + "/RPG/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/RPG/0_flip.png").convert_alpha()
@@ -1734,6 +1842,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/RPG/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/RPG/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/RPG/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/RPG/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/RPG/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/RPG/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/RPG/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/RPG/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/RPG/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 5: #shotgun
                 j2_base = pygame.image.load(curdir_j2 + "/shotgun/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/shotgun/0_flip.png").convert_alpha()
@@ -1741,12 +1856,26 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/shotgun/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/shotgun/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/shotgun/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/shotgun/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/shotgun/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/shotgun/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/shotgun/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/shotgun/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/shotgun/2_flip_hit.png").convert_alpha()
             j2 = pygame.transform.scale(j2_base, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_flip = pygame.transform.scale(j2_base_flip, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_1 = pygame.transform.scale(j2_base_1, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_flip_1 = pygame.transform.scale(j2_base_flip_1, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_2 = pygame.transform.scale(j2_base_2, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_flip_2 = pygame.transform.scale(j2_base_flip_2, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            
+            j2_hit = pygame.transform.scale(j2_base_hit, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_flip = pygame.transform.scale(j2_base_hit_flip, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_1 = pygame.transform.scale(j2_base_hit_1, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_flip_1 = pygame.transform.scale(j2_base_hit_flip_1, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_2 = pygame.transform.scale(j2_base_hit_2, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_flip_2 = pygame.transform.scale(j2_base_hit_flip_2, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
             pass_blit_j2 = False
         
 
@@ -1758,30 +1887,62 @@ while on:
                 if move_j1 == True: #si je joueur a bougé
                     compteur_j1 += 1
                     if compteur_j1 < 10:
-                        screen.blit(j1_1, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_1, pos_j1)
+                        else:
+                            screen.blit(j1_1, pos_j1)
                     elif compteur_j1 < 20:
-                        screen.blit(j1_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_2, pos_j1)
+                        else:
+                            screen.blit(j1_2, pos_j1)
                     elif compteur_j1 == 20:
-                        screen.blit(j1_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_2, pos_j1)
+                        else:
+                            screen.blit(j1_2, pos_j1)
                         compteur_j1 = 0
                     move_j1 = False
 
                 else:
-                    screen.blit(j1, pos_j1)
+                    if count_hit_j1 > 0:
+                        count_hit_j1 -= 1
+                        screen.blit(j1_hit, pos_j1)
+                    else:
+                        screen.blit(j1, pos_j1)
                     compteur_j1 = 0
             else:
                 if move_j1 == True:
                     compteur_j1 += 1
                     if compteur_j1 < 10:
-                        screen.blit(j1_flip_1, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_flip_1, pos_j1)
+                        else:
+                            screen.blit(j1_flip_1, pos_j1)
                     elif compteur_j1 < 20:
-                        screen.blit(j1_flip_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_flip_2, pos_j1)
+                        else:
+                            screen.blit(j1_flip_2, pos_j1)
                     elif compteur_j1 == 20:
-                        screen.blit(j1_flip_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_flip_2, pos_j1)
+                        else:
+                            screen.blit(j1_flip_2, pos_j1)
                         compteur_j1 = 0
                     move_j1 = False
                 else:
-                    screen.blit(j1_flip, pos_j1)
+                    if count_hit_j1 > 0:
+                        count_hit_j1 -= 1
+                        screen.blit(j1_hit_flip, pos_j1)
+                    else:
+                        screen.blit(j1_flip, pos_j1)
                     compteur_j1 = 0
         else :
             game = False
@@ -1795,36 +1956,67 @@ while on:
             pos_j2.y = int(bloc_base.y-j2.get_height())
             
 
-
         if alive_j2 == True :
             if heading_j2 == 1:
-                if move_j2 == True:
+                if move_j2 == True: #si je joueur a bougé
                     compteur_j2 += 1
                     if compteur_j2 < 10:
-                        screen.blit(j2_1, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_1, pos_j2)
+                        else:
+                            screen.blit(j2_1, pos_j2)
                     elif compteur_j2 < 20:
-                        screen.blit(j2_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_2, pos_j2)
+                        else:
+                            screen.blit(j2_2, pos_j2)
                     elif compteur_j2 == 20:
-                        screen.blit(j2_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_2, pos_j2)
+                        else:
+                            screen.blit(j2_2, pos_j2)
                         compteur_j2 = 0
                     move_j2 = False
 
                 else:
-                    screen.blit(j2, pos_j2)
+                    if count_hit_j2 > 0:
+                        count_hit_j2 -= 1
+                        screen.blit(j2_hit, pos_j2)
+                    else:
+                        screen.blit(j2, pos_j2)
                     compteur_j2 = 0
             else:
                 if move_j2 == True:
                     compteur_j2 += 1
                     if compteur_j2 < 10:
-                        screen.blit(j2_flip_1, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_flip_1, pos_j2)
+                        else:
+                            screen.blit(j2_flip_1, pos_j2)
                     elif compteur_j2 < 20:
-                        screen.blit(j2_flip_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_flip_2, pos_j2)
+                        else:
+                            screen.blit(j2_flip_2, pos_j2)
                     elif compteur_j2 == 20:
-                        screen.blit(j2_flip_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_flip_2, pos_j2)
+                        else:
+                            screen.blit(j2_flip_2, pos_j2)
                         compteur_j2 = 0
                     move_j2 = False
                 else:
-                    screen.blit(j2_flip, pos_j2)
+                    if count_hit_j2 > 0:
+                        count_hit_j2 -= 1
+                        screen.blit(j2_hit_flip, pos_j2)
+                    else:
+                        screen.blit(j2_flip, pos_j2)
                     compteur_j2 = 0
         else :
             game = False
@@ -1859,7 +2051,7 @@ while on:
             screen.blit(jauge_20, pos_jauge_j1)
         elif vie_j1 >= 10:
             screen.blit(jauge_10, pos_jauge_j1)
-        elif vie_j1 >= 0:
+        elif vie_j1 > 0:
             screen.blit(jauge_0, pos_jauge_j1)
         else:
             winner = 2
@@ -1888,7 +2080,7 @@ while on:
             screen.blit(jauge_20, pos_jauge_j2)
         elif vie_j2 >= 10:
             screen.blit(jauge_10, pos_jauge_j2)
-        elif vie_j2 >= 0:
+        elif vie_j2 > 0:
             screen.blit(jauge_0, pos_jauge_j2)
         else:
             winner = 1
@@ -2054,18 +2246,15 @@ while on:
             lenb = len(bullets)
             if (i < lenb):
                 if bullets[i] == 1:
-                    # On a affaire à un bon petit AK
                     # Attention ! t = temps[i] % 60
                     
-                    #widths[i] += 15 * orientations[i] # Insérer l'équation ici
-                    #heights[i] += 0.2 * (temps[i] % 60) + 1 # Insérer l'équation ici
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
-                        print("Hitbox J1")
+                        
                         vie_j1 -= 3
                         temps.pop(i)
                         bullets.pop(i)
@@ -2075,10 +2264,12 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
-                        print("Hitbox J2")
+                        
                         vie_j2 -= 3
                         temps.pop(i)
                         bullets.pop(i)
@@ -2088,6 +2279,8 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
+                        count_hit_j2 = 20
                         
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
@@ -2098,6 +2291,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
 
                     else:
                         screen.blit(bullet1, (widths[i], heights[i]))
@@ -2113,61 +2307,27 @@ while on:
                             width0.pop(i)
                             height0.pop(i)
                             angle0.pop(i)
+                            explosion.pop(i)
                     
                     
-                elif bullets[i] == 2:
-                    # Equation de l'hypopotamus
-                    #widths[i] = 1 + cos(pi/2)*temps[i] + width0[i] # Insérer l'équation ici
-                    #heights[i] = (-1/2)*1*temps[i]**2 + 10*sin(pi/2)*temps[i] + height0[i] # Insérer l'équation ici
-                    
-                    # Equation de la gravité
-                    #widths[i] = 3*(temps[i] % 60) + width0[i]  # Insérer l'équation ici
-                    #heights[i] = 2*(temps[i] % 60)**2 + 4*(temps[i] % 60) + height0[i] # Insérer l'équation ici
-                    
-                    # Rectiligne
-                    #widths[i] = 3*(temps[i] / 60) + width0[i]  # Insérer l'équation ici
-                    #heights[i] = height0[i] # Insérer l'équation ici
-                    
-                    # Formule qui marche pas mais saute
-                    #widths[i] = exp(temps[i] / 60) + width0[i] # Insérer l'équation ici
-                    #heights[i] = (1/60)*1*temps[i]**2 - 5*temps[i] + height0[i] # Insérer l'équation ici
-                    
-                    
-                    #widths[i] = 50*tan((temps[i] / 100) - 59.7) + width0[i] # Insérer l'équation ici
-                    #heights[i] = (1/200)*10*temps[i]**2 - 10*sin(pi/6)*temps[i] + height0[i] # Insérer l'équation ici
-                
-                    #balle fusil
-                    #widths[i] = 800*cos(0)*(temps[i]/60) + width0[i] # Insérer l'équation ici
-                    #heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(0)*(temps[i]/60) + height0[i] # Insérer l'équation ici g = 30 V0 = 800 a = 0
-                    
-                    widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 300 V0 = 400 a = pi/4
-                    temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                elif bullets[i] == 2: #grenade
+                    temps[i] += 1  
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
                         #hitbox j1
-                        print("Hitbox J1")
+                        
                         vie_j1 -= 10
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-                        angle0.pop(i)
+                        count_hit_j1 = 20
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height() and explosion[i] <= 0:
                         #hitbox j2
-                        print("Hitbox J2")
+                        
                         vie_j2 -= 10
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-                        angle0.pop(i)
+                        count_hit_j2 = 20
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
 
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
@@ -2179,7 +2339,61 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
 
+                    elif explosion[i] <= 0:
+                        widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] 
+                        heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height #  g = 300 V0 = 400 a = pi/4
+                        screen.blit(bullet2, (widths[i], heights[i]))
+                    elif explosion[i] > 0:
+                        
+                        if explosion[i] == 1:
+                            screen.blit(exp1, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 2:
+                            screen.blit(exp2, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 3:
+                            screen.blit(exp3, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 4:
+                            screen.blit(exp4, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 5:
+                            screen.blit(exp5, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 6:
+                            screen.blit(exp6, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 7:
+                            screen.blit(exp7, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 8:
+                            screen.blit(exp8, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 9:
+                            screen.blit(exp9, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 10:
+                            screen.blit(exp10, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 11:
+                            screen.blit(exp11, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 12:
+                            screen.blit(exp12, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 13:
+                            screen.blit(exp13, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 14:
+                            screen.blit(exp14, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 15:
+                            screen.blit(exp15, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 16:
+                            screen.blit(exp16, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        explosion[i] += 1
+                        if explosion[i] > 16:
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                            explosion.pop(i)
+                        
+
+                    
+                    
                     else:
                         screen.blit(bullet2, (widths[i], heights[i]))
 
@@ -2194,18 +2408,19 @@ while on:
                             width0.pop(i)
                             height0.pop(i)
                             angle0.pop(i)
+                            explosion.pop(i)
                     
-                     
+                      
    
                         
                 elif bullets[i] == 3:
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i]
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
-                        print("Hitbox J1")
+                        
                         vie_j1 -= 3
                         temps.pop(i)
                         bullets.pop(i)
@@ -2215,10 +2430,12 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
-                        print("Hitbox J2")
+                        
                         vie_j2 -= 3
                         temps.pop(i)
                         bullets.pop(i)
@@ -2228,6 +2445,8 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
+                        count_hit_j2 = 20
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                             temps.pop(i)
@@ -2238,6 +2457,7 @@ while on:
                             width0.pop(i)
                             height0.pop(i)
                             angle0.pop(i)
+                            explosion.pop(i)
 
                     else:
                         screen.blit(bullet3, (widths[i], heights[i]))
@@ -2253,37 +2473,27 @@ while on:
                             width0.pop(i)
                             height0.pop(i)
                             angle0.pop(i)
+                            explosion.pop(i)
                 
-                elif bullets[i] == 4:
-                    widths[i] = 30 + widths[i] # Insérer l'équation ici
-                    heights[i] = height0[i]+(40/1080)*height # Insérer l'équation ici
-                    temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                elif bullets[i] == 4: #rocket
+                    temps[i] += 1  
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
                         #hitbox j1
-                        print("Hitbox J1")
-                        vie_j1 -= 10
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-                        angle0.pop(i)
+                        
+                        vie_j1 -= 30
+                        count_hit_j1 = 20
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height() and explosion[i] <= 0:
                         #hitbox j2
-                        print("Hitbox J2")
-                        vie_j2 -= 10
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-                        angle0.pop(i)
+                        
+                        vie_j2 -= 30
+                        count_hit_j2 = 20
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
 
+                    
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
@@ -2293,7 +2503,61 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
 
+                    elif explosion[i] <= 0:
+                        widths[i] = (30)*orientations[i] + widths[i]
+                        heights[i] = height0[i]+(40/1080)*height
+                        screen.blit(bullet4, (widths[i], heights[i]))
+                    elif explosion[i] > 0:
+                        
+                        if explosion[i] == 1:
+                            screen.blit(exp1, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 2:
+                            screen.blit(exp2, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 3:
+                            screen.blit(exp3, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 4:
+                            screen.blit(exp4, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 5:
+                            screen.blit(exp5, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 6:
+                            screen.blit(exp6, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 7:
+                            screen.blit(exp7, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 8:
+                            screen.blit(exp8, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 9:
+                            screen.blit(exp9, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 10:
+                            screen.blit(exp10, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 11:
+                            screen.blit(exp11, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 12:
+                            screen.blit(exp12, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 13:
+                            screen.blit(exp13, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 14:
+                            screen.blit(exp14, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 15:
+                            screen.blit(exp15, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        if explosion[i] == 16:
+                            screen.blit(exp16, (int(widths[i]-exp1.get_width()/2), int(heights[i]-exp1.get_height()/2)))
+                        explosion[i] += 1
+                        if explosion[i] > 16:
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                            explosion.pop(i)
+                        
+
+                    
+                    
                     else:
                         screen.blit(bullet4, (widths[i], heights[i]))
 
@@ -2308,14 +2572,15 @@ while on:
                             width0.pop(i)
                             height0.pop(i)
                             angle0.pop(i)
+                            explosion.pop(i)
                     
                 elif bullets[i] == 5:
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
-                        print("Hitbox J1")
+                        
                         vie_j1 -= 3
                         temps.pop(i)
                         bullets.pop(i)
@@ -2325,10 +2590,12 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
-                        print("Hitbox J2")
+                        
                         vie_j2 -= 3
                         temps.pop(i)
                         bullets.pop(i)
@@ -2338,6 +2605,8 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
+                        count_hit_j2 = 20
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
@@ -2348,6 +2617,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        explosion.pop(i)
 
                     else:
                         screen.blit(bullet5, (widths[i], heights[i]))
@@ -2363,8 +2633,8 @@ while on:
                             width0.pop(i)
                             height0.pop(i)
                             angle0.pop(i)
+                            explosion.pop(i)
             lenb = len(bullets)
-            
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
         #pygame.draw.rect(screen, red, bloc_2)
