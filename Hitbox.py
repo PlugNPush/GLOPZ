@@ -14,7 +14,7 @@ l=1200 # largeur
 screen = pygame.display.set_mode((l,h)) 
 clock = pygame.time.Clock() # controle le framerate du jeu
 
-# -------------------------    hitbox  --------------------
+# -------------------------    hitbox    --------------------
 
 class Wall:
     def __init__(self, tile, x, y):
@@ -28,12 +28,9 @@ for wall in walls:
 if self.x <= 0:
     self.x += 1
 
-
-
 #-----------------   hitbox 1  -------------------
 
 self.rect = self.image.get_rect(center=(self.px, self.py))
-
 
 # ---------------------------------------------------------------------------------------------------------------------------
 # class game
