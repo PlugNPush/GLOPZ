@@ -1713,6 +1713,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/AK/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/AK/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/AK/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/AK/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/AK/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/AK/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/AK/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/AK/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/AK/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 2: #grenade
                 j2_base = pygame.image.load(curdir_j2 + "/grenade/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/grenade/0_flip.png").convert_alpha()
@@ -1720,6 +1727,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/grenade/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/grenade/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/grenade/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/grenade/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/grenade/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/grenade/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/grenade/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/grenade/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/grenade/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 3: #uzi
                 j2_base = pygame.image.load(curdir_j2 + "/UZI/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/UZI/0_flip.png").convert_alpha()
@@ -1727,6 +1741,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/UZI/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/UZI/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/UZI/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/UZI/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/UZI/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/UZI/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/UZI/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/UZI/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/UZI/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 4: #rpg
                 j2_base = pygame.image.load(curdir_j2 + "/RPG/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/RPG/0_flip.png").convert_alpha()
@@ -1734,6 +1755,13 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/RPG/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/RPG/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/RPG/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/RPG/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/RPG/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/RPG/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/RPG/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/RPG/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/RPG/2_flip_hit.png").convert_alpha()
             elif count_weapon_j2 == 5: #shotgun
                 j2_base = pygame.image.load(curdir_j2 + "/shotgun/0.png").convert_alpha()
                 j2_base_flip = pygame.image.load(curdir_j2 + "/shotgun/0_flip.png").convert_alpha()
@@ -1741,12 +1769,26 @@ while on:
                 j2_base_flip_1 = pygame.image.load(curdir_j2 + "/shotgun/1_flip.png").convert_alpha()
                 j2_base_2 = pygame.image.load(curdir_j2 + "/shotgun/2.png").convert_alpha()
                 j2_base_flip_2 = pygame.image.load(curdir_j2 + "/shotgun/2_flip.png").convert_alpha()
+                
+                j2_base_hit = pygame.image.load(curdir_j2 + "/shotgun/0_hit.png").convert_alpha()
+                j2_base_hit_flip = pygame.image.load(curdir_j2 + "/shotgun/0_flip_hit.png").convert_alpha()
+                j2_base_hit_1 = pygame.image.load(curdir_j2 + "/shotgun/1_hit.png").convert_alpha()
+                j2_base_hit_flip_1 = pygame.image.load(curdir_j2 + "/shotgun/1_flip_hit.png").convert_alpha()
+                j2_base_hit_2 = pygame.image.load(curdir_j2 + "/shotgun/2_hit.png").convert_alpha()
+                j2_base_hit_flip_2 = pygame.image.load(curdir_j2 + "/shotgun/2_flip_hit.png").convert_alpha()
             j2 = pygame.transform.scale(j2_base, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_flip = pygame.transform.scale(j2_base_flip, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_1 = pygame.transform.scale(j2_base_1, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_flip_1 = pygame.transform.scale(j2_base_flip_1, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_2 = pygame.transform.scale(j2_base_2, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
             j2_flip_2 = pygame.transform.scale(j2_base_flip_2, (int((j2_base.get_width()*2 / 1920) * width), int((j2_base.get_height()*2 / 1080) * height)))
+            
+            j2_hit = pygame.transform.scale(j2_base_hit, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_flip = pygame.transform.scale(j2_base_hit_flip, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_1 = pygame.transform.scale(j2_base_hit_1, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_flip_1 = pygame.transform.scale(j2_base_hit_flip_1, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_2 = pygame.transform.scale(j2_base_hit_2, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
+            j2_hit_flip_2 = pygame.transform.scale(j2_base_hit_flip_2, (int((j2_base_hit.get_width()*2 / 1920) * width), int((j2_base_hit.get_height()*2 / 1080) * height)))
             pass_blit_j2 = False
         
 
