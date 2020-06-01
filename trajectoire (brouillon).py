@@ -19,6 +19,29 @@ def bazooka():
 def grenade():
 
 
+#widths[i] = 1 + cos(pi/2)*temps[i] + width0[i] # Insérer l'équation ici
+#heights[i] = (-1/2)*1*temps[i]**2 + 10*sin(pi/2)*temps[i] + height0[i] # Insérer l'équation ici
+
+# Equation de la gravité
+#widths[i] = 3*(temps[i] % 60) + width0[i]  # Insérer l'équation ici
+#heights[i] = 2*(temps[i] % 60)**2 + 4*(temps[i] % 60) + height0[i] # Insérer l'équation ici
+
+# Rectiligne
+#widths[i] = 3*(temps[i] / 60) + width0[i]  # Insérer l'équation ici
+#heights[i] = height0[i] # Insérer l'équation ici
+
+# Formule qui marche pas mais saute
+#widths[i] = exp(temps[i] / 60) + width0[i] # Insérer l'équation ici
+#heights[i] = (1/60)*1*temps[i]**2 - 5*temps[i] + height0[i] # Insérer l'équation ici
+
+
+#widths[i] = 50*tan((temps[i] / 100) - 59.7) + width0[i] # Insérer l'équation ici
+#heights[i] = (1/200)*10*temps[i]**2 - 10*sin(pi/6)*temps[i] + height0[i] # Insérer l'équation ici
+
+#balle fusil
+#widths[i] = 800*cos(0)*(temps[i]/60) + width0[i] # Insérer l'équation ici
+#heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(0)*(temps[i]/60) + height0[i] # Insérer l'équation ici g = 30 V0 = 800 a = 0
+
 # la vitesse de la balle doit etre réaliste : _ralentie au début si lancer de manière parabolique
 #                                             _accéléré de la pointe vers le sol#
 

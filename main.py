@@ -949,6 +949,8 @@ while on:
     weapon3_j2 = 20
     weapon5_j2 = 5
     
+    count_hit_j1 = 0
+    count_hit_j2 = 0
     
     pass_blit_j1 = True
     pass_blit_j2 = True
@@ -1836,30 +1838,62 @@ while on:
                 if move_j1 == True: #si je joueur a bougé
                     compteur_j1 += 1
                     if compteur_j1 < 10:
-                        screen.blit(j1_1, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_1, pos_j1)
+                        else:
+                            screen.blit(j1_1, pos_j1)
                     elif compteur_j1 < 20:
-                        screen.blit(j1_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_2, pos_j1)
+                        else:
+                            screen.blit(j1_2, pos_j1)
                     elif compteur_j1 == 20:
-                        screen.blit(j1_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_2, pos_j1)
+                        else:
+                            screen.blit(j1_2, pos_j1)
                         compteur_j1 = 0
                     move_j1 = False
 
                 else:
-                    screen.blit(j1, pos_j1)
+                    if count_hit_j1 > 0:
+                        count_hit_j1 -= 1
+                        screen.blit(j1_hit, pos_j1)
+                    else:
+                        screen.blit(j1, pos_j1)
                     compteur_j1 = 0
             else:
                 if move_j1 == True:
                     compteur_j1 += 1
                     if compteur_j1 < 10:
-                        screen.blit(j1_flip_1, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_flip_1, pos_j1)
+                        else:
+                            screen.blit(j1_flip_1, pos_j1)
                     elif compteur_j1 < 20:
-                        screen.blit(j1_flip_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_flip_2, pos_j1)
+                        else:
+                            screen.blit(j1_flip_2, pos_j1)
                     elif compteur_j1 == 20:
-                        screen.blit(j1_flip_2, pos_j1)
+                        if count_hit_j1 > 0:
+                            count_hit_j1 -= 1
+                            screen.blit(j1_hit_flip_2, pos_j1)
+                        else:
+                            screen.blit(j1_flip_2, pos_j1)
                         compteur_j1 = 0
                     move_j1 = False
                 else:
-                    screen.blit(j1_flip, pos_j1)
+                    if count_hit_j1 > 0:
+                        count_hit_j1 -= 1
+                        screen.blit(j1_hit_flip, pos_j1)
+                    else:
+                        screen.blit(j1_flip, pos_j1)
                     compteur_j1 = 0
         else :
             game = False
@@ -1873,36 +1907,67 @@ while on:
             pos_j2.y = int(bloc_base.y-j2.get_height())
             
 
-
         if alive_j2 == True :
             if heading_j2 == 1:
-                if move_j2 == True:
+                if move_j2 == True: #si je joueur a bougé
                     compteur_j2 += 1
                     if compteur_j2 < 10:
-                        screen.blit(j2_1, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_1, pos_j2)
+                        else:
+                            screen.blit(j2_1, pos_j2)
                     elif compteur_j2 < 20:
-                        screen.blit(j2_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_2, pos_j2)
+                        else:
+                            screen.blit(j2_2, pos_j2)
                     elif compteur_j2 == 20:
-                        screen.blit(j2_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_2, pos_j2)
+                        else:
+                            screen.blit(j2_2, pos_j2)
                         compteur_j2 = 0
                     move_j2 = False
 
                 else:
-                    screen.blit(j2, pos_j2)
+                    if count_hit_j2 > 0:
+                        count_hit_j2 -= 1
+                        screen.blit(j2_hit, pos_j2)
+                    else:
+                        screen.blit(j2, pos_j2)
                     compteur_j2 = 0
             else:
                 if move_j2 == True:
                     compteur_j2 += 1
                     if compteur_j2 < 10:
-                        screen.blit(j2_flip_1, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_flip_1, pos_j2)
+                        else:
+                            screen.blit(j2_flip_1, pos_j2)
                     elif compteur_j2 < 20:
-                        screen.blit(j2_flip_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_flip_2, pos_j2)
+                        else:
+                            screen.blit(j2_flip_2, pos_j2)
                     elif compteur_j2 == 20:
-                        screen.blit(j2_flip_2, pos_j2)
+                        if count_hit_j2 > 0:
+                            count_hit_j2 -= 1
+                            screen.blit(j2_hit_flip_2, pos_j2)
+                        else:
+                            screen.blit(j2_flip_2, pos_j2)
                         compteur_j2 = 0
                     move_j2 = False
                 else:
-                    screen.blit(j2_flip, pos_j2)
+                    if count_hit_j2 > 0:
+                        count_hit_j2 -= 1
+                        screen.blit(j2_hit_flip, pos_j2)
+                    else:
+                        screen.blit(j2_flip, pos_j2)
                     compteur_j2 = 0
         else :
             game = False
@@ -2132,16 +2197,13 @@ while on:
             lenb = len(bullets)
             if (i < lenb):
                 if bullets[i] == 1:
-                    # On a affaire à un bon petit AK
                     # Attention ! t = temps[i] % 60
                     
-                    #widths[i] += 15 * orientations[i] # Insérer l'équation ici
-                    #heights[i] += 0.2 * (temps[i] % 60) + 1 # Insérer l'équation ici
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         print("Hitbox J1")
                         vie_j1 -= 3
@@ -2153,8 +2215,9 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         print("Hitbox J2")
                         vie_j2 -= 3
@@ -2166,6 +2229,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j2 = 20
                         
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
@@ -2194,34 +2258,11 @@ while on:
                     
                     
                 elif bullets[i] == 2:
-                    # Equation de l'hypopotamus
-                    #widths[i] = 1 + cos(pi/2)*temps[i] + width0[i] # Insérer l'équation ici
-                    #heights[i] = (-1/2)*1*temps[i]**2 + 10*sin(pi/2)*temps[i] + height0[i] # Insérer l'équation ici
                     
-                    # Equation de la gravité
-                    #widths[i] = 3*(temps[i] % 60) + width0[i]  # Insérer l'équation ici
-                    #heights[i] = 2*(temps[i] % 60)**2 + 4*(temps[i] % 60) + height0[i] # Insérer l'équation ici
-                    
-                    # Rectiligne
-                    #widths[i] = 3*(temps[i] / 60) + width0[i]  # Insérer l'équation ici
-                    #heights[i] = height0[i] # Insérer l'équation ici
-                    
-                    # Formule qui marche pas mais saute
-                    #widths[i] = exp(temps[i] / 60) + width0[i] # Insérer l'équation ici
-                    #heights[i] = (1/60)*1*temps[i]**2 - 5*temps[i] + height0[i] # Insérer l'équation ici
-                    
-                    
-                    #widths[i] = 50*tan((temps[i] / 100) - 59.7) + width0[i] # Insérer l'équation ici
-                    #heights[i] = (1/200)*10*temps[i]**2 - 10*sin(pi/6)*temps[i] + height0[i] # Insérer l'équation ici
-                
-                    #balle fusil
-                    #widths[i] = 800*cos(0)*(temps[i]/60) + width0[i] # Insérer l'équation ici
-                    #heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(0)*(temps[i]/60) + height0[i] # Insérer l'équation ici g = 30 V0 = 800 a = 0
-                    
-                    widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 300 V0 = 400 a = pi/4
+                    widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] 
+                    heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height #  g = 300 V0 = 400 a = pi/4
                     temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         print("Hitbox J1")
                         vie_j1 -= 10
@@ -2233,8 +2274,9 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         print("Hitbox J2")
                         vie_j2 -= 10
@@ -2246,6 +2288,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j2 = 20
 
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
@@ -2277,11 +2320,11 @@ while on:
    
                         
                 elif bullets[i] == 3:
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i]
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         print("Hitbox J1")
                         vie_j1 -= 3
@@ -2293,8 +2336,9 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         print("Hitbox J2")
                         vie_j2 -= 3
@@ -2306,6 +2350,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j2 = 20
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                             temps.pop(i)
@@ -2333,10 +2378,10 @@ while on:
                             angle0.pop(i)
                 
                 elif bullets[i] == 4:
-                    widths[i] = 30 + widths[i] # Insérer l'équation ici
-                    heights[i] = height0[i]+(40/1080)*height # Insérer l'équation ici
+                    widths[i] = 30 + widths[i] 
+                    heights[i] = height0[i]+(40/1080)*height 
                     temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         print("Hitbox J1")
                         vie_j1 -= 10
@@ -2348,8 +2393,9 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         print("Hitbox J2")
                         vie_j2 -= 10
@@ -2361,6 +2407,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j2 = 20
 
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
@@ -2388,10 +2435,10 @@ while on:
                             angle0.pop(i)
                     
                 elif bullets[i] == 5:
-                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
-                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         print("Hitbox J1")
                         vie_j1 -= 3
@@ -2403,8 +2450,9 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j1 = 20
                     
-                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         print("Hitbox J2")
                         vie_j2 -= 3
@@ -2416,6 +2464,7 @@ while on:
                         width0.pop(i)
                         height0.pop(i)
                         angle0.pop(i)
+                        count_hit_j2 = 20
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
@@ -2442,7 +2491,6 @@ while on:
                             height0.pop(i)
                             angle0.pop(i)
             lenb = len(bullets)
-            
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
         #pygame.draw.rect(screen, red, bloc_2)
