@@ -223,17 +223,11 @@ green2 = pygame.Color(26, 54, 63)
 
 # rectangles choix joueurs
 button_player1 = pygame.Rect(int((700/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, red, button_player1)
 button_player2 = pygame.Rect(int((900/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, green, button_player2)
 button_player3 = pygame.Rect(int((1100/ 1920) * width), int((800 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, blue, button_player3)
 button_player4 = pygame.Rect(int((700/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, red, button_player4)
 button_player5 = pygame.Rect(int((900/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, blue, button_player5)
 button_player6 = pygame.Rect(int((1100/ 1920) * width), int((950 / 1080) * height), int((100 / 1920) * width), int((50 / 1080) * height))
-pygame.draw.rect(screen, red, button_player6)
 pygame.display.flip()
 
 """JAUGE"""
