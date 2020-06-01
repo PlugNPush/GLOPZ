@@ -11,92 +11,8 @@ import sys, glob #on importe les modules
 h=600 #hauteur
 l=1200 # largeur
  
-screen = pygame.display.set_mode((l,h)) #on ouvre une fenêtre pygame avec les valeurs l et h données
- 
-clock = pygame.time.Clock() # on utilise la fonction clock pour controler le framerate du jeu
- 
- 
-class player:
-    def __init__(self):  # self définit un objet manipulable pas le joueur , ici le personnage
-        self.x = 200     # position x du personnage
-        self.y = 300      # position y du personnage
-        self.ani_speed_init=4       #vitesse initial de l'animation
-        self.ani_speed=self.ani_speed_init       # pour que la vitesse de l'animation soit la même que sa vitesse initiale
-        self.ani = glob.glob("marche/bob*.png")      # on utilise le module et la fonction glob pour rechercher les images a charger dans un dossier spécifique (ici marche) et il va charger tous les objets commencant par "bob"
-        self.ani.sort()                # ceci va permettre de classer dans l'ordre les images chargées précédemment ( bob1, bob2, bob3 ...)
-        self.ani_pos=0                 # on place l'animation a la première frame a la position 0
-        self.ani_max = len(self.ani)-1              # on soustrait 1 aux images pour définir l'animation max pour éviter l'erreur "list index out of range" et permettre la répétition des images 
-        self.img = pygame.image.load(self.ani[0])        # pygame charge l'image a l'animation 0
-        self.update(0)
-         
-    def update(self, pos):     # après le chargement des images il va être question ici du déplacament du personnage
-        if pos == 0:           # si le personnage est immobile, l'image bob0 va s'ouvrir
-            self.img = pygame.image.load("bob0.png")
-        if pos == 1:            # si la position du personnage est de 1 (il va vers la droite)
-            self.ani = glob.glob("marche/bob*.png")         # on va charger les images du perso qui va vers la droite
-            self.ani_speed-=1             # la vitesse va être égale a la vitesse de l'animation -1 ( donc 4 ici)
-            self.x+=pos+1                 # et on va additionner la nouvelle position du personnage a sa position initiale x définie a 200, de plus , on rajoutte la valeur 1 car sinon le déplacement est trop lent
-            if self.ani_speed == 0:            # si l'animation du personnage est de 0 alors il y aura un retours a la valeur 5 de la vitesse initiale
-                self.img = pygame.image.load(self.ani[self.ani_pos])
-                self.ani_speed = self.ani_speed_init
-                if self.ani_pos == self.ani_max:         # si l'animation atteind sa frame maximale alors
-                    self.ani_pos = 0                     # la position de l'animation ( et non du personnage ) reviens a 0 pour créer une boucle
-                else:
-                    self.ani_pos+=1
-                     
-        if pos == -3:             # si le perso a une position de -3 (il retourne en arrière)
-            self.ani = glob.glob("marche_gauche/bob*.png")            # on va charger les image du perso qui va vers la gauche
-            self.ani_speed-=1                # la vitesse va être égale a la vitesse de l'animation -1 ( donc 4 ici)
-            self.x+=pos+1                    # ensuite on utilise les mêmes procédés que lorsque le perso va vers la droite
-            if self.ani_speed == 0:
-                self.img = pygame.image.load(self.ani[self.ani_pos])
-                self.ani_speed = self.ani_speed_init
-                if self.ani_pos == self.ani_max:
-                    self.ani_pos = 0
-                else:
-                    self.ani_pos+=1
-                     
-        screen.blit(self.img,(self.x,self.y))         # on affiche l'image a l'écran sinon rien n'apparait
-player1 = player()
-pos = 0
-             
-while 1:
-    screen.fill((0,0,0))       #fond noir
-    clock.tick(60)             # framerate ( 60 fps)
-                               # ensuite vient la gestion des évènements
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
-        elif event.type == KEYDOWN and event.key == K_RIGHT:
-            pos = 1            # si la flèche de droite est enfoncée alors le personnage avancera vers la droite
-        elif event.type == KEYUP and event.key == K_RIGHT:
-            pos = 0
-        elif event.type == KEYDOWN and event.key == K_LEFT:
-            pos = -3           # si la flèche gauche est enfoncée alors le personnage avancera vers la gauche
-        elif event.type == KEYUP and event.key == K_LEFT:
-            pos = 0
-    player1.update(pos)         # la nouvelle position du joueur est mise a jours
-     
-    pygame.display.update()      # chaque boucle de "update" va reblitter le personnage sur l'écran
-     
-    class hero(pygame.sprite.Sprite):
-        def __init__(self):
-            self.image_face = pygame.image.load("bob.png").convert_alpha()
-            self.position = pygame.Rect(85, 168, 27, 32,)
-          
-hero = hero()
-
-
-
-
-
-
-
-
-
-
-
-
+screen = pygame.display.set_mode((l,h)) 
+clock = pygame.time.Clock() # controle le framerate du jeu
 
 # -------------------------    hitbox  --------------------
 
@@ -109,22 +25,8 @@ for wall in walls:
     if wall.colliderect(player.position):
          player.position = player.old_position
 
-
-
 if self.x <= 0:
     self.x += 1
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -133,13 +35,21 @@ if self.x <= 0:
 self.rect = self.image.get_rect(center=(self.px, self.py))
 
 
+# ---------------------------------------------------------------------------------------------------------------------------
+# class game
+def check_collision(self, sprite, group):
+    return pygame.sprite.spritecollide(sprite, group, False, pygame.sprite.collide_mask)
 
+#classe player
+def move right(self):
+    #si le joueur1 n'est pas en collision avec le joueur2
+    if self.game.check_collision(self, self.game.all.joueur2):
+        self.rect.x += self.velocity
 
-
-
-
-
-
+def foward(self):
+    #le déplacement ne se fait que si il n'y a pas de collision avec un groupe de joueur
+    if not self.game.check_collision(self, self.game.all_players):
+        self.rect.x -= self.velocity
 
 
 
@@ -268,23 +178,6 @@ def game_init():
     # create bullets
     bullets = list()
 
-# this function initializes the audio system
-def audio_init():
-    global shoot_sound, boom_sound
-
-    # initialize the audio mixer
-    pygame.mixer.init()
-
-    # load sound files
-    shoot_sound = pygame.mixer.Sound("shoot.wav")
-    boom_sound = pygame.mixer.Sound("boom.wav")
-
-# this function uses any available channel to play a sound clip
-def play_sound(sound):
-    channel = pygame.mixer.find_channel(True)
-    channel.set_volume(0.5)
-    channel.play(sound)
-
 # main program begins
 game_init()
 audio_init()
@@ -406,8 +299,6 @@ while True:
         if bullet.alive == False:
             bullets.remove(bullet)
 
-
-
 def update(self, ticks):
     self.position.x -= self.velocity.x * 10.0
     self.position.y -= self.velocity.y * 10.0
@@ -419,30 +310,6 @@ def update(self, ticks):
 def draw(self, surface):
     pos = (int(self.position.x), int(self.position.y))
     pygame.draw.circle(surface, self.color, pos, 4, 0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #--------------    hitbox 2  ----------------
@@ -461,40 +328,6 @@ char = pygame.image.load('standing.png')
 
 clock = pygame.time.Clock()
 
-
-class player(object):
-    def __init__(self,x,y,width,height):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.vel = 5
-        self.isJump = False
-        self.left = False
-        self.right = False
-        self.walkCount = 0
-        self.jumpCount = 10
-        self.standing = True
-        self.hitbox = (self.x + 17, self.y + 11, 29, 52)
-
-    def draw(self, win):
-        if self.walkCount + 1 >= 27:
-            self.walkCount = 0
-
-        if not(self.standing):
-            if self.left:
-                win.blit(walkLeft[self.walkCount//3], (self.x,self.y))
-                self.walkCount += 1
-            elif self.right:
-                win.blit(walkRight[self.walkCount//3], (self.x,self.y))
-                self.walkCount +=1
-        else:
-            if self.right:
-                win.blit(walkRight[0], (self.x, self.y))
-            else:
-                win.blit(walkLeft[0], (self.x, self.y))
-        self.hitbox = (self.x + 17, self.y + 11, 29, 52)
-        pygame.draw.rect(win, (255,0,0), self.hitbox,2)
                 
 
 
@@ -510,54 +343,6 @@ class projectile(object):
     def draw(self,win):
         pygame.draw.circle(win, self.color, (self.x,self.y), self.radius)
 
-
-class enemy(object):
-    walkRight = [pygame.image.load('R1E.png'), pygame.image.load('R2E.png'), pygame.image.load('R3E.png'), pygame.image.load('R4E.png'), pygame.image.load('R5E.png'), pygame.image.load('R6E.png'), pygame.image.load('R7E.png'), pygame.image.load('R8E.png'), pygame.image.load('R9E.png'), pygame.image.load('R10E.png'), pygame.image.load('R11E.png')]
-    walkLeft = [pygame.image.load('L1E.png'), pygame.image.load('L2E.png'), pygame.image.load('L3E.png'), pygame.image.load('L4E.png'), pygame.image.load('L5E.png'), pygame.image.load('L6E.png'), pygame.image.load('L7E.png'), pygame.image.load('L8E.png'), pygame.image.load('L9E.png'), pygame.image.load('L10E.png'), pygame.image.load('L11E.png')]
-
-    def __init__(self, x, y, width, height, end):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.end = end
-        self.path = [self.x, self.end]
-        self.walkCount = 0
-        self.vel = 3
-        self.hitbox = (self.x + 17, self.y + 2, 31, 57)
-
-    def draw(self,win):
-        self.move()
-        if self.walkCount + 1 >= 33:
-            self.walkCount = 0
-
-        if self.vel > 0:
-            win.blit(self.walkRight[self.walkCount //3], (self.x, self.y))
-            self.walkCount += 1
-        else:
-            win.blit(self.walkLeft[self.walkCount //3], (self.x, self.y))
-            self.walkCount += 1
-        self.hitbox = (self.x + 17, self.y + 2, 31, 57)
-        pygame.draw.rect(win, (255,0,0), self.hitbox,2)
-
-    def move(self):
-        if self.vel > 0:
-            if self.x + self.vel < self.path[1]:
-                self.x += self.vel
-            else:
-                self.vel = self.vel * -1
-                self.walkCount = 0
-        else:
-            if self.x - self.vel > self.path[0]:
-                self.x += self.vel
-            else:
-                self.vel = self.vel * -1
-                self.walkCount = 0
-
-    def hit(self):
-        print('hit')
-
-        
 
 def redrawGameWindow():
     win.blit(bg, (0,0))
@@ -645,20 +430,3 @@ while run:
     redrawGameWindow()
 
 pygame.quit()
-
-# ---------------------------------------------------------------------------------------------------------------------------
-# class game
-def check_collision(self, sprite, group):
-    return pygame.sprite.spritecollide(sprite, group, False, pygame.sprite.collide_mask)
-
-#classe player
-def move right(self):
-    #sile joueur n'est pas en collision avec un monstre
-    if self.game.check_collision(self, self.game.all.joueur2):
-        self.rect.x += self.velocity
-
-def foward(self):
-    #le déplacement ne se fait que si il n'y a pas de collision avec un groupe de joueur
-    if not self.game.check_collision(self, self.game.all_players):
-        self.rect.x -= self.velocity
-

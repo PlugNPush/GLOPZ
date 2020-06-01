@@ -45,76 +45,73 @@ def grenade():
 # la vitesse de la balle doit etre réaliste : _ralentie au début si lancer de manière parabolique
 #                                             _accéléré de la pointe vers le sol#
 
-http://culturesciencesphysique.ens-lyon.fr/ressource/chute-libre-python-1.xml#modelisation
 
 
 #     ---------------  Projectile   -----------------
-# définie la classe qui va gerer le projectile de notre joueur
-class Projectile(pygame.sprite.Sprite):
+# Classe qui gère la balle tirer par le joueur
 
-    def __init__(self, player):    
+#from balle import *
+class Balle(pygame.sprite.Sprite):
+
+    def __init__(self, joueur):    
         super().__init__()
-        self.velocity = 5
-        self.player
-        self.image = pygame.image.load('assets/projectile.png') #la balle
-        self.image = pygame.transform.scale(self.image, (50, 50))
-        self.rect = self.image.get_rect() #met l'image dans un rectangle
-        self.rect.x = player.rect.x + 120
-        self.rect.y = player.rect.y + 60     #permet d'avoir les projectiles au plus proches des joueurs
+        self.vitesse = 17
+        self.Joueur
+        self.image = pygame.image.load('assets/balle.png')      # image représentant la balle la balle
+        self.image = pygame.transform.scale(self.image, (50, 50))    # redimensione la balle pour que ce soit réaliste
+        self.pos = self.image.get_rect()     # met l'image dans un rectangle pour la délimitation de la hitbox
+        self.pos.x = joueur.pos.x + 120
+        self.pos.y = joueur.pos.y + 60     # permet d'avoir les balless aux coordonées de la sortie de l'arme
 
     def move(self):
-        self.rect.x += self.velocity
+        self.pos.x += self.vitesse    # permet le mouvement des balles
 
     def remove(self):
-        self.player.all_projectiles.remove(self)
+        self.joueur.all_balles.remove(self)
 
-        #verifie si le projectile entre en collision avec un monstre
-        if self.player.game.check_collision(self, self.player.game.all_players):
-            #supprimer le projectile
+        #verifie si la balle est en collision contre l'autre joueur
+        if self.joueur.game.check_collision(self, self.joueur.game.all_joueurs):
+            # supprime la balle
             self.remove()
 
-        #vérifier si notre projectile n'est plus présent
-        if self.rect.x > 1080:
-            #suprimer le projectile (en dehors de l'écran)
+        #vérifie si la balle n'est pas dans le terrain
+        if self.pos.x > 1980:    #dans le cas ou la longueur de l'écran est de 1980
+            # la balle est suprimé hors de l'écran
             self.remove
 
 
 
 #  Dans le main()
 
-from projectile import Projectile
+from balle import Balle
 
 #fonction pour les joueur
 
-class Player(pygame.sprite.Sprite):
+class Joueur(pygame.sprite.Sprite):
     def __init__(self, game)    #hitbox
         super().__init__()
         self.game = game    #hitbox
-        self.health = 100
-        self.max_health = 100
+        self.santé = 50
         self.attack = 10
-        self.velocity = 5
-        self.all_projectiles = pygame.sprite.Group()
-        self.image = pygame.image.load('assets/player.png')# image du joueur
-        self.rect = self.image.get_rect() # rectangle
-        self.rect.x = 400
-        self.rect.y = 500
+        self.vitesse = 7
+        self.all_balles = pygame.sprite.Group()       # création du groupe de balle
+        self.image = pygame.image.load('assets/joueur.png')  # image du joueur
+        self.pos = self.image.get_rect()    # rectangle
+        self.pos.x = 600
+        self.pos.y = 400
 
-def launch_projectile(self):
-    #creer une nouvelle instance de la classe Projectile
-    #projectile = Projectile()
-    self.all_projectiles.add(Projectile(self))
+def launch_balle(self):
+    #ceci est une nouvelle instance de la classe Balle
+    #balle = Balle()
+    self.all_balles.add(Balle(self))
 
-# on modifie dans la fonction qui s'occupe de faire ne sorte que le jouer tire en appuyant sur espace
-
-
-#détecter si la touche "tirer" est enclenché pour lancer notre projectile
+#détecte si la touche  qui permet de tirer est enclenché pour lancer la balle
 if event.key == pygame.K_v:
-    game.player.launch_projectile()
+    game.joueur.launch_balle()
 
-#afficher l'ensemble des images de mon groupe de projectile
-game.player.all_projectiles.draw(screen)
+#affiche l'ensemble des images de l'ensemble de balle
+game.joueur.all_balles.draw(screen)
 
-#récuperer les projectiles du joueur
-for projectile in game.player.all.projectiles:
-    projectile.move()
+#récuperer les balles du joueur
+for balle in game.joueur.all.balles:
+    balle.move()
