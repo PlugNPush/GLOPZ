@@ -322,6 +322,11 @@ bullet3 = pygame.image.load(curdir + "/images/balle2.png")
 bullet4 = pygame.image.load(curdir + "/images/balle4.png")
 bullet5 = pygame.image.load(curdir + "/images/balle3.png")
 
+bullet1 = pygame.transform.scale(bullet1, (int((4 / 1920) * width), int((4 / 1080) * height)))
+bullet2 = pygame.transform.scale(bullet2, (int((20 / 1920) * width), int((21 / 1080) * height)))
+bullet3 = pygame.transform.scale(bullet3, (int((4 / 1920) * width), int((4 / 1080) * height)))
+bullet4 = pygame.transform.scale(bullet4, (int((23 / 1920) * width), int((5 / 1080) * height)))
+bullet5 = pygame.transform.scale(bullet5, (int((2 / 1920) * width), int((2 / 1080) * height)))
 
 
 #chargement des armes en utilisation J1
@@ -430,6 +435,9 @@ while on:
     height0 = [0]
     width0 = [0]
     angle0 = [0]
+    
+    vie_j1 = 100
+    vie_j2 = 100
     
     song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
     mixer.music.play(-1)
@@ -1104,11 +1112,11 @@ while on:
                     cooldown = True
                     bullets.append(1)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/48, -pi/48))
                     pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j1 == 3 and weapon3_j1 > 0:
@@ -1116,81 +1124,81 @@ while on:
                     cooldown = True
                     bullets.append(3)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/30, -pi/30))
                 elif count_weapon_j1 == 5 and weapon5_j1 > 0:
                     weapon5_j1 -= 1
                     cooldown = True
                     bullets.append(5)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
                     
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
                     
                     bullets.append(5)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(uniform(pi/24, -pi/24))
                 elif count_weapon_j1 == 2 and reload_status_weapon2_j1 == 0:
                     reload_status_weapon2_j1 = 1
                     cooldown = True
                     bullets.append(2)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(0)
                 elif count_weapon_j1 == 4 and reload_status_weapon4_j1 == 0:
                     reload_status_weapon4_j1 = 1
                     cooldown = True
                     bullets.append(4)
                     heights.append(pos_j1.y)
-                    widths.append(pos_j1.x)
+                    widths.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     temps.append(0)
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
-                    width0.append(pos_j1.x)
+                    width0.append(pos_j1.x+j1.get_width() if heading_j1 == 1 else pos_j1.x)
                     angle0.append(0)
         else:
             cooldown = False
@@ -1263,11 +1271,11 @@ while on:
                     cooldown2 = True
                     bullets.append(1)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/48, -pi/48))
                     pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j2 == 3 and weapon3_j2 > 0:
@@ -1275,57 +1283,57 @@ while on:
                     cooldown2 = True
                     bullets.append(3)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/30, -pi/30))
                 elif count_weapon_j2 == 5 and weapon5_j2 > 0:
                     weapon5_j2 -= 1
                     cooldown2 = True
                     bullets.append(5)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
                     bullets.append(5)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
-                    angle0.append(uniform(pi/24, -pi/24))
-
-                    bullets.append(5)
-                    heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
-                    temps.append(0)
-                    orientations.append(1 if heading_j2 == 1 else -1)
-                    height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
 
                     bullets.append(5)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
 
                     bullets.append(5)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+
+                    bullets.append(5)
+                    heights.append(pos_j2.y)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j2 == 1 else -1)
+                    height0.append(pos_j2.y)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(uniform(pi/24, -pi/24))
 
                 elif count_weapon_j2 == 2 and reload_status_weapon2_j2 == 0:
@@ -1333,22 +1341,22 @@ while on:
                     cooldown2 = True
                     bullets.append(2)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(0)
                 elif count_weapon_j2 == 4 and reload_status_weapon4_j2 == 0:
                     reload_status_weapon4_j2 = 1
                     cooldown2 = True
                     bullets.append(4)
                     heights.append(pos_j2.y)
-                    widths.append(pos_j2.x)
+                    widths.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     temps.append(0)
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
-                    width0.append(pos_j2.x)
+                    width0.append(pos_j2.x+j2.get_width() if heading_j2 == 1 else pos_j2.x)
                     angle0.append(0)
         else:
             cooldown2 = False
@@ -1836,10 +1844,62 @@ while on:
 
 
         """AFFICHAGE DES JAUGES DE VIE J1"""
-        screen.blit(jauge_100, pos_jauge_j1)
+        if vie_j1 >= 100:
+            screen.blit(jauge_100, pos_jauge_j1)
+        elif vie_j1 >= 90:
+            screen.blit(jauge_90, pos_jauge_j1)
+        elif vie_j1 >= 80:
+            screen.blit(jauge_80, pos_jauge_j1)
+        elif vie_j1 >= 70:
+            screen.blit(jauge_70, pos_jauge_j1)
+        elif vie_j1 >= 60:
+            screen.blit(jauge_60, pos_jauge_j1)
+        elif vie_j1 >= 50:
+            screen.blit(jauge_50, pos_jauge_j1)
+        elif vie_j1 >= 40:
+            screen.blit(jauge_40, pos_jauge_j1)
+        elif vie_j1 >= 30:
+            screen.blit(jauge_30, pos_jauge_j1)
+        elif vie_j1 >= 20:
+            screen.blit(jauge_20, pos_jauge_j1)
+        elif vie_j1 >= 10:
+            screen.blit(jauge_10, pos_jauge_j1)
+        elif vie_j1 >= 0:
+            screen.blit(jauge_0, pos_jauge_j1)
+        else:
+            winner = 2
+            game = False
+            menu_principale = True
+            victory = True
 
         """AFFICHAGE DES JAUGES DE VIE J2"""
-        screen.blit(jauge_100, pos_jauge_j2)
+        if vie_j2 >= 100:
+            screen.blit(jauge_100, pos_jauge_j2)
+        elif vie_j2 >= 90:
+            screen.blit(jauge_90, pos_jauge_j2)
+        elif vie_j2 >= 80:
+            screen.blit(jauge_80, pos_jauge_j2)
+        elif vie_j2 >= 70:
+            screen.blit(jauge_70, pos_jauge_j2)
+        elif vie_j2 >= 60:
+            screen.blit(jauge_60, pos_jauge_j2)
+        elif vie_j2 >= 50:
+            screen.blit(jauge_50, pos_jauge_j2)
+        elif vie_j2 >= 40:
+            screen.blit(jauge_40, pos_jauge_j2)
+        elif vie_j2 >= 30:
+            screen.blit(jauge_30, pos_jauge_j2)
+        elif vie_j2 >= 20:
+            screen.blit(jauge_20, pos_jauge_j2)
+        elif vie_j2 >= 10:
+            screen.blit(jauge_10, pos_jauge_j2)
+        elif vie_j2 >= 0:
+            screen.blit(jauge_0, pos_jauge_j2)
+        else:
+            winner = 1
+            game = False
+            menu_principale = True
+            victory = True
 
         """AFFICHAGE DES ARMES J1"""
         screen.blit(ak_neutral, pos_ak_j1)
@@ -2007,7 +2067,34 @@ while on:
                     widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
                     heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                    
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                        #hitbox j1
+                        print("Hitbox J1")
+                        vie_j1 -= 10
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                    
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                        #hitbox j2
+                        print("Hitbox J2")
+                        vie_j2 -= 10
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        
+                    elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
