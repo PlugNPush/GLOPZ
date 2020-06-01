@@ -2251,8 +2251,68 @@ while on:
                     widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
                     heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
+                    if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 1 and widths[i] > bloc_1.x and widths[i] < bloc_1.x + bloc_1.w and heights[i] > bloc_1.y and heights[i] < bloc_1.y + bloc_1.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 2 and widths[i] > bloc_2.x and widths[i] < bloc_2.x + bloc_2.w and heights[i] > bloc_2.y and heights[i] < bloc_2.y + bloc_2.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 3 and widths[i] > bloc_3.x and widths[i] < bloc_3.x + bloc_3.w and heights[i] > bloc_3.y and heights[i] < bloc_3.y + bloc_3.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 4 and widths[i] > bloc_4.x and widths[i] < bloc_4.x + bloc_4.w and heights[i] > bloc_4.y and heights[i] < bloc_4.y + bloc_4.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 5 and widths[i] > bloc_5.x and widths[i] < bloc_5.x + bloc_5.w and heights[i] > bloc_5.y and heights[i] < bloc_5.y + bloc_5.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+
+                    elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
                         vie_j1 -= 3
@@ -2312,10 +2372,28 @@ while on:
                     
                 elif bullets[i] == 2: #grenade
                     temps[i] += 1  
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
+                    if  widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 1 and widths[i] > bloc_1.x and widths[i] < bloc_1.x + bloc_1.w and heights[i] > bloc_1.y and heights[i] < bloc_1.y + bloc_1.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 2 and widths[i] > bloc_2.x and widths[i] < bloc_2.x + bloc_2.w and heights[i] > bloc_2.y and heights[i] < bloc_2.y + bloc_2.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 3 and widths[i] > bloc_3.x and widths[i] < bloc_3.x + bloc_3.w and heights[i] > bloc_3.y and heights[i] < bloc_3.y + bloc_3.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 4 and widths[i] > bloc_4.x and widths[i] < bloc_4.x + bloc_4.w and heights[i] > bloc_4.y and heights[i] < bloc_4.y + bloc_4.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 5 and widths[i] > bloc_5.x and widths[i] < bloc_5.x + bloc_5.w and heights[i] > bloc_5.y and heights[i] < bloc_5.y + bloc_5.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
                         #hitbox j1
                         
-                        vie_j1 -= 10
+                        vie_j1 -= 50
                         count_hit_j1 = 20
                         explosion[i] = 1
                         pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
@@ -2324,7 +2402,7 @@ while on:
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height() and explosion[i] <= 0:
                         #hitbox j2
                         
-                        vie_j2 -= 10
+                        vie_j2 -= 50
                         count_hit_j2 = 20
                         explosion[i] = 1
                         pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
@@ -2345,6 +2423,7 @@ while on:
                         widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] 
                         heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height #  g = 300 V0 = 400 a = pi/4
                         screen.blit(bullet2, (widths[i], heights[i]))
+
                     elif explosion[i] > 0:
                         
                         if explosion[i] == 1:
@@ -2413,12 +2492,72 @@ while on:
                       
    
                         
-                elif bullets[i] == 3:
+                elif bullets[i] == 3: #uzi
                     widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i]
                     heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
+                    if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 1 and widths[i] > bloc_1.x and widths[i] < bloc_1.x + bloc_1.w and heights[i] > bloc_1.y and heights[i] < bloc_1.y + bloc_1.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 2 and widths[i] > bloc_2.x and widths[i] < bloc_2.x + bloc_2.w and heights[i] > bloc_2.y and heights[i] < bloc_2.y + bloc_2.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 3 and widths[i] > bloc_3.x and widths[i] < bloc_3.x + bloc_3.w and heights[i] > bloc_3.y and heights[i] < bloc_3.y + bloc_3.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 4 and widths[i] > bloc_4.x and widths[i] < bloc_4.x + bloc_4.w and heights[i] > bloc_4.y and heights[i] < bloc_4.y + bloc_4.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 5 and widths[i] > bloc_5.x and widths[i] < bloc_5.x + bloc_5.w and heights[i] > bloc_5.y and heights[i] < bloc_5.y + bloc_5.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+
+                    elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
                         vie_j1 -= 3
@@ -2477,7 +2616,26 @@ while on:
                 
                 elif bullets[i] == 4: #rocket
                     temps[i] += 1  
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
+                    if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 1 and widths[i] > bloc_1.x and widths[i] < bloc_1.x + bloc_1.w and heights[i] > bloc_1.y and heights[i] < bloc_1.y + bloc_1.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 2 and widths[i] > bloc_2.x and widths[i] < bloc_2.x + bloc_2.w and heights[i] > bloc_2.y and heights[i] < bloc_2.y + bloc_2.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 3 and widths[i] > bloc_3.x and widths[i] < bloc_3.x + bloc_3.w and heights[i] > bloc_3.y and heights[i] < bloc_3.y + bloc_3.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 4 and widths[i] > bloc_4.x and widths[i] < bloc_4.x + bloc_4.w and heights[i] > bloc_4.y and heights[i] < bloc_4.y + bloc_4.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                    elif count_bloc >= 5 and widths[i] > bloc_5.x and widths[i] < bloc_5.x + bloc_5.w and heights[i] > bloc_5.y and heights[i] < bloc_5.y + bloc_5.h and explosion[i] <= 0:
+                        explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
+                        
+                    elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height() and explosion[i] <= 0:
                         #hitbox j1
                         
                         vie_j1 -= 30
@@ -2578,7 +2736,68 @@ while on:
                     widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] 
                     heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
+                    if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 1 and widths[i] > bloc_1.x and widths[i] < bloc_1.x + bloc_1.w and heights[i] > bloc_1.y and heights[i] < bloc_1.y + bloc_1.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 2 and widths[i] > bloc_2.x and widths[i] < bloc_2.x + bloc_2.w and heights[i] > bloc_2.y and heights[i] < bloc_2.y + bloc_2.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 3 and widths[i] > bloc_3.x and widths[i] < bloc_3.x + bloc_3.w and heights[i] > bloc_3.y and heights[i] < bloc_3.y + bloc_3.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 4 and widths[i] > bloc_4.x and widths[i] < bloc_4.x + bloc_4.w and heights[i] > bloc_4.y and heights[i] < bloc_4.y + bloc_4.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+                    elif count_bloc >= 5 and widths[i] > bloc_5.x and widths[i] < bloc_5.x + bloc_5.w and heights[i] > bloc_5.y and heights[i] < bloc_5.y + bloc_5.h:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                        explosion.pop(i)
+
+                    elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
                         vie_j1 -= 3
