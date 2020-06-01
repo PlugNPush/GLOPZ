@@ -2066,7 +2066,7 @@ while on:
                     if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
                         #hitbox j1
                         print("Hitbox J1")
-                        vie_j1 -= 10
+                        vie_j1 -= 3
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2079,7 +2079,7 @@ while on:
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
                         #hitbox j2
                         print("Hitbox J2")
-                        vie_j2 -= 10
+                        vie_j2 -= 3
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2142,10 +2142,35 @@ while on:
                     
                     widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
                     heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 300 V0 = 400 a = pi/4
-
-
                     temps[i] += 1
-                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                        #hitbox j1
+                        print("Hitbox J1")
+                        vie_j1 -= 10
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                    
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                        #hitbox j2
+                        print("Hitbox J2")
+                        vie_j2 -= 10
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+
+                    
+                    elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2178,7 +2203,33 @@ while on:
                     heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     
-                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                        #hitbox j1
+                        print("Hitbox J1")
+                        vie_j1 -= 3
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                    
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                        #hitbox j2
+                        print("Hitbox J2")
+                        vie_j2 -= 3
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                    
+                    elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                             temps.pop(i)
                             bullets.pop(i)
                             widths.pop(i)
@@ -2207,7 +2258,33 @@ while on:
                     widths[i] = 30 + widths[i] # Insérer l'équation ici
                     heights[i] = height0[i]+(40/1080)*height # Insérer l'équation ici
                     temps[i] += 1
-                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                        #hitbox j1
+                        print("Hitbox J1")
+                        vie_j1 -= 10
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                    
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                        #hitbox j2
+                        print("Hitbox J2")
+                        vie_j2 -= 10
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+
+                    elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2236,9 +2313,33 @@ while on:
                     widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
                     heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
                     temps[i] += 1
-                    screen.blit(bullet5, (widths[i], heights[i]))
+                    if widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[0] < pos_j2.y + j1.get_height():
+                        #hitbox j1
+                        print("Hitbox J1")
+                        vie_j1 -= 3
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
                     
-                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                    elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[0] < j2.get_height():
+                        #hitbox j2
+                        print("Hitbox J2")
+                        vie_j2 -= 3
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+                    
+                    elif widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
