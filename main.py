@@ -534,26 +534,30 @@ while on:
         screen.blit(img_info, pos_info)
         pygame.display.flip()
 
+    #On crée une boucle while pour chaque menu : ici pour le menu des personnages
     while menu_personnage:
         fpsClock.tick(15)
         
-
+    #Boucle qui sert aux événements qui suivront : clics
         keys = pygame.key.get_pressed()
         for event in pygame.event.get():
             if event.type == QUIT:
                 on = False
                 break
-            elif keys[K_ESCAPE]:
+            elif keys[K_ESCAPE]: #Evenement clic sur esc : fin de jeu, retour au menu principal
                 game = False
                 menu_principale = True
                 menu_map = False
                 victory = False
                 menu_personnage = False
-            elif event.type == pygame.MOUSEBUTTONUP:
+            elif event.type == pygame.MOUSEBUTTONUP: #Dans le cas où l'evenement est un clique de la souris
 
-                if joueur_1 is True:
-                    if event.button == 1:
-                        if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player1 ; 0 pour x et 1 pour y
+                if joueur_1 is True: #Tour du joueur pour choisir son personnage
+                    if event.button == 1:  #evemenement clique droit
+                    #Condition if, elif pour les cliques dans les zones de sekections des joueurs 0 pour x et 1 pour y 
+                        #Puis on charge les images pour chaque personnage ici le perosnnage 1
+                            #Dés que le perosnnage est séléctionné, le tour du joueru 1 est passé (false) et c'est le tour du joueur2(true)
+                        if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: 
                             print("BOUTON 1")
                             curdir_j1 = curdir + "/images/characters/1"
                             j1 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
@@ -679,8 +683,8 @@ while on:
                             joueur_2 = True
                             break
 
-                if joueur_2 is True:
-                    if event.button == 1:
+                if joueur_2 is True: # tour du joueur 2
+                    if event.button == 1: # meme successions d'étapes que pour le joueur 1
                         if event.pos[0] >= (700 / 1920) * width and event.pos[0] <= (800 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player1 ; 0 pour x et 1 pour y
                             curdir_j2 = curdir + "/images/characters/1"
                             j2 = pygame.image.load(curdir + "/images/chara_1_0.png").convert_alpha()
@@ -698,7 +702,7 @@ while on:
                             j2_flip_1 = pygame.transform.scale(j2_flip_1, (j2.get_width()*2, j2.get_height()*2))
                             j2_2 = pygame.transform.scale(j2_2, (j2.get_width()*2, j2.get_height()*2))
                             j2_flip_2 = pygame.transform.scale(j2_flip_2, (j2.get_width()*2, j2.get_height()*2))
-                            menu_personnage = False
+                            menu_personnage = False #Apres le choix du personnage du joueur 2, on ferme le menu puis on passe au menu des cartes
                             joueur_2 = False
                             break
                         elif event.pos[0] >= (900 / 1920) * width and event.pos[0] <= (1000 / 1920) * width and event.pos[1] >= (800 / 1080) * height and event.pos[1] <= (850 / 1080) * height: #rect player2
@@ -802,7 +806,7 @@ while on:
                             joueur_2 = False
                             break
         screen.blit(fond_vs, (BACK_X, BACK_Y))
-
+        # on crée les differentes surfaces à base de Rect pour faiire les boutons
         rect_separation = pygame.Rect(int(WINDOW_X/2), int((0 / 1080) * height), int((2 / 1920) * width), int(WINDOW_Y / 1080))
         pygame.draw.rect(screen, red, rect_separation)
         rect_players_choice = pygame.Rect(int((0/ 1920) * width), int((700 / 1080) * height), int(WINDOW_X), int(WINDOW_Y))
@@ -1072,11 +1076,11 @@ while on:
                 menu_principale = True
                 menu_map = True
 
-#switch des armes
-            elif keys[K_e]:
-                if pass_weapon_j1 is True:
-                    count_weapon_j1 += 1
-                    pass_weapon_j1 = False
+            """Changement d'armes"""
+            elif keys[K_e]: # appuie sur la touche e
+                if pass_weapon_j1 is True: # le joueur 1 peut changer d'arme 
+                    count_weapon_j1 += 1 #Compteur qui va permettre de savoir quelle arme il aura
+                    pass_weapon_j1 = False # VARIABLE de transition pour eviter une interpretation d'un appuie prolongé
                     pass_blit_j1 = True
             else:
                 pass_weapon_j1 = True
@@ -2040,7 +2044,7 @@ while on:
             pos_j2.x = int((1500 / 1920) * width)
             pos_j2.y = int(bloc_base.y-j2.get_height())
 
-
+        """Les jauges de vie seront affichées avec un remplissage differrents selon le niveau de vie du personnage"""
         """AFFICHAGE DES JAUGES DE VIE J1"""
         if vie_j1 >= 100:
             screen.blit(jauge_100, pos_jauge_j1)
@@ -2114,6 +2118,8 @@ while on:
         screen.blit(ak_neutral, pos_ak_j2)
 
         """COMPTEUR SWITCH ARMES J1"""
+        """Affichage des icones d'armes en fonction du nombre de fois où l'on appuie sur la touche"""
+        """1: AK; 2:grenade; 3:uzi; 4:rpg; 5:shotgun"""
         if count_weapon_j1 == 6:
             count_weapon_j1 = 1
         if count_weapon_j1 == 1:
