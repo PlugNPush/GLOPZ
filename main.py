@@ -2483,6 +2483,7 @@ while on:
                         vie_j1 -= 30
                         count_hit_j1 = 20
                         explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
                     
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height() and explosion[i] <= 0:
                         #hitbox j2
@@ -2490,6 +2491,7 @@ while on:
                         vie_j2 -= 30
                         count_hit_j2 = 20
                         explosion[i] = 1
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rocket-launcher-explosion.mp3"))
 
                     
                     elif widths[i] > width or widths[i] < 0 or heights[i] > height:
