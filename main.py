@@ -2577,7 +2577,7 @@ while on:
                     elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
-                        vie_j1 -= 3
+                        vie_j1 -= 4
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2592,7 +2592,7 @@ while on:
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         
-                        vie_j2 -= 3
+                        vie_j2 -= 4
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2817,7 +2817,7 @@ while on:
                     elif widths[i] > pos_j1.x and widths[i] < pos_j1.x + j1.get_width() and heights[i] > pos_j1.y and heights[i] < pos_j1.y + j1.get_height():
                         #hitbox j1
                         
-                        vie_j1 -= 3
+                        vie_j1 -= 5
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -2832,7 +2832,7 @@ while on:
                     elif widths[i] > pos_j2.x and widths[i] < pos_j2.x + j2.get_width() and heights[i] > pos_j2.y and heights[i] < pos_j2.y + j2.get_height():
                         #hitbox j2
                         
-                        vie_j2 -= 3
+                        vie_j2 -= 5
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
