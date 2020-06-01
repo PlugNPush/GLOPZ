@@ -1076,7 +1076,7 @@ while on:
                 menu_principale = True
                 menu_map = True
 
-            """Changement d'armes"""
+            #Changement d'armes joueur 1 (E) et joueur 2 (SHIFT DROITE)
             elif keys[K_e]: # appuie sur la touche e
                 if pass_weapon_j1 is True: # le joueur 1 peut changer d'arme 
                     count_weapon_j1 += 1 #Compteur qui va permettre de savoir quelle arme il aura
@@ -2511,7 +2511,7 @@ while on:
                         
                 elif bullets[i] == 3: #uzi
                     widths[i] = ((((800*cos(angle0[i])*(temps[i]/60))*orientations[i]) / 1920) * width) + width0[i]
-                    heights[i] = ((((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height) + height0[i]+(40/1080)*height # g = 30 V0 = 800 a = 0
+                    heights[i] = ((((1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60)) / 1080) * height) + height0[i]+(60/1080)*height # g = 30 V0 = 800 a = 0
                     temps[i] += 1
                     if widths[i] > bloc_base.x and widths[i] < bloc_base.x + bloc_base.w and heights[i] > bloc_base.y and heights[i] < bloc_base.y + bloc_base.h:
                         temps.pop(i)
