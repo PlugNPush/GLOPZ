@@ -10,6 +10,7 @@ from math import pi
 from math import sqrt
 from math import exp
 from math import tan
+from random import uniform
 #toutes les coordonnées:
 
 pygame.init()
@@ -310,6 +311,14 @@ uzi_neutral = pygame.transform.scale(uzi_neutral, (int(463/10), int(469/10) ))
 rpg_neutral = pygame.transform.scale(rpg_neutral, (int(463/10), int(469/10) ))
 shotgun_neutral = pygame.transform.scale(shotgun_neutral, (int(463/10), int(469/10) ))
 
+bullet1 = pygame.image.load(curdir + "/images/balle1.png")
+bullet2 = pygame.image.load(curdir + "/images/grenade2.png")
+bullet3 = pygame.image.load(curdir + "/images/balle2.png")
+bullet4 = pygame.image.load(curdir + "/images/balle4.png")
+bullet5 = pygame.image.load(curdir + "/images/balle3.png")
+
+
+
 #chargement des armes en utilisation J1
 ak_neutral_use = pygame.image.load(curdir + "/images/icon/AK/full.png").convert_alpha()
 grenade_neutral_use = pygame.image.load(curdir + "/images/icon/grenade/full.png").convert_alpha()
@@ -415,6 +424,7 @@ while on:
     orientations = [0]
     height0 = [0]
     width0 = [0]
+    angle0 = [0]
     
     song_menu = mixer.music.load(curdir + "/audio/music_map_serenite.mp3")
     mixer.music.play(-1)
@@ -1094,6 +1104,7 @@ while on:
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/48, -pi/48))
                     pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j1 == 3 and weapon3_j1 > 0:
                     weapon3_j1 -= 1
@@ -1105,6 +1116,7 @@ while on:
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/30, -pi/30))
                 elif count_weapon_j1 == 5 and weapon5_j1 > 0:
                     weapon5_j1 -= 1
                     cooldown = True
@@ -1115,6 +1127,44 @@ while on:
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    
+                    
+                    bullets.append(5)
+                    heights.append(pos_j1.y)
+                    widths.append(pos_j1.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j1 == 1 else -1)
+                    height0.append(pos_j1.y)
+                    width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    
+                    bullets.append(5)
+                    heights.append(pos_j1.y)
+                    widths.append(pos_j1.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j1 == 1 else -1)
+                    height0.append(pos_j1.y)
+                    width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    
+                    bullets.append(5)
+                    heights.append(pos_j1.y)
+                    widths.append(pos_j1.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j1 == 1 else -1)
+                    height0.append(pos_j1.y)
+                    width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    
+                    bullets.append(5)
+                    heights.append(pos_j1.y)
+                    widths.append(pos_j1.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j1 == 1 else -1)
+                    height0.append(pos_j1.y)
+                    width0.append(pos_j1.x)
+                    angle0.append(uniform(pi/24, -pi/24))
                 elif count_weapon_j1 == 2 and reload_status_weapon2_j1 == 0:
                     reload_status_weapon2_j1 = 1
                     cooldown = True
@@ -1125,6 +1175,7 @@ while on:
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x)
+                    angle0.append(0)
                 elif count_weapon_j1 == 4 and reload_status_weapon4_j1 == 0:
                     reload_status_weapon4_j1 = 1
                     cooldown = True
@@ -1135,6 +1186,7 @@ while on:
                     orientations.append(1 if heading_j1 == 1 else -1)
                     height0.append(pos_j1.y)
                     width0.append(pos_j1.x)
+                    angle0.append(0)
         else:
             cooldown = False
 
@@ -1211,6 +1263,7 @@ while on:
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/48, -pi/48))
                     pygame.mixer.Channel(0).play(pygame.mixer.Sound(curdir + "/audio/rifle-shot.mp3"))
                 elif count_weapon_j2 == 3 and weapon3_j2 > 0:
                     weapon3_j2 -= 1
@@ -1222,6 +1275,7 @@ while on:
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/30, -pi/30))
                 elif count_weapon_j2 == 5 and weapon5_j2 > 0:
                     weapon5_j2 -= 1
                     cooldown2 = True
@@ -1232,6 +1286,43 @@ while on:
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+                    bullets.append(5)
+                    heights.append(pos_j2.y)
+                    widths.append(pos_j2.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j2 == 1 else -1)
+                    height0.append(pos_j2.y)
+                    width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+
+                    bullets.append(5)
+                    heights.append(pos_j2.y)
+                    widths.append(pos_j2.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j2 == 1 else -1)
+                    height0.append(pos_j2.y)
+                    width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+
+                    bullets.append(5)
+                    heights.append(pos_j2.y)
+                    widths.append(pos_j2.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j2 == 1 else -1)
+                    height0.append(pos_j2.y)
+                    width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+
+                    bullets.append(5)
+                    heights.append(pos_j2.y)
+                    widths.append(pos_j2.x)
+                    temps.append(0)
+                    orientations.append(1 if heading_j2 == 1 else -1)
+                    height0.append(pos_j2.y)
+                    width0.append(pos_j2.x)
+                    angle0.append(uniform(pi/24, -pi/24))
+
                 elif count_weapon_j2 == 2 and reload_status_weapon2_j2 == 0:
                     reload_status_weapon2_j2 = 1
                     cooldown2 = True
@@ -1242,6 +1333,7 @@ while on:
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x)
+                    angle0.append(0)
                 elif count_weapon_j2 == 4 and reload_status_weapon4_j2 == 0:
                     reload_status_weapon4_j2 = 1
                     cooldown2 = True
@@ -1252,6 +1344,7 @@ while on:
                     orientations.append(1 if heading_j2 == 1 else -1)
                     height0.append(pos_j2.y)
                     width0.append(pos_j2.x)
+                    angle0.append(0)
         else:
             cooldown2 = False
                 
@@ -1898,20 +1991,18 @@ while on:
         
         lenb = len(bullets)
         for i in range(0, lenb):
-             lenb = len(bullets)
-             if (i < len(bullets)):
-                 if bullets[i] == 1:
-                     # On a affaire à un bon petit AK
-                     # Attention ! t = temps[i] % 60
-                     
-                     widths[i] += 15 * orientations[i] # Insérer l'équation ici
-                     heights[i] += 0.2 * (temps[i] % 60) + 1 # Insérer l'équation ici
-                     temps[i] += 1
-                     bullet = pygame.image.load(curdir + "/images/papacito2.png")
-                     screen.blit(bullet, (widths[i], heights[i]))
-                     
-                     if temps[i] > 60*5:
-                        # Mode sans échec
+            lenb = len(bullets)
+            if (i < lenb):
+                if bullets[i] == 1:
+                    # On a affaire à un bon petit AK
+                    # Attention ! t = temps[i] % 60
+                    
+                    #widths[i] += 15 * orientations[i] # Insérer l'équation ici
+                    #heights[i] += 0.2 * (temps[i] % 60) + 1 # Insérer l'équation ici
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(40/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    temps[i] += 1
+                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -1919,45 +2010,117 @@ while on:
                         orientations.pop(i)
                         width0.pop(i)
                         height0.pop(i)
-                        
-                     
-                 elif bullets[i] == 2:
-                     # Equation de l'hypopotamus
-                     #widths[i] = 1 + cos(pi/2)*temps[i] + width0[i] # Insérer l'équation ici
-                     #heights[i] = (-1/2)*1*temps[i]**2 + 10*sin(pi/2)*temps[i] + height0[i] # Insérer l'équation ici
-                     
-                     # Equation de la gravité
-                     #widths[i] = 3*(temps[i] % 60) + width0[i]  # Insérer l'équation ici
-                     #heights[i] = 2*(temps[i] % 60)**2 + 4*(temps[i] % 60) + height0[i] # Insérer l'équation ici
-                     
-                     # Rectiligne
-                     #widths[i] = 3*(temps[i] / 60) + width0[i]  # Insérer l'équation ici
-                     #heights[i] = height0[i] # Insérer l'équation ici
-                     
-                     # Formule qui marche pas mais saute
-                     #widths[i] = exp(temps[i] / 60) + width0[i] # Insérer l'équation ici
-                     #heights[i] = (1/60)*1*temps[i]**2 - 5*temps[i] + height0[i] # Insérer l'équation ici
-                     
-                     
-                     widths[i] = 50*tan((temps[i] / 100) - 59.7) + width0[i] # Insérer l'équation ici
-                     heights[i] = (1/200)*10*temps[i]**2 - 10*sin(pi/6)*temps[i] + height0[i] # Insérer l'équation ici
-                     
-                     
-                     temps[i] += 1
-                     bullet = pygame.image.load(curdir + "/images/grenade1.png")
-                     screen.blit(bullet, (widths[i], heights[i]))
+                        angle0.pop(i)
+
+                    else:
+                        screen.blit(bullet1, (widths[i], heights[i]))
+
+                    
+                        if temps[i] > 60*5:
+                            # Mode sans échec
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                    
+                    
+                elif bullets[i] == 2:
+                    # Equation de l'hypopotamus
+                    #widths[i] = 1 + cos(pi/2)*temps[i] + width0[i] # Insérer l'équation ici
+                    #heights[i] = (-1/2)*1*temps[i]**2 + 10*sin(pi/2)*temps[i] + height0[i] # Insérer l'équation ici
+                    
+                    # Equation de la gravité
+                    #widths[i] = 3*(temps[i] % 60) + width0[i]  # Insérer l'équation ici
+                    #heights[i] = 2*(temps[i] % 60)**2 + 4*(temps[i] % 60) + height0[i] # Insérer l'équation ici
+                    
+                    # Rectiligne
+                    #widths[i] = 3*(temps[i] / 60) + width0[i]  # Insérer l'équation ici
+                    #heights[i] = height0[i] # Insérer l'équation ici
+                    
+                    # Formule qui marche pas mais saute
+                    #widths[i] = exp(temps[i] / 60) + width0[i] # Insérer l'équation ici
+                    #heights[i] = (1/60)*1*temps[i]**2 - 5*temps[i] + height0[i] # Insérer l'équation ici
+                    
+                    
+                    #widths[i] = 50*tan((temps[i] / 100) - 59.7) + width0[i] # Insérer l'équation ici
+                    #heights[i] = (1/200)*10*temps[i]**2 - 10*sin(pi/6)*temps[i] + height0[i] # Insérer l'équation ici
+                
+                    #balle fusil
+                    #widths[i] = 800*cos(0)*(temps[i]/60) + width0[i] # Insérer l'équation ici
+                    #heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(0)*(temps[i]/60) + height0[i] # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    
+                    widths[i] = (400*cos(pi/4)*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
+                    heights[i] = (1/2)*300*(temps[i]/60)**2 - 400*sin(pi/4)*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 300 V0 = 400 a = pi/4
+
+
+                    temps[i] += 1
+                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                        temps.pop(i)
+                        bullets.pop(i)
+                        widths.pop(i)
+                        heights.pop(i)
+                        orientations.pop(i)
+                        width0.pop(i)
+                        height0.pop(i)
+                        angle0.pop(i)
+
+                    else:
+                        screen.blit(bullet2, (widths[i], heights[i]))
+
+                    
+                        if temps[i] > 60*5:
+                            # Mode sans échec
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                    
                      
    
                         
-                 elif bullets[i] == 3:
-                     widths[i] = widths[i] # Insérer l'équation ici
-                     heights[i] = heights[i] # Insérer l'équation ici
-                     temps[i] += 1
-                     bullet = pygame.image.load(curdir + "/images/vs.png")
-                     screen.blit(bullet, (widths[i], heights[i]))
-                     
-                     if temps[i] > 60*5:
-                        # Mode sans échec
+                elif bullets[i] == 3:
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    temps[i] += 1
+                    
+                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+
+                    else:
+                        screen.blit(bullet3, (widths[i], heights[i]))
+
+                    
+                        if temps[i] > 60*5:
+                            # Mode sans échec
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                
+                elif bullets[i] == 4:
+                    widths[i] = 30 + widths[i] # Insérer l'équation ici
+                    heights[i] = height0[i]+(40/1080)*height # Insérer l'équation ici
+                    temps[i] += 1
+                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -1965,16 +2128,30 @@ while on:
                         orientations.pop(i)
                         width0.pop(i)
                         height0.pop(i)
-                        
-                 elif bullets[i] == 4:
-                     widths[i] = widths[i] # Insérer l'équation ici
-                     heights[i] = heights[i] # Insérer l'équation ici
-                     temps[i] += 1
-                     bullet = pygame.image.load(curdir + "/images/Knife.png")
-                     screen.blit(bullet, (widths[i], heights[i]))
-                     
-                     if temps[i] > 60*5:
-                        # Mode sans échec
+                        angle0.pop(i)
+
+                    else:
+                        screen.blit(bullet4, (widths[i], heights[i]))
+
+                    
+                        if temps[i] > 60*5:
+                            # Mode sans échec
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+                    
+                elif bullets[i] == 5:
+                    widths[i] = (800*cos(angle0[i])*(temps[i]/60))*orientations[i] + width0[i] # Insérer l'équation ici
+                    heights[i] = (1/2)*30*(temps[i]/60)**2 - 800*sin(angle0[i])*(temps[i]/60) + height0[i]+(60/1080)*height # Insérer l'équation ici g = 30 V0 = 800 a = 0
+                    temps[i] += 1
+                    screen.blit(bullet5, (widths[i], heights[i]))
+                    
+                    if widths[i] > width or widths[i] < 0 or heights[i] > height:
                         temps.pop(i)
                         bullets.pop(i)
                         widths.pop(i)
@@ -1982,24 +2159,23 @@ while on:
                         orientations.pop(i)
                         width0.pop(i)
                         height0.pop(i)
-                        
-                 elif bullets[i] == 5:
-                     widths[i] = widths[i] # Insérer l'équation ici
-                     heights[i] = heights[i] # Insérer l'équation ici
-                     temps[i] += 1
-                     bullet = pygame.image.load(curdir + "/images/nathan.png")
-                     screen.blit(bullet, (widths[i], heights[i]))
-                     
-                     if temps[i] > 60*5:
-                        # Mode sans échec
-                        temps.pop(i)
-                        bullets.pop(i)
-                        widths.pop(i)
-                        heights.pop(i)
-                        orientations.pop(i)
-                        width0.pop(i)
-                        height0.pop(i)
-             lenb = len(bullets)
+                        angle0.pop(i)
+
+                    else:
+                        screen.blit(bullet5, (widths[i], heights[i]))
+
+                    
+                        if temps[i] > 60*5:
+                            # Mode sans échec
+                            temps.pop(i)
+                            bullets.pop(i)
+                            widths.pop(i)
+                            heights.pop(i)
+                            orientations.pop(i)
+                            width0.pop(i)
+                            height0.pop(i)
+                            angle0.pop(i)
+            lenb = len(bullets)
             
         #raffraichissement
         #pygame.draw.rect(screen, red, bloc_1)
